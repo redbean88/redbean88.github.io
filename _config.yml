@@ -20,7 +20,7 @@ plainwhite:
   # generate social links in footer
   social_links:
     twitter: redbean88
-    github:  redbean88
+    github:  /redbean88/redbean88.github.io
     # linkedIn: in/thelehhman
     rss: rss
     # dribbble: jekyll
@@ -39,8 +39,8 @@ plainwhite:
 
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
-#header_pages:
-# - about.md
+header_pages:
+ - about.md
 
 # Build settings
 theme: plainwhite
