@@ -1,4 +1,4 @@
-title: Your awesome title
+title: red Achieve
 author: GitHub User
 email: doctortor88@google.com
 description: > # this means to ignore newlines until "show_exerpts:"
@@ -19,9 +19,9 @@ plainwhite:
 
   # generate social links in footer
   social_links:
-    twitter: thelehhman
-    github:  thelehhman
-    linkedIn: in/thelehhman
+    twitter: redbean88
+    # github:  thelehhman
+    # linkedIn: in/thelehhman
     rss: rss
     # dribbble: jekyll
     # flickr:   jekyll
