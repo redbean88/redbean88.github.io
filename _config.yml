@@ -49,4 +49,4 @@ plugins:
   - jekyll-seo-tag
 #  - jekyll-feed
 
-disqus-shortname : myblog
+disqus_shortname : redbean88-github-io
