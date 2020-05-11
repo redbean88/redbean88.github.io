@@ -48,5 +48,5 @@ theme: plainwhite
 plugins:
   - jekyll-seo-tag
 #  - jekyll-feed
-plainwhite.disqus_shortname : redbean88-github-io
+disqus_shortname : redbean88-github-io
 
