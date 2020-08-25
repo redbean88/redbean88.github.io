@@ -9,7 +9,7 @@ public class FlyWithWings implements FlyBehavior {
 
 	@Override
 	public void fly() {
-		System.out.println("날아요");
+		System.out.println("날다아다녀요");
 	}
 
 }
