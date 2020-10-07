@@ -57,3 +57,6 @@ plugins:
  - jekyll-feed
  - jekyll-seo-tag
  
+site: 
+  disqus:
+    shortname: my_disqus_shortname
