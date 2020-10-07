@@ -4,7 +4,6 @@ author:
   email: doctortor88@gmail.com
 description: > # this means to ignore newlines until "show_excerpts:"
   there is dev-note for redbean88
-
 show_excerpts: false # set to true to show excerpts on the homepage
 
 # Minima date format
