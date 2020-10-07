@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 title: Your awesome title
 author:
   name: GitHub User
@@ -58,3 +59,10 @@ theme: minima
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
+=======
+title: Redbean Archive
+description: dev note.
+show_downloads: true
+google_analytics:
+theme: jekyll-theme-cayman
+>>>>>>> f8baaf0648e7fa2bc352196c0b7690caa75aaebb
