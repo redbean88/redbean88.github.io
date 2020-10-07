@@ -58,4 +58,4 @@ plugins:
  - jekyll-seo-tag
   
 disqus:
-  shortname: my_disqus_shortname
+  shortname: redbean88-github-io
