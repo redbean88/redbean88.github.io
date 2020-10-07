@@ -2,4 +2,6 @@
 layout: page
 title: About
 ---
- test
+ 
++ 2018 ~ now
+  + kbiz (gwangju. kr)
