@@ -1,4 +1,6 @@
-title: Your awesome title
+  disqus:
+    shortname: my_disqus_shortname
+title: Readbean Archive
 author:
   name: GitHub User
   email: doctortor88@gmail.com
@@ -56,3 +58,4 @@ theme: minima
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
+ 
