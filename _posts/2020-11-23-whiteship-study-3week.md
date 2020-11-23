@@ -1,9 +1,3 @@
----
-layout : post
-title : 학습진도
-date : 2020-06-25
-categories : study
----
 목표
 자바가 제공하는 다양한 연산자를 학습하세요.
 
