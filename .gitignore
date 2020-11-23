@@ -1,12 +1,29 @@
-.editorconfig
-.gitattributes
-.github
-.idea
-/docs
-/test
-CHANGELOG.md
-minimal-mistakes-jekyll.gemspec
-screenshot-layouts.png
-screenshot.png
+# Vim
+*~
+*.sw[p_]
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Ruby Gem
+*.gem
+.bundle
+Gemfile.lock
+**/vendor/bundle
+
+# Node.js and NPM
+node_modules
+npm-debug.log*
+package-lock.json
+codekit-config.json
+
+# macOS
 .DS_Store
-_posts/.idea
+
+# Jekyll generated files
+.jekyll-cache
+.jekyll-metadata
+.sass-cache
+_asset_bundler_cache
+_site
