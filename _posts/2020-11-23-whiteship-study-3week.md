@@ -1,4 +1,3 @@
-
 ---
 title : "자바스터디 3주차"
 date : 2020-11-23
@@ -31,9 +30,10 @@ categories : study
 |%|연산자를 기준으로 좌항을 우항으로 나눈 나머지 연산을 수행합니다. 우항이 0일 경우, 예외를 발생 합니다.|
 
 > 나눗셈 연산
+
 단순하게 나머지 연산만 수행 했을 경우, 소수점표기가 되지 않으며, 소수점 연산이 필요한경우, 
 1. 좌,우항중 하나를 실수로 표기한후, double로 받아 표기.
 2. java.math의 BigDecimal 이용 (추천)
 [관련 링크](https://mainia.tistory.com/2020)
 
-<iframe height="400px" width="100%" src="https://repl.it/@redbean1/Arithmetic?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="800px" width="100%" src="https://repl.it/@redbean1/Arithmetic?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
