@@ -13,7 +13,7 @@ categories : study
 1. 관계 연산자
 1. 논리 연산자
 2. instanceof
-3. assignment(=) operator1
+3. assignment(=) operator
 4. 화살표(->) 연산자
 5. 3항 연산자
 6. 연산자 우선 순위
@@ -23,7 +23,7 @@ categories : study
 
 |산술 연산자|설명|
 |:---:|---|
-|+|연산자를 기준으로 우항과 좌항의 합연산을 수행합니다.|
+|+|연산자를 기준으로 우항과 좌항의 합연산을 수행합니다|
 |-|연산자를 기준으로 우항과 좌항의 차연산을 수행합니다|
 |*|연산자를 기준으로 우항과 좌항의 곱연산을 수행합니다|
 |/|연산자를 기준으로 좌항을 우항으로 나누기 연산을 수행합니다. 우항이 0일 경우, 예외를 발생 합니다.|
@@ -56,3 +56,55 @@ categories : study
 비트연산의 경우 , 연산 속도가 빠름
 
 <iframe height="400px" width="100%" src="https://repl.it/@redbean1/bit?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+# 관계 연산자 (Relational operator, (비교 연산자, Comparison operator))
+
+반환 값은 항상, boolean 타입이다
+동일성을 보장하며, 동등성을 보장하지 않는다.(String,배열, 레퍼런스 객체등)
+
+> 동일성 vs 동등성
+동일성 : 메모리 주소값의 정보가 같음
+동등성 : 객체의 정보가 같음
+
+|관계 연산자|설명|
+|:---:|---|
+|==|연산자를 기준으로 우항과 좌항이 같으면 true|
+|!=|연산자를 기준으로 우항과 좌항이 다르면 true|
+|>|연산자를 기준으로 좌항이 우항보다 크면 true|
+|>=|연산자를 기준으로 좌항이 우항보다 더 크거나 같으면 true|
+|<|연산자를 기준으로 우항이 좌항보다 크면 true.|
+|<=|연산자를 기준으로 우항이 좌항보다 왼쪽보다 더 크거나 같으면 true.|
+
+<iframe height="400px" width="100%" src="https://repl.it/@redbean1/compare?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+# 논리 연산자 (Logical operator)
+
+|논리 연산자|설명|
+|:---:|---|
+|&&|모두 참이면 true (AND 연산)|
+|&#124;&#124;| 하나라도 참이면 true (OR 연산)|
+|!|논리 반전 (true > false , false > true) (NOT 연산)|
+
+<iframe height="400px" width="100%" src="https://repl.it/@redbean1/Comparison?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+# instanceof
+- 참조 변수가 참조하고 있는 인스턴스의 실제 타입을 반환. 
+- 실재 JVM에서는 null이 아닌 class , array, interface 의 경우 아래와 같이 처리 후, 참인경우 1 , 거짓인 경우 0을 operand 스택에 쌓는다(원문 push라고 써있음).
+- 아래는 1을 반환하는 경우
+    + 좌항이 array가 아닌 클래스인 경우
+        * 우항이 클래스라면, instanceof 연산자를 기준으로 좌항은 같은 클래스 이거나, 서브클래스인 경우
+        * 우항이 인터페이스라면, instanceof 연산자를 기준으로 좌항이 인터페이스를 구현(implement) 한 경우
+    + 좌항이 interface인 경우
+        * instanceof 연산자를 기준으로 우항은 반드시 Object 클래스인 경우
+        * instanceof 연산자를 기준으로 우항과 같은 인터페이스 혹은 우항의 서브인터페이스 경우
+    + 좌항이 array인 경우
+        * 우항이 클래스라면, instanceof 연산자를 기준으로 우항은 반드시 Object 클래스인 경우
+        * 우항이 인터페이스라면, instanceof 연산자를 기준으로 우항은 array를 구현하는 구현체 중 하나인 경우
+        * 우항이 array라면, 아래의 경우에 만족할 경우
+            - 좌항과 우항이 같은 원시타입일 경우
+            - 좌항과 우항이 같은 레퍼런트 타입인 경우
+
+<iframe height="400px" width="100%" src="https://repl.it/@redbean1/InstanceOf?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+# assignment(=) operator
+- 연산자 기준으로, 좌항에 우항을 할당 (이때, 값을 __복사__하는것이 아닌, 메모리값을__할당__하는것)
