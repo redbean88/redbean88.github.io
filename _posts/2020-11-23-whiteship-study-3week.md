@@ -107,4 +107,44 @@ categories : study
 <iframe height="400px" width="100%" src="https://repl.it/@redbean1/InstanceOf?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 # assignment(=) operator
-- 연산자 기준으로, 좌항에 우항을 할당 (이때, 값을 __복사__하는것이 아닌, 메모리값을__할당__하는것)
+- 연산자 기준으로, 좌항에 우항을 할당 (이때, 값을 **복사**하는것이 아닌, 메모리값을**할당**하는것)
+
+<iframe height="400px" width="100%" src="https://repl.it/@redbean1/copy?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+# 화살표(->) 연산자
+자바 8버전 부터 지원하는 익명함수 생성 방법, 단일 함수 인터페이스를 구현하는데 사용 가능 (@FunctionalInterface를 통해 단일함수 인터페이스를 강제 가능)
+
+<iframe height="400px" width="100%" src="https://repl.it/@redbean1/lamda?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+# 3항 연산자
+표현식 : [condition] ? [true_value] : [false_value] 
+간략한 문장으로 줄일때 사용하면 유용한 방법, 지나치게 사용할 경우 코드 복잡도는 높힐수 있음
+
+<iframe height="400px" width="100%" src="https://repl.it/@redbean1/TernaryOperator?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+# 연산자 우선 순위
+~~싫어하는 동료가 있다면, 괄호를 안쓰면 스트레스를 줄수 있다.~~
+
+|우선 순위|연산자|설명|
+|:---:|---|---|
+|1|expr++ ㅤ expr--|후위 증가/감소 연산자|
+|2|++expr ㅤ --expr ㅤ +expr ㅤ -expr ㅤ ~ ㅤ !|전위 증가/감소 연산자, 양/음 부호, 논리/비트 NOT 연산자|
+|3|* ㅤ / ㅤ %|곱셈/나눗셈/나머지 연산자|
+|4|+ ㅤ -|덧셈/뺄셈 연산자|
+|5|<< ㅤ >> ㅤ >>>|비트 왼쪽/오른쪽 Shift 연산자, Unsigned Shift 연산자|
+|6|< ㅤ > ㅤ <= ㅤ >= ㅤ instanceof|보다 작은/보다 큰/보다 작거나 같은/보다 크거나 같은 관계 연산자, instanceof|
+|7|== ㅤ !=|와 같은/와 다른 관계 연산자|
+|8|&|비트 AND 연산자|
+|9|^|비트 XOR 연산자|
+|10|\\||비트 OR 연산자|
+|11|&&|논리 AND 연산자|
+|12|\\|\\||논리 OR 연산자|
+|13|? :|삼항 조건 연산자|
+|14|= ㅤ += ㅤ -= ㅤ *= ㅤ /= ㅤ %= ㅤ &= ㅤ ^= ㅤ \\|= ㅤ <<= ㅤ >>= ㅤ >>>=|대입 연산자 및 복합 대입 연산자|
+
+# 참고자료
+
+[3주차 과체 : nimkoes](https://blog.naver.com/hsm622/221017369794)
+[3주차 과체 : gtpe](https://github.com/gtpe/java-study/blob/master/w3.md)
+[오라클 레퍼런스](https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-6.html)
+
