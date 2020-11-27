@@ -39,7 +39,7 @@ categories : study
 자바의 레퍼선스 객체의 오토박싱과 유사한 처리 상세내용은 링크를 확인해 보자
 [숫자승격](https://kils-log-of-develop.tistory.com/336)
 
-<iframe height="400px" width="100%" src="https://repl.it/@redbean1/Arithmetic?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="800px" width="100%" src="https://repl.it/@redbean1/Arithmetic?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ### 비트연산자
 
@@ -55,7 +55,7 @@ categories : study
 > 사용이유
 비트연산의 경우 , 연산 속도가 빠름
 
-<iframe height="400px" width="100%" src="https://repl.it/@redbean1/bit?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="800px" width="100%" src="https://repl.it/@redbean1/bit?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 # 관계 연산자 (Relational operator, (비교 연산자, Comparison operator))
 
@@ -75,7 +75,7 @@ categories : study
 |<|연산자를 기준으로 우항이 좌항보다 크면 true.|
 |<=|연산자를 기준으로 우항이 좌항보다 왼쪽보다 더 크거나 같으면 true.|
 
-<iframe height="400px" width="100%" src="https://repl.it/@redbean1/compare?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="800px" width="100%" src="https://repl.it/@redbean1/compare?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 # 논리 연산자 (Logical operator)
 
@@ -85,7 +85,7 @@ categories : study
 |&#124;&#124;| 하나라도 참이면 true (OR 연산)|
 |!|논리 반전 (true > false , false > true) (NOT 연산)|
 
-<iframe height="400px" width="100%" src="https://repl.it/@redbean1/Comparison?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="800px" width="100%" src="https://repl.it/@redbean1/Comparison?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 # instanceof
 - 참조 변수가 참조하고 있는 인스턴스의 실제 타입을 반환. 
@@ -104,23 +104,23 @@ categories : study
             - 좌항과 우항이 같은 원시타입일 경우
             - 좌항과 우항이 같은 레퍼런트 타입인 경우
 
-<iframe height="400px" width="100%" src="https://repl.it/@redbean1/InstanceOf?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="800px" width="100%" src="https://repl.it/@redbean1/InstanceOf?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 # assignment(=) operator
 - 연산자 기준으로, 좌항에 우항을 할당 (이때, 값을 **복사**하는것이 아닌, 메모리값을**할당**하는것)
 
-<iframe height="400px" width="100%" src="https://repl.it/@redbean1/copy?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="800px" width="100%" src="https://repl.it/@redbean1/copy?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 # 화살표(->) 연산자
 자바 8버전 부터 지원하는 익명함수 생성 방법, 단일 함수 인터페이스를 구현하는데 사용 가능 (@FunctionalInterface를 통해 단일함수 인터페이스를 강제 가능)
 
-<iframe height="400px" width="100%" src="https://repl.it/@redbean1/lamda?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="800px" width="100%" src="https://repl.it/@redbean1/lamda?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 # 3항 연산자
 표현식 : [condition] ? [true_value] : [false_value] 
 간략한 문장으로 줄일때 사용하면 유용한 방법, 지나치게 사용할 경우 코드 복잡도는 높힐수 있음
 
-<iframe height="400px" width="100%" src="https://repl.it/@redbean1/TernaryOperator?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="800px" width="100%" src="https://repl.it/@redbean1/TernaryOperator?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 # 연산자 우선 순위
 ~~싫어하는 동료가 있다면, 괄호를 안쓰면 스트레스를 줄수 있다.~~
