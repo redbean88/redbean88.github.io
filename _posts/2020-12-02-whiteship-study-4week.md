@@ -33,32 +33,32 @@ class Main {
 Code:
        0: iconst_0                  //int 0 피연산자 스택에 push
        1: istore_1                  //로컬변수1번(x) 에 피연산자 스택에서 pop된 값(0)을 저장
-       2: iload_1                   //1번째 로컬변수에서 값 호출(0)
+       2: iload_1                   //로컬변수1번에서 값 호출(0)
        3: ifne          11          //값이 0이 아닌경우 , 11번지로 점프
        6: iconst_0                  //int 0 피연산자 스택에 push
        7: istore_2                  //로컬변수2번(y) 에 피연산자 스택에서 pop된 값(0)을 저장
        8: goto          50          //50번지로 이동(return)
-      11: iload_1                   //1번째 로컬변수에서 값 호출(0)
+      11: iload_1                   //로컬변수1번에서 값 호출(0)
       12: iconst_1                  //int 1 피연산자 스택에 push
-      13: if_icmpne     21          //1번째 로컬변수에서 값(0)과 피연산자 스택에서 pop된 값(1)을 비교하여 서로 다른경우, 21번으로 점프
+      13: if_icmpne     21          //로컬변수1번에서 값(0)과 피연산자 스택에서 pop된 값(1)을 비교하여 서로 다른경우, 21번으로 점프
       16: iconst_1                  //int 1 피연산자 스택에 push
       17: istore_2                  //로컬변수2번(y) 에 피연산자 스택에서 pop된 값(1)을 저장
       18: goto          50          //50번지로 이동(return)
-      21: iload_1                   //1번째 로컬변수에서 값 호출(0)
+      21: iload_1                   //로컬변수1번에서 값 호출(0)
       22: iconst_2                  //int 2 피연산자 스택에 push
-      23: if_icmpne     31          //1번째 로컬변수에서 값(0)과 피연산자 스택에서 pop된 값(2)을 비교하여 서로 다른경우, 31번으로 점프
+      23: if_icmpne     31          //로컬변수1번에서 값(0)과 피연산자 스택에서 pop된 값(2)을 비교하여 서로 다른경우, 31번으로 점프
       26: iconst_2                  //int 2 피연산자 스택에 push
       27: istore_2                  //로컬변수2번(y) 에 피연산자 스택에서 pop된 값(2)을 저장
       28: goto          50          //50번지로 이동(return)
-      31: iload_1                   //1번째 로컬변수에서 값 호출(0)
+      31: iload_1                   //로컬변수1번에서 값 호출(0)
       32: iconst_5                  //int 5 피연산자 스택에 push
-      33: if_icmpne     41          //1번째 로컬변수에서 값(0)과 피연산자 스택에서 pop된 값(5)을 비교하여 서로 다른경우, 41번으로 점프
+      33: if_icmpne     41          //로컬변수1번에서 값(0)과 피연산자 스택에서 pop된 값(5)을 비교하여 서로 다른경우, 41번으로 점프
       36: iconst_5                  //int 5 피연산자 스택에 push
       37: istore_2                  //로컬변수2번(y) 에 피연산자 스택에서 pop된 값(5)을 저장
       38: goto          50          //50번지로 이동(return)
-      41: iload_1                   //1번째 로컬변수에서 값 호출(0)
+      41: iload_1                   //로컬변수1번에서 값 호출(0)
       42: bipush        6           //int 6 피연산자 스택에 push
-      44: if_icmpne     50          //1번째 로컬변수에서 값(0)과 피연산자 스택에서 pop된 값(6)을 비교하여 서로 다른경우, 50번으로 점프
+      44: if_icmpne     50          //로컬변수1번에서 값(0)과 피연산자 스택에서 pop된 값(6)을 비교하여 서로 다른경우, 50번으로 점프
       47: bipush        6           //int 6 피연산자 스택에 push
       49: istore_2                  //로컬변수2번(y) 에 최상위 스택에 쌓인 값(6)을 저장
       50: return                    //void 메서드를 리턴
@@ -148,13 +148,13 @@ public static void main(String[] args) {
        0: iconst_0                  //int 0 피연산자 스택에 push
        1: istore_1                  //로컬변수1번(i)에 피연산자 스택에서 pop된 값(0)을 저장
        2: goto          15          //15번지로 점프
-       5: getstatic     #16         // static 메소드 호출(Field java/lang/System.out:Ljava/io/PrintStream)
-       8: iload_1                   //1번째 로컬변수에서 값 호출(0)
-       9: invokevirtual #22         // 메소드 실행(Method java/io/PrintStream.println:(I)V)(i 출력)
-      12: iinc          1, 2        // 로컬변수1번(i)를 2만큼 증가
-      15: iload_1                   // 1번째 로컬변수에서 값 호출(0)
+       5: getstatic     #16         //static 메소드 호출(Field java/lang/System.out:Ljava/io/PrintStream)
+       8: iload_1                   //로컬변수1번에서 값 호출(0)
+       9: invokevirtual #22         //메소드 실행(Method java/io/PrintStream.println:(I)V)(i 출력)
+      12: iinc          1, 2        //로컬변수1번(i)를 2만큼 증가
+      15: iload_1                   //로컬변수1번에서 값 호출(0)
       16: iconst_5                  //int 5 피연산자 스택에 push
-      17: if_icmplt     5           //1번째 로컬변수에서 값과 피연산자 스택에서 pop된 값을 비교하여 로컬변수가 작은 경우, 5번으로 점프
+      17: if_icmplt     5           //로컬변수1번에서 값과 피연산자 스택에서 pop된 값을 비교하여 로컬변수가 작은 경우, 5번으로 점프
       20: return
 ```
 
@@ -175,13 +175,13 @@ public static void main(String[] args) {
        0: iconst_0                  //int 0 피연산자 스택에 push
        1: istore_1                  //로컬변수1번(i)에 피연산자 스택에서 pop된 값(0)을 저장
        2: goto          15          //15번지로 점프
-       5: getstatic     #16         // static 메소드 호출(Field java/lang/System.out:Ljava/io/PrintStream)
-       8: iload_1                   //1번째 로컬변수에서 값 호출(0)
-       9: invokevirtual #22         // 메소드 실행(Method java/io/PrintStream.println:(I)V)(i 출력)
-      12: iinc          1, 2        // 로컬변수1번(i)를 2만큼 증가
-      15: iload_1                   // 1번째 로컬변수에서 값 호출(0)
+       5: getstatic     #16         //static 메소드 호출(Field java/lang/System.out:Ljava/io/PrintStream)
+       8: iload_1                   //로컬변수1번에서 값 호출(0)
+       9: invokevirtual #22         //메소드 실행(Method java/io/PrintStream.println:(I)V)(i 출력)
+      12: iinc          1, 2        //로컬변수1번(i)를 2만큼 증가
+      15: iload_1                   //로컬변수1번에서 값 호출(0)
       16: iconst_5                  //int 5 피연산자 스택에 push
-      17: if_icmplt     5           //1번째 로컬변수에서 값과 피연산자 스택에서 pop된 값을 비교하여 로컬변수가 작은 경우, 5번으로 점프
+      17: if_icmplt     5           //로컬변수1번에서 값과 피연산자 스택에서 pop된 값을 비교하여 로컬변수가 작은 경우, 5번으로 점프
       20: return
 ```
 #### do-while
@@ -200,16 +200,16 @@ public static void main(String[] args) {
  Code:
        0: iconst_0					//int 0 피연산자 스택에 push
        1: istore_1					//로컬변수1번(i)에 피연산자 스택에서 pop된 값(0)을 저장
-       2: getstatic     #16         // static 메소드 호출(Field java/lang/System.out:Ljava/io/PrintStream)
-       5: iload_1					// 1번째 로컬변수에서 값 호출(0)
-       6: invokevirtual #22         // 메소드 실행(Method java/io/PrintStream.println:(I)V)(i 출력)
-       9: iinc          1, 2		// 로컬변수1번(i)를 2만큼 증가
-      12: iload_1					// 1번째 로컬변수에서 값 호출(2)
+       2: getstatic     #16         //static 메소드 호출(Field java/lang/System.out:Ljava/io/PrintStream)
+       5: iload_1					//로컬변수1번에서 값 호출(0)
+       6: invokevirtual #22         //메소드 실행(Method java/io/PrintStream.println:(I)V)(i 출력)
+       9: iinc          1, 2		//로컬변수1번(i)를 2만큼 증가
+      12: iload_1					//로컬변수1번에서 값 호출(2)
       13: iconst_5					//int 5 피연산자 스택에 push
-      14: if_icmplt     2			//1번째 로컬변수에서 값과 피연산자 스택에서 pop된 값을 비교하여 로컬변수가 작은 경우, 2번으로 점프
+      14: if_icmplt     2			//로컬변수1번에서 값과 피연산자 스택에서 pop된 값을 비교하여 로컬변수가 작은 경우, 2번으로 점프
       17: return
 ```
-####for-each
+#### for-each
 ```
 public static void main(String[] args) {
 	
@@ -222,23 +222,23 @@ public static void main(String[] args) {
 ```
 ```
   Code:
-       0: iconst_2
-       1: newarray       int
-       3: dup
-       4: iconst_0
-       5: iconst_1
-       6: iastore
-       7: dup
-       8: iconst_1
-       9: iconst_2
-      10: iastore
-      11: astore_1
-      12: aload_1
+       0: iconst_2					//int 2 피연산자 스택에 push
+       1: newarray       int 		//int타입으로 피연산자 스택에서 pop된 값의 크기만큼의 배열 생성
+       3: dup						//피연산자 스택의 최상위 값을 복사
+       4: iconst_0					//int 0 피연산자 스택에 push
+       5: iconst_1					//int 1 피연산자 스택에 push
+       6: iastore					//int타입 배열에 피연산자 스택에서 pop된 값저장 //{1}이됨
+       7: dup						//피연산자 스택의 최상위 값을 복사
+       8: iconst_1					//int 1 피연산자 스택에 push
+       9: iconst_2					//int 2 피연산자 스택에 push
+      10: iastore					//int타입 배열에 피연산자 스택에서 pop된 값저장 //{2}이됨
+      11: astore_1					//배열생성끝
+      12: aload_1					//로컬변수1번(array)에서 배열 호출
       13: dup
       14: astore        5
       16: arraylength
       17: istore        4
-      19: iconst_0
+      19: iconst_0					//int 0 피연산자 스택에 push
       20: istore_3
       21: goto          39
       24: aload         5
@@ -249,13 +249,13 @@ public static void main(String[] args) {
       32: iload_2
       33: invokevirtual #22                 // Method java/io/PrintStream.println:(I)V
       36: iinc          3, 1
-      39: iload_3
-      40: iload         4
-      42: if_icmplt     24
+      39: iload_3					//로컬변수3번에서 값 호출하여 피연산자 스택에 push
+      40: iload         4			//로컬변수4번에서 값 호출하여 피연산자 스택에 push
+      42: if_icmplt     24			//로컬변수1번에서 값과 피연산자 스택에서 pop된 값을 비교하여 로컬변수가 작은 경우, 24번으로 점프
       45: return
 ```
 
-과제
+과제(옵션)
 + 과제 0. JUnit 5 학습하세요.  
 인텔리J, 이클립스, VS Code에서 JUnit 5로 테스트 코드 작성하는 방법에 익숙해 질 것.
 이미 JUnit 알고 계신분들은 다른 것 아무거나!
