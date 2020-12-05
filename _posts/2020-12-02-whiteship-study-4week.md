@@ -13,6 +13,8 @@ categories : study
 
 ### 조건문
 > if를 사용하는 결정문
+
+
 if문 안 조건에 해당하는 경우, 그 블록안의 코드를 실행
 
 ```
@@ -66,6 +68,8 @@ Code:
 
 ### 선택문
 > swich를 사용하는 결정문, if문을 이용할 때 보다 속도가 빠르다. [관련문서](https://thinkpro.tistory.com/132)
+
+
 + switch 문 표현식은 byte, short, int, long, enum 유형, String 및 Byte, Short, Int 및 Long과 같은 일부 래퍼 유형일 수 있습니다.(단, switch 표현식에서만 wrapper 허용하고, case 에는 wrapper 를 허용하지 않는다.) switch () 대괄호 사이에 변수 또는 표현식을 넣을 수 있습니다 .  (float 은  두 개의 부동 소수점 숫자를 비교하는 것은 x와 y의 십진수 등가가 합리적인 정밀도로 동일하게 보일 때 정확하지 않을 수 있어 허용하지 않습니다.)
 + 케이스 값은 리터럴 또는 상수 여야합니다. 케이스 값 유형은 표현식 유형이어야합니다.
 + 각 케이스는 고유해야합니다. 중복 케이스 값을 생성하면 컴파일 타임 오류가 발생합니다.
@@ -143,6 +147,8 @@ public static void main(String[] args) {
 }
 ```
 > 2번에서 15번으로 이동하여 비교 처리 후, 5번으로 돌아와 i값을 출력후, 증감 시킨다.
+
+
 ```
   Code:
        0: iconst_0                  //int 0 피연산자 스택에 push
@@ -160,6 +166,7 @@ public static void main(String[] args) {
 
 #### while
 > 놀랍게도 어셈블러는 for문과 동일하게 처리한다.
+
 
 ```
 public static void main(String[] args) {
@@ -196,6 +203,8 @@ public static void main(String[] args) {
 	}
 ```
 > 비교연산처리부터 하지 않고, 차래대로 실행 된다. 때문에 do구문에 있는 명령은 한번문 무조건 실행 되게 된다.
+
+
 ```
  Code:
        0: iconst_0					//int 0 피연산자 스택에 push
