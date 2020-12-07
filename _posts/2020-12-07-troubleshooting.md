@@ -7,4 +7,4 @@ categories : troubleshooting
 + 전자정부 설정 로드 불가 오류
   + 컴파일 위치 확인(이클립스 기준)
     + properties > Deployment Assembly > /src/main/resources 설정 여부   
-    ![이미지](https://redbean88.github.io/img/2020-12-07 145735.png)
+    ![이미지](https://redbean88.github.io/img/2020-12-07_145735.png)
