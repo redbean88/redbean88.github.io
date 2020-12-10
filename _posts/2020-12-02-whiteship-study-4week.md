@@ -295,3 +295,5 @@ int pop()을 구현하세요.
 ListNode를 사용해서 한번.  
 마감일시  
 2020년 12월 12일 토요일 오후 1시까지.
+
+[참고](https://kils-log-of-develop.tistory.com/349)
