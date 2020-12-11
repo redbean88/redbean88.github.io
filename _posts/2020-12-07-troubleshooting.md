@@ -1,7 +1,6 @@
 ---
 title : "JUNIT in egov"
 date : 2020-12-07
-categories : troubleshooting
 ---
 
 + 전자정부 설정 로드 불가 오류
