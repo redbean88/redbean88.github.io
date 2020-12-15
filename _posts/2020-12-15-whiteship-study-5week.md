@@ -11,7 +11,7 @@ categories : study
 1. 클래스 정의하는 방법
 
 클래스 생성시 생성자 메서드가 기본적으로 호출된다.
-따라서, 아래 두 코드는 같은 형식으로 컴파일된다
+따라서, 아래 세가지 코드는 같은 형식으로 컴파일된다
 ```java
 public class Test {
 }
@@ -22,6 +22,12 @@ public class Test {
     }
 }
 ```
+```java
+public class Test {
+	{}
+}
+```
+
 > 컴파일 코드
 ```
 public class Test {
