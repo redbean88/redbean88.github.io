@@ -1,16 +1,15 @@
-최상혁
-Java 백엔드 엔지니어
-Email: doctortor88@gmail.com
-
-Web: https://redbean88.github.io/
+최상혁  
+Java 백엔드 엔지니어  
+Email: doctortor88@gmail.com  
+blog: https://redbean88.github.io/
 
 > About Me
 
 Java & Spring, 전자정부 기반의 2년차 백엔드(풀스택) 개발자로 관공서와 교육대학교의 인프라 구축 및 기능 개선, 유지보수 업무를 진행 하였습니다.
 현재는 팀 내 선임 개발자로 유지보수 분석/기능 설계를  주요 업무로 하고 있습니다.
-반복되는 업무를 __자동화__ 하고 팀원에게 전파하는 것을 좋아하며 개발에서 반복되는 엑셀 업/다운로드 기능, 알림 표시 기능 등을 작업하였고, 학습한 내용을 팀원에게 공유하는 것을 좋아하여 스프링 기본기술(IoC,AOP,PSA), TMUX 사용법등을 리뷰 하기도 하였습니다.
+반복되는 업무를 __자동화__ 하고, 학습한 내용을 팀원에게 __공유__ 하는 것을 좋아합니다.
 
-> Work Experience
+# Work Experience
 
 ### (주)케이비즈
 
@@ -38,7 +37,7 @@ Java & Spring, 전자정부 기반의 2년차 백엔드(풀스택) 개발자로 
 	+ 전산 자원 관리를 위한 기초 ERP 시스템
 	+ 전체 서비스 설계 및 어드민 개발
 
-> Opensource
+# Opensource
 
 + [개인 블로그](https://redbean88.github.io/)
 	* 업무 처리 방법, 관심있는 기술 서적, 이슈 처리 방법을 공유하기 위한 블로그
@@ -51,19 +50,18 @@ Java & Spring, 전자정부 기반의 2년차 백엔드(풀스택) 개발자로 
 	+ 목록별 갱신된 내용을 사용자 별로 확인 가능하도록 하는 프로세스 처리속도 개선
 	+ 8천건 기준 20초 이상 지연되던 기능을 18만건 기준 2초 이내로 단축
 
-> Skill
+# Skills
 
-Backend
-Java, egovframework, Spring Boot, Spring MVC, Spring Security, Junit4, easyMock, Maven, IntelliJ, Eclipse
++ Backend
+  + Java, egovframework, Spring Boot, Spring MVC, Spring Security, Junit4, easyMock, Maven, IntelliJ, Eclipse
 
-DataBase
-Oracle, MySQL, Tomcat
-Linux Centos
++ DataBase
+  + Oracle, MySQL, Tomcat, Linux Centos
 
-Frontend
-ES5, jquery, jsp
++ Frontend
+  + ES5, jquery, jsp
 
-> Education
+# Education
 
 
 
