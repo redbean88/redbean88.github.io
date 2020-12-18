@@ -73,7 +73,8 @@ class test2{
 
 _싱글톤이나 빌더패턴에서 사용하는 생성자를 private으로 만들면 어떻게 될까?_
 코드가 생성되지 않는다. 메모리에 올라가지 않기 때문에 쓸수 없는 것 같다.
-```
+
+```java
 public class Test {
     private Test(){
         int a= 0;
