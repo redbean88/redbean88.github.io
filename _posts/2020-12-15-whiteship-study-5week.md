@@ -48,7 +48,7 @@ public class Test {
        4: return
 }
 ```
-invokespecial은 특정 상황에서, 예외를 발생 하는데 그 예외는 아래와 같다
+invokespecial은 특정 상황에서, 예외를 발생 하는데 그 예외는 아래와 같다.(오역의 가능성이 있어 해석은 차후에 진행)
 + Linking Exceptions
     * During resolution of the symbolic reference to the method, any of the exceptions pertaining to method resolution (§5.4.3.3) can be thrown.
     * Otherwise, if the resolved method is an instance initialization method, and the class in which it is declared is not the class symbolically referenced by the instruction, a NoSuchMethodError is thrown.
@@ -168,8 +168,8 @@ public class Test {
 
  new는 특정 상황에서, 예외를 발생 하는데 그 예외는 아래와 같다
 + Linking Exceptions
-    + 레퍼런스(class, array, interface type)를 해석하는 과정에서 오류를 발생, 
-    + 또는, 레퍼런스(class, array, interface type)가 interface 혹은 추상 클래스인 경우 InstantiationError 발생  
+    + 레퍼런스(class, array, interface type)를 해석하는 과정에서 오류를 발생 
+    + 레퍼런스(class, array, interface type)가 interface 혹은 추상 클래스인 경우 InstantiationError 발생  
 + Run-time Exception
     + 클래스 초기화에 실패 했을 경우
 
