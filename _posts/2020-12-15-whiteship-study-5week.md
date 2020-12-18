@@ -50,14 +50,14 @@ public class Test {
 ```
 invokespecial은 특정 상황에서, 예외를 발생 하는데 그 예외는 아래와 같다.(오역의 가능성이 있어 해석은 차후에 진행)
 + Linking Exceptions
-    * During resolution of the symbolic reference to the method, any of the exceptions pertaining to method resolution (§5.4.3.3) can be thrown.
-    * Otherwise, if the resolved method is an instance initialization method, and the class in which it is declared is not the class symbolically referenced by the instruction, a NoSuchMethodError is thrown.
-    * Otherwise, if the resolved method is a class (static) method, the invokespecial instruction throws an IncompatibleClassChangeError.
+    * ~~During resolution of the symbolic reference to the method, any of the exceptions pertaining to method resolution (§5.4.3.3) can be thrown.~~
+    * if the resolved method is an instance initialization method, and the class in which it is declared is not the class symbolically referenced by the instruction, a NoSuchMethodError is thrown.
+    * if the resolved method is a class (static) method, the invokespecial instruction throws an IncompatibleClassChangeError.
 + Run-time Exception
-    * Otherwise, if objectref is null, the invokespecial instruction throws a NullPointerException.
-    * Otherwise, if no method matching the resolved name and descriptor is selected, invokespecial throws an AbstractMethodError.
-    * Otherwise, if the selected method is abstract, invokespecial throws an AbstractMethodError.
-    * Otherwise, if the selected method is native and the code that implements the method cannot be bound, invokespecial throws an UnsatisfiedLinkError.
+    * if objectref is null, the invokespecial instruction throws a NullPointerException.
+    * if no method matching the resolved name and descriptor is selected, invokespecial throws an AbstractMethodError.
+    * if the selected method is abstract, invokespecial throws an AbstractMethodError.
+    * if the selected method is native and the code that implements the method cannot be bound, invokespecial throws an UnsatisfiedLinkError.
 
 _innner class를 사용할 경우, 컴파일시 해당 클래스가 추가로 생성된다_  
 아래와 같은 코드는 Test.class, Test2.class를 생성해낸다.
@@ -228,11 +228,117 @@ public class Test {
 
 ##### 오버라이딩
 
+부모 클래스에서 만든 메소드를 자식 메소드에서 재정의하는 기능
+```java
+public class Main {
+    public static void main(String[] args) {
+        Child child = new Child();
+        child.myname();     //dola
+        child.papa();       //papa
+        child.mama();       //mother
+    }
+}
+
+class Child extends Parent{
+    String myname(){
+        return "dola";
+    }
+    String mama(){
+        return "mother";
+    }
+
+}
+class Parent{
+    String papa(){
+        return "papa";
+    }
+    String mama(){
+        return "mama";
+    }
+}
+```
+
+> 컴파일 코드
+
+```
+public class Main {
+  public Main();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: new           #2                  // class Child
+       3: dup
+       4: invokespecial #3                  // Method Child."<init>":()V
+       7: astore_1
+       8: aload_1
+       9: invokevirtual #4                  // 해당 인스턴트의 메소드를 호출 Method Child.myname:()Ljava/lang/String;
+      12: pop
+      13: aload_1
+      14: invokevirtual #5                  // 해당 인스턴트의 메소드를 호출 Method Child.papa:()Ljava/lang/String;
+      17: pop
+      18: aload_1
+      19: invokevirtual #6                  // 해당 인스턴트의 메소드를 호출 Method Child.mama:()Ljava/lang/String;
+      22: pop
+      23: return
+}
+```
+부모의 메소드를 호출하고, 바꿀수 있는 마법같은 기능은 invokevirtual 가능하게 해준다
+1. 먼저 오버라이드 된 메소드를 찾아 존재 할 경우, 해당 메소드를 실행한다
+2. 1항에 해당하지 않으면, 부모클래스에서 같은 작업을 재귀적으로 반복한다.
+
 ### 생성자 정의하는 방법
+
+위에 클래스에 설명한 내용을 참고하자.
+
 ### this 키워드 이해하기
 
-마감일시
-2020년 12월 19일 토요일 오후 1시까지.
+영문법에서 this 약간 감정적으로 가까운 것을 의미하는것 같다. 그 때문인지 각 언어마다 this에 대한 해석이 다르다.
+java 에서는 this를 자기자신이라고 생각한다. 
+
+```java
+public class Test{
+    String me;
+
+    public Test(String me) {
+        this.me = me;
+    }
+
+    public Test(){
+        this("me");
+    }
+
+}
+```
+
+> 컴파일 코드
+
+```
+public class Test {
+  java.lang.String me;
+
+  public Test(java.lang.String);
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: aload_1
+       6: putfield      #2                  //객체에 me하는 이름으로 필드 셋팅// Field me:Ljava/lang/String;
+       9: return
+
+  public Test();
+    Code:
+       0: aload_0
+       1: ldc           #3                  // 현재 클래스 상수풀에 값을 푸시 // String me
+       3: invokespecial #4                  // Method "<init>":(Ljava/lang/String;)V
+       6: return
+}
+```
+생성자에서는 this를 통해 자신의 생성자를 호출 할 수 있다.
+
 
 과제 (Optional)
 int 값을 가지고 있는 이진 트리를 나타내는 Node 라는 클래스를 정의하세요.
