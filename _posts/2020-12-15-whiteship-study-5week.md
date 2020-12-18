@@ -297,7 +297,7 @@ public class Main {
 ### this 키워드 이해하기
 
 영문법에서 this 약간 감정적으로 가까운 것을 의미하는것 같다. 그 때문인지 각 언어마다 this에 대한 해석이 다르다.
-java 에서는 this를 자기자신이라고 생각한다. 
+java 에서는 this를 객제자이라고 생각한다. 
 
 ```java
 public class Test{
