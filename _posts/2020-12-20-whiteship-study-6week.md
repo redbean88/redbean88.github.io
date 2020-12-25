@@ -233,6 +233,143 @@ public class Parent{
 하위 클래스 또는 하위 클래스가 해당 부모 클래스 또는 상위 클래스 중 하나에서 이미 제공 한 메서드를 재구현 할수 있도록 하는 기능으로,
  다형성을 __런타임__ 시 지원하는 한가지 방법이다.
  실행되는 메서드는 호출에 사용되는 객체에 의해 결정된다.
+예제로 사용되는 소스는 위의 상속 부분의 소스와 동일하며, 부모 클래스의 메소드를 자식클래스의 메소드로 오버라이딩 하는 부분만 다시한번 확인해 보자
+```java
+package week6;
+
+public class Parent{
+    public void print(){
+        System.out.println("parent");
+    }
+}
+```
+> 컴파일 코드
+```
+public class week6.Parent {
+  public week6.Parent();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public void print();
+    Code:
+       0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       3: ldc           #3                  // 런타임 상수풀에 String parent를 push
+       5: invokevirtual #4                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       8: return
+}
+```
+```java
+package week6;
+
+public class Child extends Parent {
+
+    public void print(){
+        System.out.println("child");
+    }
+}
+```
+> 컴파일 코드
+```
+public class week6.Child extends week6.Parent {
+  public week6.Child();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method week6/Parent."<init>":()V
+       4: return
+
+  public void print();
+    Code:
+       0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       3: ldc           #3                  // 런타임 상수풀에 String child를 push
+       5: invokevirtual #4                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       8: return
+}
+```
+해당 코드를 사용할 매인메소드를 구성해보자
+```java
+package week6;
+
+public class Main {
+    public static void main(String[] args) {
+        Parent parent = new Child();
+        parent.print();     // child
+    }
+}
+```
+> 컴파일 코드
+```
+public class week6.Main {
+  public week6.Main();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: new           #2                  // class week6/Child
+       3: dup
+       4: invokespecial #3                  // Method week6/Child."<init>":()V
+       7: astore_1
+       8: aload_1
+       9: invokevirtual #4                  // Method week6/Parent.print:()V
+      12: return
+}
+```
+
+> 제 설명보다 상세하고 친절한 설명으로 토비님의 [영상](https://www.youtube.com/watch?v=s-tXAHub6vg) 이 있으니, 꼭 보시기 바랍니다.
+### 스태틱 메소드 디스패치 (static method dispatch)
+스태틱 메소드 디스패치 자바가 컴파일 하는 시점에 이미 어떤 클래스에 어떤 메소드를 실행 할지, 클래스에 코드로 만들어 놓는 것이다.
+
+```java
+package week6;
+
+public class StaticDispatch {
+
+    public static void main(String[] args){
+        new Service().run();
+        new Service().run("test");
+    }
+}
+class Service{
+    void run(){
+        System.out.println("run");
+    }
+
+    void run(String msg){
+        System.out.println(msg);
+    }
+}
+```
+
+> 컴파일 코드
+
+```
+public class week6.StaticDispatch {
+  public week6.StaticDispatch();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: new           #2                  // class week6/Service
+       3: dup
+       4: invokespecial #3                  // Method week6/Service."<init>":()V
+       7: invokevirtual #4                  // Method week6/Service.run:()V
+      10: new           #2                  // class week6/Service
+      13: dup
+      14: invokespecial #3                  // Method week6/Service."<init>":()V
+      17: ldc           #5                  // String test
+      19: invokevirtual #6                  // Method week6/Service.run:(Ljava/lang/String;)V
+      22: return
+}
+```
+7번과 19번 라인을 보면 어디에 있는 무슨 메소드를 호출 할지, 컴파일러는 이미 알고 있다
+
 ### 다이나믹 메소드 디스패치 (Dynamic Method Dispatch)
 다이다믹 메소드 디스패치는 오버라이딩된 메소드를 처리할때 컴파일시 처리가 아닌 __런타임__ 시 처리하는 메커니즘이다.
 부모클래스를 통해 오버라이딩 된 메소드가 호출 될 경우(자식 클래스를 부모클래스로 형 변환하여, 오버라이딩된 메소드를 호출 할 경우)
@@ -241,6 +378,10 @@ public class Parent{
 런타임시, 참조된 객체의 타입에 의존하며(레퍼런스 변수의 타입이 아니다. 어렵다면 아래 예제를 참고), 해당 객체는 부모클래스가 참조 __할 수있는__ 자식클래스의 실행될 오버라이딩된 메소드를 결정하게 된다.
 This is also known as upcasting. Java uses this fact to resolve calls to overridden methods at run time.
 이런 방식은 업케스팅이라고도 
+
+### 더블 디스패치
+
+
 ### 추상 클래스
 추상 클래스는 클래스와 인터페이스의 중간정도의 역할을 하는 클래스이다.
  가장 큰 장점은 객체 생성를 못하면서 상속의 기능을 사용할 수 있는 점이다. 
