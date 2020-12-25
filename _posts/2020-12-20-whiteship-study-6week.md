@@ -119,13 +119,28 @@ public class week6.Main {
 
 ### super 키워드
 #### super
-super 키워드는 호출된 객체를 기중으로 해당 필드를 호출할 수 있는 가장 
+super 키워드는 호출된 객체의 부모 클래스 또는 상위 클래스 중 해당 필드를 호출할 수 있는 가장 
 가까운 값을 호출한다. 이해가 안된다면 아래의 예제를 통해 사용법과 함께 알아보자
 ```java
 package week6;
 
 public class Pparent {
     int test= 10;
+}
+```
+> 컴파일코드
+```
+public class week6.Pparent {
+  int test;
+
+  public week6.Pparent();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: bipush        10
+       7: putfield      #2                  // Field test:I
+      10: return
 }
 ```
 ```java
@@ -135,26 +150,89 @@ public class Parent extends Pparent{
     int test = 1;
 }
 ```
+> 컴파일 코드
+```
+public class week6.Parent extends week6.Pparent {
+  public week6.Parent();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method week6/Pparent."<init>":()V
+       4: return
+}
+
+```
 ```java
 package week6;
 
 public class Child extends Parent {
 
     public void test(){
-        System.out.println(test);
-        System.out.println(this.test);
-        System.out.println(super.test);
+        System.out.println(test);           // 1
+        System.out.println(this.test);      // 1
+        System.out.println(super.test);     // 1
     }
 }
-
 ```
+> 컴파일 코드
+```
+public class week6.Child extends week6.Parent {
+  public week6.Child();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method week6/Parent."<init>":()V
+       4: return
+
+  public void test();
+    Code:
+       0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       3: aload_0
+       4: getfield      #3                  // 객체에서 필드를 가져온다 (Field test:I)
+       7: invokevirtual #4                  // Method java/io/PrintStream.println:(I)V
+      10: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      13: aload_0
+      14: getfield      #3                  // 객체에서 필드를 가져온다 (Field test:I)
+      17: invokevirtual #4                  // Method java/io/PrintStream.println:(I)V
+      20: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      23: aload_0
+      24: getfield      #5                  // 객체에서 필드를 가져온다 (Field week6/Parent.test:I)
+      27: invokevirtual #4                  // Method java/io/PrintStream.println:(I)V
+      30: return
+}
+```
+여기서 확인해보면 4,14번은 Child 객체의 필드를 사용하지만, 24번(super.test)의 경우는 부모 객체의 필드를 호출한다.
 
 #### super()
 
+전주 학습에서 우리는 객체 생성시 생성자가 필수적으로 생성되여야 하며 자동으로 생성된다는 것을 알수 있었다.
+때문에 자식 클래스에서 부모클래스를 이용하기 위해서는 부모클래스를 이용한 객체가 __생성 될 수 있어야__ 한다.
+자바에서는 친절하게도 자식 클래스를 생성시 부모클래스를 생성 할 수 있도록 __자식 클래스의 생성자__ 에서 부모클래스의 생성자를
+호출 할 수 있는 __super()__ 를 자동으로 호출 해 준다. 때문에 기본 생성자를 호출 할 수 없는 아래와 같은 경우에는 컴파일 에러가 
+발생 한다.
 
+```java
+public class Parent{    //이 경우, 자식클래스에서 아규먼트를 넣어 호출하면 정상 호출이 가능하다.
+    int test;
+
+    public Parent(int test) {
+        this.test = test;
+    }
+}
+
+public class Parent{
+
+    private Parent() {
+    }
+}
+```
+
+> 왜 있어요?
+
+자식 클래스를 생성시, 부모의 필드의 값을 변경하고 싶을수 있다. 또는 추가적인 로직이 필요할때 응용하면 되겠다.
 
 ### 메소드 오버라이딩
-메소드 오버라이딩은 자바에서 다형성을 __런타임__ 시 지원하는 한가지 방법이다.
+하위 클래스 또는 하위 클래스가 해당 부모 클래스 또는 상위 클래스 중 하나에서 이미 제공 한 메서드를 재구현 할수 있도록 하는 기능으로,
+ 다형성을 __런타임__ 시 지원하는 한가지 방법이다.
+ 실행되는 메서드는 호출에 사용되는 객체에 의해 결정된다.
 ### 다이나믹 메소드 디스패치 (Dynamic Method Dispatch)
 다이다믹 메소드 디스패치는 오버라이딩된 메소드를 처리할때 컴파일시 처리가 아닌 __런타임__ 시 처리하는 메커니즘이다.
 부모클래스를 통해 오버라이딩 된 메소드가 호출 될 경우(자식 클래스를 부모클래스로 형 변환하여, 오버라이딩된 메소드를 호출 할 경우)
@@ -164,7 +242,116 @@ public class Child extends Parent {
 This is also known as upcasting. Java uses this fact to resolve calls to overridden methods at run time.
 이런 방식은 업케스팅이라고도 
 ### 추상 클래스
+추상 클래스는 클래스와 인터페이스의 중간정도의 역할을 하는 클래스이다.
+ 가장 큰 장점은 객체 생성를 못하면서 상속의 기능을 사용할 수 있는 점이다. 
+ 위에서 확인 했듯 우리는 객체를 생성하지 못하면 상속도 사용 할 수 없다.
+ 하지만 우리는 객체 생성을 막아 직접적으로 객체 조작을 못하게 하면서, 구현은 받아서 쓰고 싶을수 있다.
+오라클 공식 문서에서는 다음과 같은 사항일때, 추상 메소드 사용을 고려해보라고 하고있다
++ 여러 클래스 간의 구현된 메소드를 공유 하고 싶다.
++ 확장 하려는 클래스에 공통적으로 사용하는 필드가 있거나 public 이외의 접근제어자를 설정 하고 싶다.
++ static 또는 final 이외의 필드를 사용하고 싶다. 
+```java
+package week6;
+
+public abstract class AbstractClass {
+    protected int a;
+
+    public void test(){
+        System.out.println("abstract");
+    }
+}
+```
+
+> 컴파일 코드
+
+```
+public abstract class week6.AbstractClass {
+  protected int a;
+
+  public week6.AbstractClass();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public void test();
+    Code:
+       0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       3: ldc           #3                  // String abstract
+       5: invokevirtual #4                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       8: return
+}
+```
+
+```java
+package week6;
+
+public class AbstractImpl extends AbstractClass{
+}
+```
+
+> 컴파일 코드
+
+```
+public class week6.AbstractImpl extends week6.AbstractClass {
+  public week6.AbstractImpl();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method week6/AbstractClass."<init>":()V
+       4: return
+}
+```
+
+매인클래스를 확인해보자
+
+```java
+package week6;
+
+public class Main {
+    public static void main(String[] args) {
+        // AbstractClass abs = new AbstractClass(); 컴파일 에러
+        AbstractImpl abs = new AbstractImpl();
+        abs.test();     //abstract
+    }
+}
+```
+
+> 컴파일 코드
+
+```
+public class week6.Main {
+  public week6.Main();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: new           #2                  // class week6/AbstractImpl
+       3: dup
+       4: invokespecial #3                  // Method week6/AbstractImpl."<init>":()V
+       7: astore_1
+       8: aload_1
+       9: invokevirtual #4                  // Method week6/AbstractImpl.test:()V
+      12: return
+}
+``` 
+
+상속과 유사하게, 부모 클래스의 구현 부를 사용할 수 있다. 그러면서도 new 키워드를 통한 생성을 불가능 하다.
+
 ### final 키워드
+final 은 변수, 메서드 또는 클래스에만 적용 할 수 있는 비접근 수정자 이다. 용법은 아래와 같다.
+#### final 변수
+변수가 값일 경우, 기본적으로 변경이 불가능한 상수지만, 변수가 참조 값일 경우(예:map , array 등) 
+해당 객체의 내부 상태(추가,삭제)가 가능하다
+#### final 메소드
+오버라이딩을 막아 재정의 방지
+#### final 클래스
+상속을 방지하여 확장을 금지(Integer , Float 등)
+String 클래스와 같이 __불변 클래스__ 를 생성
+
+
 ### Object 클래스
 
 마감일시
