@@ -351,6 +351,9 @@ public class week6.Main {
 ```
 
 > 제 설명보다 상세하고 친절한 설명으로 토비님의 [영상](https://www.youtube.com/watch?v=s-tXAHub6vg) 이 있으니, 꼭 보시기 바랍니다.
+#### 오버로딩
+__컴파일 시점__ 에 사용하는 기술로, 해당 메소드의 파라미터를 기준으로 어떤 메소드를 실행할지를 결정 하는 기술이다 아래의 예제를 참고
+
 ### 스태틱 메소드 디스패치 (static method dispatch)
 스태틱 메소드 디스패치 자바가 컴파일 하는 시점에 이미 어떤 클래스에 어떤 메소드를 실행 할지, 클래스에 코드로 만들어 놓는 것이다.
 
@@ -408,11 +411,170 @@ public class week6.StaticDispatch {
 자바에서는 호출할 메소드 실행시, 호출 당시의 참조된(가르키는) 객체에 기반하여 해당 메소드를 결정 하게된다.
 다시말해, __런타임__ 시에, 어떤 객체에 어떤 메소드를 실행 할지가 결정된다.
 런타임시, 참조된 객체의 타입에 의존하며(레퍼런스 변수의 타입이 아니다. 어렵다면 아래 예제를 참고), 해당 객체는 부모클래스가 참조 __할 수있는__ 자식클래스의 실행될 오버라이딩된 메소드를 결정하게 된다.
-This is also known as upcasting. Java uses this fact to resolve calls to overridden methods at run time.
-이런 방식은 업케스팅이라고도 
+이런 방식은 업케스팅이라고도 알려져 있고, 자바에서는 오버라이딩된 메소드를 런타임시 처리한다
+
+```java
+package week6;
+
+public class DynamicDispatch {
+
+    static abstract class Service{
+        abstract void run();
+    }
+
+    static class MyService1 extends Service{
+        void run(){
+            System.out.println("MyService1");
+        }
+    }
+
+    static class MyService2 extends Service{
+        void run(){
+            System.out.println("MyService2");
+        }
+    }
+
+    public static void main(String[] args){
+        Service svc = new MyService1();
+        svc.run();  // MyService1
+    }
+
+}
+
+```
+
+> 컴파일 코드
+
+```
+public class week6.DynamicDispatch {
+  public week6.DynamicDispatch();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: new           #2                  // class week6/DynamicDispatch$MyService1
+       3: dup
+       4: invokespecial #3                  // Method week6/DynamicDispatch$MyService1."<init>":()V
+       7: astore_1
+       8: aload_1
+       9: invokevirtual #4                  // Method week6/DynamicDispatch$Service.run:()V
+      12: return
+}
+```
+9번 라인을 보면, Service클래스의 run 메소드를 실행 하지만, 해당 메소드는 구현이 없는 메소드이다.
+하지만 "MyService1"가 정확히 호출된다. 그 의미는 런타임시 JVM에서 그 처리를 진행한다는 뜻이다.
+토비님의 설명을 추가 하자면, 자바 스팩에는 해당 메소드 호출과정에서 최초로 리시버 파라미터가 호출되고 
+그 메소드의 객체를 확인하여 어떤 객체의 메소드를 실행하는지 파악 한다고 한다. (위 영상의 30분 정도)(~~과제하는 시간이 새벽 4시라 자세히는 못찾겠어요~~)
 
 ### 더블 디스패치
+쉽게 말해서 다이나믹 디스패치를 두번 처리하는 것이다. 처리되는 과정은 토비님 영상을 참고하자 영상에는 왜안되는지 이유까지 상세히 알려주십니다.
+(개인적으로 static method처리 때문에 오류발생 설명해주시는 부분은 꿀부분입니다.)
 
+```java
+package week6;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class Dispatch {
+    interface  Post{
+        void postOn(SNS sns);
+    }
+    interface SNS {
+        void post(Text post);
+        void post(Picture post);
+    }
+
+    static class Text implements Post{
+        public void postOn(SNS sns){
+            sns.post(this);
+        }
+    }
+    static class Picture implements Post{
+        public void postOn(SNS sns){
+            sns.post(this);
+        }
+    }
+    static class facebook implements SNS{
+        public void post(Text post) {
+            System.out.println("text - > facebook");
+        }
+        public void post(Picture post) {
+            System.out.println("Picture - > facebook");
+        }
+    }
+    static class twitter implements SNS{
+        public void post(Text post) {
+            System.out.println("text - > twitter");
+        }
+        public void post(Picture post) {
+            System.out.println("Picture - > twitter");
+        }
+    }
+
+    public static void main(String[] args) {
+        List<Post> posts = Arrays.asList(new Text() , new Picture());
+        List<SNS> snsList = Arrays.asList(new facebook(), new twitter());
+        posts.forEach(post -> snsList.forEach(sns -> post.postOn(sns)));
+    }
+}
+```
+> 컴파일 소스
+
+```
+public class week6.Dispatch {
+  public week6.Dispatch();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: iconst_2
+       1: anewarray     #2                  // class week6/Dispatch$Post
+       4: dup
+       5: iconst_0
+       6: new           #3                  // class week6/Dispatch$Text
+       9: dup
+      10: invokespecial #4                  // Method week6/Dispatch$Text."<init>":()V
+      13: aastore
+      14: dup
+      15: iconst_1
+      16: new           #5                  // class week6/Dispatch$Picture
+      19: dup
+      20: invokespecial #6                  // Method week6/Dispatch$Picture."<init>":()V
+      23: aastore
+      24: invokestatic  #7                  // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+      27: astore_1
+      28: iconst_2
+      29: anewarray     #8                  // class week6/Dispatch$SNS
+      32: dup
+      33: iconst_0
+      34: new           #9                  // class week6/Dispatch$facebook
+      37: dup
+      38: invokespecial #10                 // Method week6/Dispatch$facebook."<init>":()V
+      41: aastore
+      42: dup
+      43: iconst_1
+      44: new           #11                 // class week6/Dispatch$twitter
+      47: dup
+      48: invokespecial #12                 // Method week6/Dispatch$twitter."<init>":()V
+      51: aastore
+      52: invokestatic  #7                  // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+      55: astore_2
+      56: aload_1
+      57: aload_2
+      58: invokedynamic #13,  0             // InvokeDynamic #0:accept:(Ljava/util/List;)Ljava/util/function/Consumer;
+      63: invokeinterface #14,  2           // InterfaceMethod java/util/List.forEach:(Ljava/util/function/Consumer;)V
+      68: return
+}
+```
+
+런타임시 처리 되기 때문에 해당 컴파일 소스에서는 해당 메소드를 특정해 주는 부분을 찾을 수 없다.
 
 ### 추상 클래스
 추상 클래스는 클래스와 인터페이스의 중간정도의 역할을 하는 클래스이다.
@@ -595,3 +757,7 @@ Object 클래스는 유형을 모르는 객체를 참조하려는 경우 이용�
 |void wait()	|해당 객체의 다른 스레드가 notify()나 notifyAll() 메소드를 실행할 때까지 현재 스레드를 일시적으로 대기(wait)시킬 때 호출함.|
 |void wait(long timeout)	| 해당 객체의 다른 스레드가 notify()나 notifyAll() 메소드를 실행하거나 전달받은 시간이 지날 때까지 현재 스레드를 일시적으로 대기(wait)시킬 때 호출함.|
 |void wait(long timeout, int nanos)	|해당 객체의 다른 스레드가 notify()나 notifyAll() 메소드를 실행하거나 전달받은 시간이 지나거나 다른 스레드가 현재 스레드를 인터럽트(interrupt) 할 때까지 현재 스레드를 일시적으로 대기(wait)시킬 때 호출함.|
+
+[오라클 도큐먼트](https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-6.html#jvms-6.5.dup)
+[javatpoint](https://www.javatpoint.com/method-overloading-in-java)
+[토비의 봄 1회](https://www.youtube.com/watch?v=s-tXAHub6vg)
