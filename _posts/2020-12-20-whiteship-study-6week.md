@@ -20,6 +20,7 @@ Java의 상속은 하나의 객체가 부모 객체의 모든 속성과 동작�
 > 사용방법
 
 클래스 생성시, extend 라는 키워드를 이용하여 사용 가능하다
+
 ```java
 package week6;
 
@@ -29,7 +30,9 @@ public class Parent{
     }
 }
 ```
+
 > 컴파일 코드
+
 ```
 public class week6.Parent {
   public week6.Parent();
@@ -46,6 +49,7 @@ public class week6.Parent {
        8: return
 }
 ```
+
 ```java
 package week6;
 
@@ -56,7 +60,9 @@ public class Child extends Parent {
     }
 }
 ```
+
 > 컴파일 코드
+
 ```
 public class week6.Child extends week6.Parent {
   public week6.Child();
@@ -73,7 +79,9 @@ public class week6.Child extends week6.Parent {
        8: return
 }
 ```
+
 해당 코드를 사용할 매인메소드를 구성해보자
+
 ```java
 package week6;
 
@@ -84,7 +92,9 @@ public class Main {
     }
 }
 ```
+
 > 컴파일 코드
+
 ```
 public class week6.Main {
   public week6.Main();
@@ -104,6 +114,7 @@ public class week6.Main {
       12: return
 }
 ```
+
 위 코드의 주목할 점은 9번으로 child가 호출되었기 때문에 자식 메소드인 Child가 호출 될것 같았는데,
  놀랍게도(?) 부모메소드인 Parent가 호출된다는것을 확인 할수 있다. 이 궁금증은 잠시뒤에 확인해 보자
   
@@ -121,6 +132,7 @@ public class week6.Main {
 #### super
 super 키워드는 호출된 객체의 부모 클래스 또는 상위 클래스 중 해당 필드를 호출할 수 있는 가장 
 가까운 값을 호출한다. 이해가 안된다면 아래의 예제를 통해 사용법과 함께 알아보자
+
 ```java
 package week6;
 
@@ -128,7 +140,9 @@ public class Pparent {
     int test= 10;
 }
 ```
+
 > 컴파일코드
+
 ```
 public class week6.Pparent {
   int test;
@@ -143,6 +157,7 @@ public class week6.Pparent {
       10: return
 }
 ```
+
 ```java
 package week6;
 
@@ -150,7 +165,9 @@ public class Parent extends Pparent{
     int test = 1;
 }
 ```
+
 > 컴파일 코드
+
 ```
 public class week6.Parent extends week6.Pparent {
   public week6.Parent();
@@ -161,6 +178,7 @@ public class week6.Parent extends week6.Pparent {
 }
 
 ```
+
 ```java
 package week6;
 
@@ -173,7 +191,9 @@ public class Child extends Parent {
     }
 }
 ```
+
 > 컴파일 코드
+
 ```
 public class week6.Child extends week6.Parent {
   public week6.Child();
@@ -199,6 +219,7 @@ public class week6.Child extends week6.Parent {
       30: return
 }
 ```
+
 여기서 확인해보면 4,14번은 Child 객체의 필드를 사용하지만, 24번(super.test)의 경우는 부모 객체의 필드를 호출한다.
 
 #### super()
@@ -234,6 +255,7 @@ public class Parent{
  다형성을 __런타임__ 시 지원하는 한가지 방법이다.
  실행되는 메서드는 호출에 사용되는 객체에 의해 결정된다.
 예제로 사용되는 소스는 위의 상속 부분의 소스와 동일하며, 부모 클래스의 메소드를 자식클래스의 메소드로 오버라이딩 하는 부분만 다시한번 확인해 보자
+
 ```java
 package week6;
 
@@ -243,7 +265,9 @@ public class Parent{
     }
 }
 ```
+
 > 컴파일 코드
+
 ```
 public class week6.Parent {
   public week6.Parent();
@@ -260,6 +284,7 @@ public class week6.Parent {
        8: return
 }
 ```
+
 ```java
 package week6;
 
@@ -270,7 +295,9 @@ public class Child extends Parent {
     }
 }
 ```
+
 > 컴파일 코드
+
 ```
 public class week6.Child extends week6.Parent {
   public week6.Child();
@@ -287,7 +314,9 @@ public class week6.Child extends week6.Parent {
        8: return
 }
 ```
+
 해당 코드를 사용할 매인메소드를 구성해보자
+
 ```java
 package week6;
 
@@ -298,7 +327,9 @@ public class Main {
     }
 }
 ```
+
 > 컴파일 코드
+
 ```
 public class week6.Main {
   public week6.Main();
@@ -368,6 +399,7 @@ public class week6.StaticDispatch {
       22: return
 }
 ```
+
 7번과 19번 라인을 보면 어디에 있는 무슨 메소드를 호출 할지, 컴파일러는 이미 알고 있다
 
 ### 다이나믹 메소드 디스패치 (Dynamic Method Dispatch)
@@ -391,6 +423,7 @@ This is also known as upcasting. Java uses this fact to resolve calls to overrid
 + 여러 클래스 간의 구현된 메소드를 공유 하고 싶다.
 + 확장 하려는 클래스에 공통적으로 사용하는 필드가 있거나 public 이외의 접근제어자를 설정 하고 싶다.
 + static 또는 final 이외의 필드를 사용하고 싶다. 
+
 ```java
 package week6;
 
