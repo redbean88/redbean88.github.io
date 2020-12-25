@@ -109,7 +109,7 @@ public class week6.Main {
   
 #### 상속의 유형
 상속은 크게 단일 , 다중 레벨 , 계층 구조 상속이 있다.(자바는 다중상속은 지원하지 않는다.)
-![상속]()
+![상속](https://redbean88.github.io/img/typesofinheritance.jpg)
 
 #### 상속의 단점
 이렇게 유용한 상속에도 단점이 존재한다. 복잡도가 증가할수록 상속이 중첩될수록 메소드 오버라이드로 인한
@@ -345,14 +345,79 @@ final 은 변수, 메서드 또는 클래스에만 적용 할 수 있는 비접�
 #### final 변수
 변수가 값일 경우, 기본적으로 변경이 불가능한 상수지만, 변수가 참조 값일 경우(예:map , array 등) 
 해당 객체의 내부 상태(추가,삭제)가 가능하다
+```java
+package week6;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Finalval {
+    final int num =1;
+    final Map<String , String> map = new HashMap<>();
+
+    public void setData(){
+        //num = 2; // 컴파일 에러
+        //map = new HashMap<>(); //컴파일 에러
+        map.put("test","test");
+    }
+}
+```
+
 #### final 메소드
 오버라이딩을 막아 재정의 방지
+
+```java
+package week6;
+
+public class FinalMethod {
+
+    final void method(){
+
+    }
+}
+
+
+public class FinalMethodChild extends FinalMethod{
+    
+   /* void method(){
+        
+    }*/ //컴파일 에러
+}
+```
+
 #### final 클래스
 상속을 방지하여 확장을 금지(Integer , Float 등)
 String 클래스와 같이 __불변 클래스__ 를 생성
 
+```java
+package week6;
+
+public final class FinalClass {
+}
+
+public class FinalClassChild extends FinalClass {   //컴파일 에러
+}
+```
+
+컴파일 후 소스에서는 final키워드에 의한 변화를 확인 할 수 없다. 다른 방식으로 확인 방식을 아시는 분은 답글좀 부탁드립니다...
+
 
 ### Object 클래스
+Object 클래스는 기본적으로 자바의 모든 클래스의 부모 클래스로, 즉, Java의 최상위 클래스이다.
+Object 클래스는 유형을 모르는 객체를 참조하려는 경우 이용하면 좋지만, 가능하다면 제네릭을 사용하도록 하면 좋다.
 
-마감일시
-2020년 12월 26일 토요일 오후 1시까지.
+아래는 Object에서 기본적으로 제공하는 메소드이다.
+
+|메소드명|설명|
+|:--|--|
+|protected Object clone()	|해당 객체의 복제본을 생성하여 반환함.|
+|boolean equals(Object obj)	|해당 객체와 전달받은 객체가 같은지 여부를 반환함.|
+|protected void finalize()	|해당 객체를 더는 아무도 참조하지 않아 가비지 컬렉터가 객체의 리소스를 정리하기 위해 호출함.|
+|Class<T> getClass()	|해당 객체의 클래스 타입을 반환함.|
+|int hashCode()	|해당 객체의 해시 코드값을 반환함.|
+|void notify()	|해당 객체의 대기(wait)하고 있는 하나의 스레드를 다시 실행할 때 호출함.|
+|void notifyAll()	|해당 객체의 대기(wait)하고 있는 모든 스레드를 다시 실행할 때 호출함.|
+|String toString()	|해당 객체의 정보를 문자열로 반환함.|
+|void wait()	|해당 객체의 다른 스레드가 notify()나 notifyAll() 메소드를 실행할 때까지 현재 스레드를 일시적으로 대기(wait)시킬 때 호출함.|
+|void wait(long timeout)	| 해당 객체의 다른 스레드가 notify()나 notifyAll() 메소드를 실행하거나 전달받은 시간이 지날 때까지 현재 스레드를 일시적으로 대기(wait)시킬 때 호출함.|
+|void wait(long timeout, int nanos)	|해당 객체의 다른 스레드가 notify()나 notifyAll() 메소드를 실행하거나 전달받은 시간이 지나거나 다른 스레드가 현재 스레드를 인터럽트(interrupt) 할 때까지 현재 스레드를 일시적으로 대기(wait)시킬 때 호출함.|
