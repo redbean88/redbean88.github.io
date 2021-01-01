@@ -190,7 +190,7 @@ export CLASSPATH=.:$JAVA_HOME/lib/tools.jar
 ### -classpath 옵션
 CLI로 쉘등에서 javac를 이용하여 사용 가능하다.
 
-![파일경로](https://redbean88.github.io/img/filerootfileroot1.png)
+![파일경로](https://redbean88.github.io/img/fileroot1.png)
 _Test폴더와 같은 위치에 있을때
 
 윈도우
