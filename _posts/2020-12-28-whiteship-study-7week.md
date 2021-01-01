@@ -33,7 +33,7 @@ __내장 패키지__ 는 자바에서 기본적으로 제공<sup>[1](#footnote_1
 ### import 키워드
 
 자바에서 다른 패키지를 사용시, 사용되는 키워드로 __같은 패키지__ 의 클래스를 호출 하거나, __java.lang__ 패키지 내부의 클래스를 사용시에는   
-해당 키워드를 __사용하지 않아도___ 된다.
+해당 키워드를 __사용하지 않아도__ 된다.
 
 > import 사용 방법
 
@@ -45,20 +45,119 @@ __내장 패키지__ 는 자바에서 기본적으로 제공<sup>[1](#footnote_1
 #### 1. import 패키지명.*
 패키지명.* 사용시 해당 패키지안의 모든 클래스나 인터페이스 등을 사용가능가지만, __하위 패키지__ 의 내용은 사용이 불가능 하다.
 
+![파일경로](https://redbean88.github.io/img/importall.png)
+
 _예제_
+
+```java
+import test.*;
+
+public class Test {
+    public static void main(String[] args) {
+    TestA testA = new TestA();
+    }
+}
+```
+
+> 컴파일 소스
+
+```
+public class Test {
+  public Test();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: new           #7                  // class test/TestA
+       3: dup
+       4: invokespecial #9                  // Method test/TestA."<init>":()V
+       7: astore_1
+       8: return
+}
+```
+
+패키지에 대한 정보는 바이트코드에 반영되지 않는다.
 
 #### 2. import 패키지명.클래스명
 패키지명.클래스명 사용시, 사용할 클래스나 인터페이스를 특정하여 사용 가능하다.
 
+![파일경로](https://redbean88.github.io/img/import2.png)
+
 _예제_
+
+```java
+import test.TestA;
+
+public class Test {
+    public static void main(String[] args) {
+    TestA test = new TestA();
+    }
+}
+```
+
+> 컴파일 소스
+
+```
+public class Test {
+  public Test();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: new           #7                  // class test/TestA
+       3: dup
+       4: invokespecial #9                  // Method test/TestA."<init>":()V
+       7: astore_1
+       8: return
+}
+```
+
+패키지에 대한 정보는 바이트코드에 반영되지 않는다.
+
 
 #### 3. 풀 패키지 경로(fully qualified name)
 import를 사용하지 않고, 사용하는 방식이다. 변수 생성시, 클래스 명이 아닌 해당 클래스의 전체 경로를 입력하여 사용한다. 같은 이름의 클래스를 사용하는 변수를 사용시 이용한다.
 
+![파일경로](https://redbean88.github.io/img/import3.png)
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        test.TestA test = new test.TestA();
+    }
+}
+```
+
+> 컴파일 소스
+
+```
+public class Test {
+  public Test();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: new           #7                  // class test/TestA
+       3: dup
+       4: invokespecial #9                  // Method test/TestA."<init>":()V
+       7: astore_1
+       8: return
+}
+```
+
+패키지에 대한 정보는 바이트코드에 반영되지 않는다.
 
 ### PATH VS CLASSPATH
 자바에서 Path와 ClassPath를 환경 설정에 이용한다.  
-
 
 |차이점|Path|classPath|
 |--|:--|:--|
@@ -74,27 +173,47 @@ import를 사용하지 않고, 사용하는 방식이다. 변수 생성시, 클�
 ### CLASSPATH 환경변수
 CLASSPATH 명령어를 사용해서 설정이 가능하다.
 
+윈도우
+![윈도우](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcgTFrB%2FbtqRqb5kigF%2FTIDMKzmCWECK2NDscHxQH0%2Fimg.png)   
+https://blog.opid.kr/62 
+
+
 _사용법_
 CLASSPATH=[경로1]:[경로2]
 
-_예제_
+맥
+```
+vi /etc/profile
+export CLASSPATH=.:$JAVA_HOME/lib/tools.jar
+```
+
 
 ### -classpath 옵션
 CLI로 쉘등에서 javac를 이용하여 사용 가능하다.
 
-_예제_
+![파일경로](https://redbean88.github.io/img/filerootfileroot1.png)
+_Test폴더와 같은 위치에 있을때
+
+윈도우
+```
+java -cp ".;Test" Test
+```
+
+맥
+```
+java -cp ".:Test" Test
+```
 
 > 어떻게 제 소스가 실행되는거죠?
 
 classLoader는 classpath를 기준으로 파일 위치를 확인 하여 실행한다. 여기서 중요한 점은 classPath를 분석할때 java파일의 최상단에 선언된 __package 키워드__ 를 기반으로 해당 클래스를 찾아내는 것이다.
-~이래서 위에 package를 배웠구나~ 
 
 
 ### 지시자
 자바에는 두가지 종류의 지시자를 제공하고 있으며, __접근 지시자__ 와 __비 접근 지시자__ 가 있다.
 
 ### 비 접근 지시자
-
+종류가 많아 추후 추가예정
 
 ### 접근지시자
 필드, 메소드, 생성자 또는 클래스의 접근 가능여부 또는 범위를 지정하며, 접근 지시자를 적용하여 필드, 생성자, 메서드 및 클래스의 접근 가능 범위을 변경할 수 있다   
@@ -120,4 +239,4 @@ _예제_
 
 ---
 
-<a name="footnote_1">1</a>: java, lang, awt, javax, swing, net, io, util, sql
+<a name="footnote_1">1</a>: java, lang, awt, javax, swing, net, io, util, sql 
