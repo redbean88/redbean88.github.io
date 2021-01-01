@@ -55,7 +55,21 @@ _예제_
 #### 3. 풀 패키지 경로(fully qualified name)
 import를 사용하지 않고, 사용하는 방식이다. 변수 생성시, 클래스 명이 아닌 해당 클래스의 전체 경로를 입력하여 사용한다. 같은 이름의 클래스를 사용하는 변수를 사용시 이용한다.
 
+
+### PATH VS CLASSPATH
+자바에서 Path와 ClassPath를 환경 설정에 이용한다.  
+
+
+|차이점|Path|classPath|
+|--|:--|:--|
+|정의 |자바 프로그램을 실행하고 자바 소스 파일을 컴파일하는 데 사용되는 " java "또는 " javac "명령 과 같은 JDK 바이너리를 찾는 데 사용되는 환경 변수|System 또는 Application ClassLoader 에서 .class 파일에 저장된 Java 바이트 코드를 찾아서로드 하는 데 사용되는 환경 변수|
+|설정내용|JDK_HOME / bin 디렉토리 | .class 파일 또는 JAR 파일을 넣은 모든 디렉토리|
+|변경가능여부|불가능|"java "및 " javac "명령 모두에 명령 줄 옵션 -classpath 또는 -cp 를 제공 하거나 Class-를 사용하여 CLASSPATH를 재정의 가능|
+
 ### 클래스패스
+자바 컴파일러는 실행시켜야 하는 바이트 코드의 위치를 알아야 하는데 그 클래스 파일의 위치를 __클래스패스__ 를 라고 부른다.
+
+
 ### CLASSPATH 환경변수
 ### -classpath 옵션
 
