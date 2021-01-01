@@ -65,13 +65,30 @@ import를 사용하지 않고, 사용하는 방식이다. 변수 생성시, 클�
 |정의 |자바 프로그램을 실행하고 자바 소스 파일을 컴파일하는 데 사용되는 " java "또는 " javac "명령 과 같은 JDK 바이너리를 찾는 데 사용되는 환경 변수|System 또는 Application ClassLoader 에서 .class 파일에 저장된 Java 바이트 코드를 찾아서로드 하는 데 사용되는 환경 변수|
 |설정내용|JDK_HOME / bin 디렉토리 | .class 파일 또는 JAR 파일을 넣은 모든 디렉토리|
 |변경가능여부|불가능|"java "및 " javac "명령 모두에 명령 줄 옵션 -classpath 또는 -cp 를 제공 하거나 Class-를 사용하여 CLASSPATH를 재정의 가능|
+|사용| 운영체제에서 바이너리타입이나 클래스 타입에 이용된다| 오직 자바의 classLoader에서만 사용된다|
 
 ### 클래스패스
-자바 컴파일러는 실행시켜야 하는 바이트 코드의 위치를 알아야 하는데 그 클래스 파일의 위치를 __클래스패스__ 를 라고 부른다.
-
+자바 컴파일러는 실행시켜야 하는 클래스 파일의 위치를 알아야 하는데 그 클래스 파일의 위치를 __클래스패스__ 를 라고 부른다.
+위에 설명한 내용과 같이, 클래스 패스는 클래스 로더에서 사용하는 환경변수 이다.
 
 ### CLASSPATH 환경변수
+CLASSPATH 명령어를 사용해서 설정이 가능하다.
+
+_사용법_
+CLASSPATH=[경로1]:[경로2]
+
+_예제_
+
 ### -classpath 옵션
+CLI로 쉘등에서 javac를 이용하여 사용 가능하다.
+
+_예제_
+
+> 어떻게 제 소스가 실행되는거죠?
+
+classLoader는 classpath를 기준으로 파일 위치를 확인 하여 실행한다. 여기서 중요한 점은 classPath를 분석할때 java파일의 최상단에 선언된 __package 키워드__ 를 기반으로 해당 클래스를 찾아내는 것이다.
+~이래서 위에 package를 배웠구나~ 
+
 
 ### 지시자
 자바에는 두가지 종류의 지시자를 제공하고 있으며, __접근 지시자__ 와 __비 접근 지시자__ 가 있다.
@@ -92,8 +109,14 @@ _참고이미지(출처[https://kils-log-of-develop.tistory.com/430])_
 생각해 보자 대통령의 고조 할아버지 생애를 알아야 한다는 법률이 제정된다면, 누가 좋아 할 것인가? OOP에서 프로그래머의 명령은 법이나 마찬가지다.   
 어쩌면 우리 컴파일 에러를 볼때마다, 클래스 입장에서는 처벌을 받는 것일 지도 모른다.
 
+_예제_
+
 ### 참고
+
 [javatpoint](https://www.javatpoint.com/)
+[클래스패스](https://effectivesquid.tistory.com/entry/%EC%9E%90%EB%B0%94-%ED%81%B4%EB%9E%98%EC%8A%A4%ED%8C%A8%EC%8A%A4classpath%EB%9E%80)
+[what-is-path-and-classpath-in-java-difference](https://www.java67.com/2012/08/what-is-path-and-classpath-in-java-difference.html)
+[생활코딩-클래스패스](https://opentutorials.org/course/1223/5527)
 
 ---
 
