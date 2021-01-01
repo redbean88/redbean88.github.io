@@ -173,15 +173,14 @@ public class Test {
 ### CLASSPATH 환경변수
 CLASSPATH 명령어를 사용해서 설정이 가능하다.
 
-윈도우
+윈도우   
+
 ![윈도우](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcgTFrB%2FbtqRqb5kigF%2FTIDMKzmCWECK2NDscHxQH0%2Fimg.png)   
 https://blog.opid.kr/62 
 
 
-_사용법_
-CLASSPATH=[경로1]:[경로2]
+맥   
 
-맥
 ```
 vi /etc/profile
 export CLASSPATH=.:$JAVA_HOME/lib/tools.jar
