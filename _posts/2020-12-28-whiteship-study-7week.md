@@ -190,8 +190,8 @@ export CLASSPATH=.:$JAVA_HOME/lib/tools.jar
 ### -classpath 옵션
 CLI로 쉘등에서 javac를 이용하여 사용 가능하다.
 
-![파일경로](https://redbean88.github.io/img/fileroot1.png)
-_Test폴더와 같은 위치에 있을때
+![파일경로](https://redbean88.github.io/img/fileroot1.png)   
+_Test폴더와 같은 위치에 있을때_
 
 윈도우
 ```
@@ -219,6 +219,7 @@ classLoader는 classpath를 기준으로 파일 위치를 확인 하여 실행�
 총 4가지 접근지시자가 있다.
 
 ![참고이미지](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FKb2tD%2FbtqRrPm3DAn%2F9Q28T3eXG4n3kukPuMiup0%2Fimg.png)   
+
 _참고이미지(출처[https://kils-log-of-develop.tistory.com/430])_
 
 > 왜 쓰나요
