@@ -72,6 +72,11 @@ import를 사용하지 않고, 사용하는 방식이다. 변수 생성시, 클�
 ![참고이미지](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FKb2tD%2FbtqRrPm3DAn%2F9Q28T3eXG4n3kukPuMiup0%2Fimg.png)   
 _참고이미지(출처[https://kils-log-of-develop.tistory.com/430])_
 
+> 왜 쓰나요
+
+모르는게 약이다라는 말이 있다. OOP 세상에서 객체는 살이있는 능동적인 존재다. 사람이 모든 일을 할 수 없듯이, 객체가 모든 것을 __알지 못 하게__ 하는 것도 중요하다.   
+생각해 보자 대통령의 고조 할아버지 생애를 알아야 한다는 법률이 제정된다면, 누가 좋아 할 것인가? OOP에서 프로그래머의 명령은 법이나 마찬가지다.   
+어쩌면 우리 컴파일 에러를 볼때마다, 클래스 입장에서는 처벌을 받는 것일 지도 모른다.
 
 ### 참고
 [javatpoint](https://www.javatpoint.com/)
