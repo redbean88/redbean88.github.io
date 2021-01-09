@@ -236,12 +236,198 @@ public class week8.Test {
 자바 8 버전에서 추가된 기능으로, 추상 메소드에서 사용하듯이 default 키워드를 이용 하여, 추가된 기능이 __구현된__ 인터페이스를 제공 할 수 있게 되었다.
 아래의 예시를 보자
 ```java
+public interface Monitor {
+    void on();
+    void off();
+    default void add(){
+        System.out.println("add");
+    }
+}
 
 ```
+컴파일소스
+```
+public interface week8.Monitor {
+  public abstract void on();
+
+  public abstract void off();
+
+  public default void add();
+    Code:
+       0: getstatic     #1                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       3: ldc           #7                  // String add
+       5: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       8: return
+}
+```
+
+위 처럼 생성한 메소드는 상속 받은 구현체에서 구현하지 않아도, 레퍼런스에서 사용 가능 하다
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        Monitor monitor = new LG();
+        monitor.add();
+    }
+}
+```
+
+컴파일 소스
+
+```
+public class week8.Test {
+  public week8.Test();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: new           #7                  // class week8/LG
+       3: dup
+       4: invokespecial #9                  // Method week8/LG."<init>":()V
+       7: astore_1
+       8: aload_1
+       9: invokeinterface #10,  1           // InterfaceMethod week8/Monitor.add:()V
+      14: return
+}
+```
+
+사용되는 메소드는 invokeinterface로 
+기존 인터페이스와 동일하다
 
 
 ### 인터페이스의 static 메소드, 자바 8
+
+유틸형 클래스에 사용하는 static 또한 지원된다. 인터페이스에 구현하여 유틸성으로 이용 할 수 있다.
+
+```java
+public interface Monitor {
+    static void whiteUp(){
+        System.out.println("whiteUp");
+    };
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Monitor.whiteUp();
+    }
+}
+```
+
+컴파일소스
+
+```
+public interface week8.Monitor {
+  public static void whiteUp();
+    Code:
+       0: getstatic     #1                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       3: ldc           #7                  // String whiteUp
+       5: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       8: return
+}
+
+public class week8.Test {
+  public week8.Test();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: invokestatic  #7                  // InterfaceMethod week8/Monitor.whiteUp:()V
+       3: return
+}
+
+```
+
+사용되는 메소드는 invokestatic로 인터페이스의 invokeinterface를 사용하지 않는다
+
 ### 인터페이스의 private 메소드, 자바 9
+
+인터페이스 내부에서만 사용 가능한 private 메소드가 추가 되어 내부적인 처리가 필요 할 경우, 이용 가능하도록 기능이 추가 되었다
+
+```java
+
+public interface Monitor {
+    static void whiteUpStatic(){
+        printStatic();
+    };
+    private static void printStatic(){
+        System.out.println("whiteUpStatic");
+    }
+    default void whiteUp(){
+        print();
+    }
+    private void print(){
+        System.out.println("whiteUp");
+    }
+}
+
+public class Empty implements Monitor{
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Monitor.whiteUpStatic();
+        Monitor monitor = new Empty();
+        monitor.whiteUp();
+    }
+}
+```
+
+컴파일 소스
+
+```
+public interface week8.Monitor {
+  public static void whiteUpStatic();
+    Code:
+       0: invokestatic  #1                  // InterfaceMethod printStatic:()V
+       3: return
+
+  public default void whiteUp();
+    Code:
+       0: aload_0
+       1: invokeinterface #21,  1           // InterfaceMethod print:()V
+       6: return
+}
+
+public class week8.Empty implements week8.Monitor {
+  public week8.Empty();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+}
+
+public class week8.Test {
+  public week8.Test();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: invokestatic  #7                  // InterfaceMethod week8/Monitor.whiteUpStatic:()V
+       3: new           #12                 // class week8/Empty
+       6: dup
+       7: invokespecial #14                 // Method week8/Empty."<init>":()V
+      10: astore_1
+      11: aload_1
+      12: invokeinterface #15,  1           // InterfaceMethod week8/Monitor.whiteUp:()V
+      17: return
+}
+
+```
+
+Monitor 클래스를 살펴보면 private 메소드는 컴파일소스에서 확인 불가능 하다. 때문에 상속받은 클래스에서 사용이 불가하며 이를 이용하여 캡슐화를 진행 할 수 있다
+
+> 첨언
+
+위에서 설명 했듯이 인터페이스는 규약에 가깝다 하지만, 이러한 메소드는 규약에 적혀있지 않은 __편법__ 에 가깝다고 생각한다. 너무 지나친 자유는 오히려 독이 될수 있다
 
 
 
