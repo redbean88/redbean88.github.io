@@ -46,7 +46,7 @@ public interface week8.Monitor {
 추상 메소드와 같이 상속 받은 자식 메소드에서 구현부를 구현해야 한다는 것이다. 
 
 > 추가  
-_접근 제어자로는 public 과 default를 사용한다
+접근 제어자로는 public 과 default를 사용한다
 
 ### 인터페이스 구현하는 방법
 위에서 만든 Monitor의 구현체를 만들어 보자
