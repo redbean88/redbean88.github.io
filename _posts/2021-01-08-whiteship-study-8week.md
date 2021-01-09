@@ -42,9 +42,10 @@ public interface week8.Monitor {
 ```
 컴파일 소스를 보면 인터페이스에서 선언된 변수에는 public static final, 
 메소드에는 public abstract 가 붙는 것은 알 수 있다.
-이로 인해 우리는 추상 메소드와 같이 상속 받은 자식 메소드에서 구현부를 구현해야 한다는 것을 알 수 있다.
+이로 인해 우리는 첫째 인터페이스 내부의 변수는 재할당이 불가능 하며, 두번째 추상 메소드와 같이 상속 받은 자식 메소드에서 구현부를 구현해야 한다는 것을 알 수 있다.
 
-> 추가  
+> 추가
+
 접근 제어자로는 public 과 default를 사용한다
 
 ### 인터페이스 구현하는 방법
@@ -187,7 +188,8 @@ public class week8.Test {
 인터페이스를 처리하는 컴파일러의 코드로 자세한 사항은 [이곳](https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-6.html#jvms-6.5.invokeinterface)에서 살펴보자
 
 > 추가
-> 익명 객체로 구현체를 만들지 않고 잠깐만 구현하여 사용할 수 있다.
+
+익명 객체로 구현체를 만들지 않고 잠깐만 구현하여 사용할 수 있다.
 
 ```java
 public class Test {
