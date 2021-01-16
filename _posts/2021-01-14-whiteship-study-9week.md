@@ -171,8 +171,18 @@ public class TryCatchResource {
            0    12    15   Class java/lang/Exception
 }
 ```
+실행 순서를 보면
+1. 0번에서 생성한 클래스를 7번라인에서 저장
+1. 7번라인에서 저장한 클래스를 8번 라인에서 로드
+1. 8번라인에서 로드한 클래스의 close()를 9번 라인에서 실행
+
+예외 처리는 Exception table 테이블을 이용하여, 12번 라인의 목적이 메모값을 변경 (종료인 16라인에서 Exception 클래스 가 있는 15번 라인으로 이동)
 
 
+output
+
+```
+always exec
 ```
 
 `getSuppressed,addSuppressed`
@@ -208,7 +218,7 @@ public class Throwable implements Serializable {
 ```
 
 __throw__
-- throw키워드를 이용해서 고의로 예외를 발생시킬 수 있다.
+- throw키워드를 이용해서 고의로 예외를 발생 가능
 ```java
 Exception e = new Exception("예외");
 throw e;
@@ -217,7 +227,7 @@ throw e;
 __throws__
 
 + throws키워드를 이용해서 예외를 호출한 메소드로 넘길 수 있다. ~~하지마세요~~
-+ throws키워드를 사용할 경우, 예외 처리를 위한 Exception table 생성된다
++ throws키워드를 사용할 경우, 예외 처리를 위한 Exception table 생성
 
 ```java
 public class TryCatchResource {
