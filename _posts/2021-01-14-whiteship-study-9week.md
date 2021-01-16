@@ -41,9 +41,9 @@ __catch__
 public class TryCatchFinally {
     public static void main(String[] args) {
         try{
-
+          ...처리작업
         }catch (Exception e){
-
+          ...예외발생시 처리작업
         }
     }
 }
@@ -87,50 +87,90 @@ __finally__
 + 이런 문제는 자바7에서 try-with-resources로 해결할 수 있다.
 
 ```java
-static void copy(String src, String dst) throws IOException {
-	InputStream in = new FileInputStream(src);
-	try {
-		OutputStream out = new FileOutputStream(dst);
-		try {
-			byte[] buf = new byte[256];
-			int n;
-			while ((n = in.read(buf)) >= 0) {
-				out.write(buf, 0, n);
-			}
-		} finally {
-			out.close();
-		}
-	} finally {
-		in.close();
-	}
+spublic class TryCatchFinally {
+    public static void main(String[] args) {
+        try{
+          ...처리작업
+        }catch (Exception e){
+          ...예외발생시 처리작업
+        }finally {
+          ...항상 실행 작업
+        }
+    }
 }
+
+```
+
+> 컴파일소스
+
+```
+public class TryCatchFinally {
+  public TryCatchFinally();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: return
+}
+ch
 ```
 
 __try-with-resources(자바7)__
 
-+ 대상이 되는 클래스는 AutoCloseable 인터페이스를 구현해야 한다.
++ 대상이 되는 메소드는 AutoCloseable 인터페이스를 구현해야 한다.
 + try블록이 종료 되면, AutoCloseable 의 close()메소드의 구현체가 실행된다.
 + try-catch문과 AutoCloseable.close()에서 모두 예외가 발생되면, 두 예외가 동시에 발생할 수는 없기 때문에 close()에서 발생되는 예외는 `억제된 예외` 로 처리되어 실제 발생한 예외(try-catch문에서 발생한 예외)에 저장된다.
 
 ```java
-static void copy(String src, String dst) throws IOException {
-	try (InputStream in = new FileInputStream(src);
-		OutputStream out = new FileOutputStream(dst)) {
-		byte[] buf = new byte[256];
-		int n;
-		while ((n = in.read(buf)) >= 0) {
-			out.write(buf, 0, n);
-		}
-	}
+public class TryCatchResource {
+    public static void main(String[] args){
+        try(TryCatchResourceMethod c = new TryCatchResourceMethod()){
+
+        } catch (Exception e) {
+        }
+    }
 }
 
-public abstract class InputStream implements Closeable {
+class TryCatchResourceMethod implements AutoCloseable {
+
+    @Override
+    public void close() {
+        System.out.println("always exec");
+    }
 }
 
-public interface Closeable extends AutoCloseable {
 
-    public void close() throws IOException; 
+```
+
+> 컴파일 소스
+
+```
+public class TryCatchResource {
+  public TryCatchResource();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: new           #7                  // class TryCatchResourceMethod
+       3: dup
+       4: invokespecial #9                  // Method TryCatchResourceMethod."<init>":()V
+       7: astore_1
+       8: aload_1
+       9: invokevirtual #10                 // Method TryCatchResourceMethod.close:()V
+      12: goto          16
+      15: astore_1
+      16: return
+    Exception table:
+       from    to  target type
+           0    12    15   Class java/lang/Exception
 }
+```
 
 
 ```
@@ -270,22 +310,52 @@ https://madplay.github.io/post/java-checked-unchecked-exceptions
 - 보통 Exception클래스로부터 상속받는 클래스를 만들지만, 필요에 따라 알맞은 예외 클래스를 선택 가능
 
 ```java
-class CustomException extends Exception {
-	private final int ERROR_CODE:
-	CustomException(String message, int errorCode) {
-		super(msg);
-		this.ERROR_CODE = errorCode;
-	}
-	CustomException(String message) {
-		this(msg, 100);
-	}
-	public int getErrorCode() {
-		return ERROR_CODE;
-	}
+public class CustomException extends Exception {
+    private final int ERROR_CODE;
+    CustomException(String message, int errorCode) {
+        super(message);
+        this.ERROR_CODE = errorCode;
+    }
+    CustomException(String message) {
+        this(message, 100);
+    }
+    public int getErrorCode() {
+        return ERROR_CODE;
+    }
 }
 
 ```
 
+> 컴파일소스
+
+```
+ublic class CustomException extends java.lang.Exception {
+  CustomException(java.lang.String, int);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #1                  // Method java/lang/Exception."<init>":(Ljava/lang/String;)V
+       5: aload_0
+       6: iload_2
+       7: putfield      #7                  // Field ERROR_CODE:I
+      10: return
+
+  CustomException(java.lang.String);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: bipush        100
+       4: invokespecial #13                 // Method "<init>":(Ljava/lang/String;I)V
+       7: return
+
+  public int getErrorCode();
+    Code:
+       0: aload_0
+       1: getfield      #7                  // Field ERROR_CODE:I
+       4: ireturn
+}
+
+```
 
 참고
 
