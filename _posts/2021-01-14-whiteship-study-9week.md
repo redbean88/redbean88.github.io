@@ -244,6 +244,49 @@ java.lang.Exception: child Exception
 ```
 
 ### 자바가 제공하는 예외 계층 구조
+
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FRoZlV%2FbtqS3I0AXjN%2FadMoY7CeVX8YCffIlNCoH0%2Fimg.png)
+
+https://madplay.github.io/post/java-checked-unchecked-exceptions
+
++ Exception과 Error는 Throwable이라는 클래스를 상속받고 있으며 Throwable은 Object를 직접 상속받음
+
 ### Exception과 Error의 차이는?
+
++ Throwable은 Error와 Exception이라는 두 개의 하위 클래스를 갖는데, 필요한 곳에서 Exception클래스를 확인하고 수정하는 것으로 개발자가 직접 처리 할 수 있다
++ Error는 OutOfMemoryError나 NoClassDefFoundError클래스처럼 개발자 스스로 처리 할 수 있는것이 아니다.
+
 ### RuntimeException과 RE가 아닌 것의 차이는?
+
+
+- 예외는 ‘런타임 예외(runtime exception)’이거나 ‘확인해야 하는 예외(checked exception)’ 두 가지로 구분
+- 런타임 예외는 모두 RuntimeException의 하위 클래스고, 확인해야 하는 예외는 모두 다른 예외
+- 확인해야 하는 예외(checked exception)를 처리하는 메소드(또는 생성자)를 사용할 때는 메소드 정의에 명시적으로 예외가 정의되어야 하며, 따라 코드를 호출하는 모든 호출자들은 해당 예외를 처리 즉, 메소드의 호출자에게 전달하거나 try/catch/finally문으로 예외를 적절히 처리
+[참고](https://www.notion.so/3565a9689f714638af34125cbb8abbe8)
+
 ### 커스텀한 예외 만드는 방법
+
+- 기존 정의된 예외 클래스 외에 필요에 따라 새로운 예외 클래스를 정의할 수 있다.
+- 보통 Exception클래스로부터 상속받는 클래스를 만들지만, 필요에 따라 알맞은 예외 클래스를 선택할 수 있다.
+```java
+class CustomException extends Exception {
+	private final int ERROR_CODE:
+	CustomException(String message, int errorCode) {
+		super(msg);
+		this.ERROR_CODE = errorCode;
+	}
+	CustomException(String message) {
+		this(msg, 100);
+	}
+	public int getErrorCode() {
+		return ERROR_CODE;
+	}
+}
+
+```
+
+
+참고
+
+
+[9주차](https://github.com/kongduboo/whiteship-java-study/blob/main/week9.md)
