@@ -266,8 +266,9 @@ https://madplay.github.io/post/java-checked-unchecked-exceptions
 
 ### 커스텀한 예외 만드는 방법
 
-- 기존 정의된 예외 클래스 외에 필요에 따라 새로운 예외 클래스를 정의할 수 있다.
-- 보통 Exception클래스로부터 상속받는 클래스를 만들지만, 필요에 따라 알맞은 예외 클래스를 선택할 수 있다.
+- 기존 정의된 예외 클래스 외에 필요에 따라 새로운 예외 클래스를 정의
+- 보통 Exception클래스로부터 상속받는 클래스를 만들지만, 필요에 따라 알맞은 예외 클래스를 선택 가능
+
 ```java
 class CustomException extends Exception {
 	private final int ERROR_CODE:
