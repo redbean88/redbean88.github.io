@@ -295,3 +295,85 @@ hash-based 컬렉션의 성능 향상을 위해 사용 가능합니다.
 어노테이션을 사용하면 별도의 유형을 만들지 않고도 클래스에 대한 메타 데이터를 소비자에게 전달하는 동일한 목적을 달성 할 수 있습니다. 또한, 프로그래머가 더 정교한 정보를 "소비"하는 클래스에 전달할 수 있습니다.
 
 ## 28. checked 와 unchecked exceptions은 무엇이며, 언제 사용하나요?
+
+`checked exception`은 반드시 처리해아 하는 예외 이며, 컴파일러에 의해 처리 됩니다.
+`unchecked exception`은 반드시 잡아야 하는 예외는 아니며, 런타임시에 발생 합니다.
+회복 가능한 상황일 경우, `checked exception`을 사용하는 것이 좋습니다.
+
+참고 : https://yadon079.github.io/2021/java%20study%20halle/week-09#runtimeexception%EA%B3%BC-re%EA%B0%80-%EC%95%84%EB%8B%8C-%EA%B2%83%EC%9D%98-%EC%B0%A8%EC%9D%B4%EB%8A%94
+
+## 29. int a = 1L; 는 컴파일이 불가능 하고, int b = 0; b += 1L; 컴파일이 가능합니다. 이유가 뭘까요?
+
+`+=`사용시, 직접문은 복합문으로 변경되어 컴파일러는 내부적으로 오토캐스팅을 진행합니다. 때문에 컴파일에러가 발생하지 않습니다. 하지만 단순 `1L`와 같은 직접문의 경우, 오토케스팅이 진행되지 않아 컴파일어에서 타입에러를 발생 시킨다.
+
+## 30. 자바에서 다중상속을 인터페이스에서는 허용하지만, 클래스에서는 허용하지 않는 이유는 무엇인가요?
+
+클래스를 확장하면 모호성 문제가 발생할 수 있습니다. 반면에 인터페이스 측면에서 한 클래스의 단일 메서드 구현은 둘 이상의 인터페이스를 제공 할 수 있습니다.
+
+## 31. 아래 코드에서 인스턴스가 null이지만, `NullPointerException` 이 발생하지 않는 이유는 무엇인가요?
+
+```java
+Test t = null;
+t.someMethod();
+
+
+ public static void someMethod() {
+  ...
+}
+```
+
+해당 코드는 인스턴스가 필요없는 정적 메소드이기 때문입니다. 정적 메소드는 인스턴스가 아닌 클래스에 속하기 때문에 null예외를 발생하지 않습니다.
+
+## 32. 아래코드에서 첫번째는 true 두번째는 false가 출력되는 이우는 무엇인가요?
+
+```java
+public class Test
+{
+    public static void main(String[] args)
+    {
+        Integer a = 1000, b = 1000;
+        System.out.println(a == b); //false
+
+        Integer c = 100, d = 100;
+        System.out.println(c == d); //true
+    }
+}
+```
+
+해당 현상은 JVM의 캐시때문에 발생하는 현상입니다. JVM은 Integer가 범위(-128에서 127) 내에 있을 경우, 새로운 인스턴스 생성하지 않으며, 기존의 생성된 인스턴스의 참조 값을 이용합니다.
+때문에, 위 코드에서 `d`를 위한 참조는 생성되지 않으며, `c`의 참조 값을 이용합니다. 그렇기에 두 번째 출력은 true가 됩니다.
+
+## 33. 두 개의 문장이 아나그램인지 확인하시오
+
+```java
+String s1="home";
+String s2="mohe";
+```
+
+```java
+boolean result = new String(Arrays.sort(s1.toCharArray()))
+                  .equals(new String(Arrays.sort(s2.toCharArray())));
+```
+
+## 34. String("Java Programming")을 반복문과 재귀를 사용하지 않고 반전시키시오.
+
+```java
+System.out.println("reverse = " + new StringBuilder(givenString).reverse());
+```
+
+## 35. ArrayList를 사용하는 경우와 LinkedList를 사용하는 경우를 논하시오.
+
+ArrayList는 검색시 LinkedList보다 빠르기 때문에 검색이 빈번한 경우, 더 유용하며 `O(1)`
+삭제나 삽입 시에는, LinkedList가 더 유리합니다. `O(1)`
+
+## 36. Iterator 와 ListIterator 의 차이점이 무엇인가요?
+
+Iterator는 set,list에 시용가능하며, 단반향이동만 지원하며, ListIterator는 list에만 사용가능하며, 양방향이동이 가능하고 메소드를 통해서 인덱스를 가져올수 있다.
+
+출처 : http://www.tcpschool.com/java/java_collectionFramework_iterator
+
+## 37. 제네릭의 사용 이점이 뭔가요?
+
+컴파일 타임에 강력한 타입체크 기능을 지원하여, 런타임시 오류보다 더 쉬운 오류체크를 가능하도록 합니다.
+
+참고 : https://namjackson.tistory.com/18
