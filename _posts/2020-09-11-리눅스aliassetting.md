@@ -21,6 +21,10 @@ categories : linux
           . ~/.bash_aliases
   fi
   ```  
++ add bash_aliases
+```
+vi ~/.bash_aliases
+```
 + add alias
   ```
   alias pet="ps -ef|grep tomcat"
