@@ -16,6 +16,12 @@ categories : study
 + 데드락
 
 ### Thread 클래스와 Runnable 인터페이스
+
+## Process
+
+
+## Thread 
+
 ### 쓰레드의 상태
 ### 쓰레드의 우선순위
 ### Main 쓰레드
