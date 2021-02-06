@@ -109,11 +109,11 @@ public class SuppresTest {
 }
 ```
 
-아래의 사진과 같이 @SuppressWarnings 어노테이션을 주석처리하면 경고를 표시합니다.
+아래의 사진과 같이 @SuppressWarnings 어노테이션을 주석처리하면 경고를 표시합니다.  
 ![SuppressWarnings1](https://github.com/redbean88/redbean88.github.io/blob/master/img/suppress01.png?raw=true)
 
 
-아래의 사진과 같이 @SuppressWarnings 어노테이션을 추가사면 경고를 표시가 사라집니다.
+아래의 사진과 같이 @SuppressWarnings 어노테이션을 추가사면 경고를 표시가 사라집니다.  
 ![SuppressWarnings2](https://github.com/redbean88/redbean88.github.io/blob/master/img/suppress02.png?raw=true)
 
 ### @Deprecated
