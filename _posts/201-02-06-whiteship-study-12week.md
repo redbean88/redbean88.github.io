@@ -380,5 +380,5 @@ _[출처](https://better-dev.netlify.app/java/2020/09/07/thejava_16/)_
 
 
 참조
-[javatpoint.com/java-annotation](https://www.javatpoint.com/java-annotation)
+[javatpoint.com/java-annotation](https://www.javatpoint.com/java-annotation)  
 [stackoverflow.com/questions/23973107/how-to-use-inherited-annotation-in-java](https://stackoverflow.com/questions/23973107/how-to-use-inherited-annotation-in-java)
