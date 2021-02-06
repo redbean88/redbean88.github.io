@@ -363,7 +363,7 @@ null
 
 ![이미지](https://github.com/redbean88/redbean88.github.io/blob/master/img/javadoc01.png?raw=true)
 
-JavaDoc 파일 생성은 아래 블로그를 참고하자
+JavaDoc 파일 생성은 아래 블로그를 참고하세요
 [JavaDoc](https://shinheechul.tistory.com/43)
 
 ### 애노테이션 프로세서
@@ -374,7 +374,7 @@ _[출처](https://better-dev.netlify.app/java/2020/09/07/thejava_16/)_
 
 우리가 사용하는 spring의 컨트롤러나 lombok 도 애노테이션 프로세서라 할 수 있다.
 
-아래의 블로그도 참조하자  
+아래의 블로그도 참조하세요 
 [Annotation Processor란?](https://mysend12.medium.com/java-annotation-processor-1-7f95693748ef)
 
 
