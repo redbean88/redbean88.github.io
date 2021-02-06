@@ -180,9 +180,11 @@ public class TestAnnotation {
 
 어노테이션에는 3가지 유형이 있습니다.
 
-- 마커 어노테이션
-- 단일 값 어노테이션
-- 다중 값 어노테이션
+![이미지](https://static.javatpoint.com/java/new/images/java-annotation-types.jpg)
+
+- 마커 어노테이션(Marker Annotation)
+- 단일 값 어노테이션(Single-Value Annotation)
+- 다중 값 어노테이션(Multi-Value Annotation)
 
 #### 마커 어노테이션
 
