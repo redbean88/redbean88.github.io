@@ -359,7 +359,7 @@ null
 
 ### @documented
 
-@Documented 어노테이션이 지정된 대상을 JavaDoc에 표시하기 위해 사용한다. @Documented 어노테이션을 이용하여 API 문서를 만들 수 있습니다. 
+@Documented 어노테이션이 지정된 대상을 JavaDoc에 표시하기 위해 사용합니다. @Documented 어노테이션을 이용하여 API 문서를 만들 수 있습니다. 
 
 ![이미지](https://github.com/redbean88/redbean88.github.io/blob/master/img/javadoc01.png?raw=true)
 
