@@ -355,11 +355,11 @@ null
 ```
 
 결과를 보면 @InheritedAnnotationType 어노테이션을 선언하면 해당 어노테이션은 상속받은 어노테이션을 붙이지 않은(위에서 클래스 C)도 해당 
-어노테이션을 불러오는 것을 확인 할 수 있다
+어노테이션을 불러오는 것을 확인 할 수 있습니다.
 
 ### @documented
 
-@Documented 어노테이션이 지정된 대상을 JavaDoc에 표시하기 위해 사용한다. @Documented 어노테이션을 이용하여 API 문서를 만들 수 있다. 
+@Documented 어노테이션이 지정된 대상을 JavaDoc에 표시하기 위해 사용한다. @Documented 어노테이션을 이용하여 API 문서를 만들 수 있습니다. 
 
 ![이미지](https://github.com/redbean88/redbean88.github.io/blob/master/img/javadoc01.png?raw=true)
 
