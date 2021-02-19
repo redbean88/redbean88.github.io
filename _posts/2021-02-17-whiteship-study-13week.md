@@ -193,7 +193,7 @@ public class week13.CopyByte {
 
 ```
 
-내부적으로 아래 이미지와 같은 작업을 반복한다.
+내부적으로 아래 이미지와 같은 작업을 반복한다.  
 ![이미지](https://docs.oracle.com/javase/tutorial/figures/essential/byteStream.gif)
 
 항상 스트림 닫기
@@ -499,11 +499,6 @@ Eclipse와 같은 일부 프로그램은 출력을 System.err 빨간색 텍스�
     public static final PrintStream err = null;
 ```
 
-### 파일 읽고 쓰기
-
-
-# 마감일시
-2021년 2월 20일 토요일 오후 1시까지
 
 # 출처
 https://docs.oracle.com/javase/tutorial/essential/io/streams.html  
