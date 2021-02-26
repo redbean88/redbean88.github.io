@@ -546,7 +546,7 @@ public class TestMain {
 }
 ```
 
-![이미지](https://docs.oracle.com/javase/tutorial/figures/java/generics-subtypeRelationship.gif)
+![이미지](https://docs.oracle.com/javase/tutorial/figures/java/generics-subtypeRelationship.gif)  
 _오라클 튜토리얼_
 
 #### 제네릭과 서브타이핑
@@ -555,7 +555,8 @@ _오라클 튜토리얼_
 
 Collections 클래스를 예로 들면 ArrayList \<E> 는 List \<E>를 구현 하고 List \<E>는 Collection \<E>을 확장 합니다. 따라서 ArrayList \<String> 은 Collection \<String> 의 하위 유형 인 List \<String> 의 하위 타입입니다. 타입 아규먼트를 변경하지 않는 한 타입간에 하위 타입 관계가 유지됩니다.
 
-![이미지](https://docs.oracle.com/javase/tutorial/figures/java/generics-sampleHierarchy.gif)
+![이미지](https://docs.oracle.com/javase/tutorial/figures/java/generics-sampleHierarchy.gif)  
+_오라클 튜토리얼_
 
 PayloadList라는 인터페이스를 정의할 때 P라는 generic 타입을 메서드의 파라메터로 사용한다고했을때, 아래 코드와 같을 것입니다.
 
@@ -571,7 +572,8 @@ List\<String>의 서브타입이면서 PayloadList가 타입 아규먼트로 다
 - PayloadList<String,Integer>
 - PayloadList<String,Exception>
 
-![이미지](https://docs.oracle.com/javase/tutorial/figures/java/generics-payloadListHierarchy.gif)
+![이미지](https://docs.oracle.com/javase/tutorial/figures/java/generics-payloadListHierarchy.gif)  
+_오라클 튜토리얼_
 
 #### 와일드 카드와 서브타이핑
 
@@ -588,7 +590,8 @@ List<Number> d = c;     //컴파일 에러
 위 코드에서 a,b는 정상적으로 작동하지만, c,d는 정상적으로 작동하지 않습니다. 이는 제네릭의 경우 c와 d는 부모 자식 관계가 아니기 때문입니다.
 공통의 부모는 List\<?>입니다
 
-![이미지](https://docs.oracle.com/javase/tutorial/figures/java/generics-listParent.gif)
+![이미지](https://docs.oracle.com/javase/tutorial/figures/java/generics-listParent.gif)  
+_오라클 튜토리얼_
 
 하지만, integer는 number의 하위 타입입니다. 때문에 상한 와일드카드를 이용하여 이 문제를 해결 할수 있습니다.
 
@@ -606,7 +609,7 @@ public class TestMain {
 
 전체 구조는 아래와 같습니다.
 
-![이미지](https://docs.oracle.com/javase/tutorial/figures/java/generics-wildcardSubtyping.gif)
+![이미지](https://docs.oracle.com/javase/tutorial/figures/java/generics-wildcardSubtyping.gif)  
 _오라클 튜토리얼_
 
 #### 와일드 카드 사용지침
