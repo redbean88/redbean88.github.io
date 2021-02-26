@@ -926,7 +926,6 @@ public class week14.TestMain {
 class MyNode extends Node {
 
     // 컴파일러에 의해 생성된 브릿지 메소드
-    //
     public void setData(Object data) {
         setData((Integer) data);
     }
