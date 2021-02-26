@@ -141,9 +141,9 @@ public class week14.GenericBox<T> {
 
 #### 타입변수 명명규칙
 
-규칙에 따라 유형 매개 변수 이름은 단일 대문자입니다. 이것은 이미 알고 있는 변수 명명 규칙 과는 뚜렷한 대조를 이루며 그럴만 한 이유가 있습니다. 이 규칙이 없으면 유형 변수와 일반 클래스 또는 인터페이스 이름의 차이를 구분하기 어려울 것입니다.
+규칙에 따라 타입 파라미터 이름은 단일 대문자입니다. 이것은 이미 알고 있는 변수 명명 규칙 과는 뚜렷한 대조를 이루며 그럴만 한 이유가 있습니다. 이 규칙이 없으면 유형 변수와 일반 클래스 또는 인터페이스 이름의 차이를 구분하기 어려울 것입니다.
 
-가장 일반적으로 사용되는 유형 매개 변수 이름은 다음과 같습니다.
+가장 일반적으로 사용되는 타입 파라미터 이름은 다음과 같습니다.
 
 |변수|내용|
 |:--|:--|
@@ -157,7 +157,7 @@ public class week14.GenericBox<T> {
 
 #### 제네릭 유형 호출 및 인스턴스화
 
-코드에서 위 예시의 BOX 클래스를 참조하여면, T에 Integer와 같은 구체적인 값을 정의하는 제네릭 타입 호출을 수행하여야 합니다.  
+코드에서 위 예시의 BOX 클래스를 참조하면, T에 Integer와 같은 구체적인 값을 정의하는 제네릭 타입 호출을 수행하여야 합니다.  
 
 예) Box \<Integer> integerBox;  
 
@@ -178,7 +178,7 @@ _타입 파라미터(Type Parameter)와 타입 아규먼트(type-Argument)의 �
 
 다른 변수 선언과 마찬가지로 위 코드는 실제로 새 Box 객체를 생성하지 않습니다. 단순히 integerBox 가 "Integer 타입의 Box"에 대한 참조를 보유 할 것이라고 선언하는 것입니다. 이는 Box \<Integer> 를 읽는 방법입니다.
 
-제네릭 유형의 호출을 일반적으로 매개 변수화된 타입( parameterized type)이라고 합니다.
+제네릭 유형의 호출을 일반적으로 매개 변수화된 타입(parameterized type)이라고 합니다.
 
 이 클래스를 인스턴스화하려면 평소처럼 new 키워드를 사용 하되 클래스 이름과 괄호 사이에 \<Integer> 를 넣으면 됩니다.
 
@@ -192,7 +192,7 @@ Java SE 7 이상에서는 컴파일러가 문맥에서 타입 아규먼트(type-
 
 #### 다중 타입 파라미터
 
-제네릭 클래스는 여러 유형 매개 변수를 가질 수 있습니다
+제네릭 클래스는 여러 타입 파라미터를 가질 수 있습니다
 
 
 ```java
@@ -424,10 +424,9 @@ public class week14.Box<T> {
 }
 ```
 
-위 코드의 main 메소드에서는 범위를 넘어가는 
-integerBox.inspect("some text")코드에 대해 오류를 발생합니다.
+위 코드의 main 메소드에서는 범위를 넘어가는 integerBox.inspect("some text")코드에 대해 오류를 발생합니다.
 ![이미지](https://github.com/redbean88/redbean88.github.io/blob/master/img/genericex02.png?raw=true)
-
+
 같은 방식으로 클래스에도 적용이 가능합니다.
 
 #### 다중 경계(Multiple Bounds)
@@ -452,7 +451,7 @@ public static <T> int countGreaterThan(T[] anArray, T elem) {
     return count;
 }
 ```
-위 코드는 구현은 간단하지만 비교연산자(>)가 원시타입에만 적용되기 때문에, 컴파일이 불가능 합니다. 때문에 Comparable <T> 인터페이스로 제한되는 형식 매개 변수를 사용하도록 변경합니다.
+위 코드는 구현은 간단하지만 비교연산자(>)가 원시타입에만 적용되기 때문에, 컴파일이 불가능 합니다. 때문에 Comparable \<T> 인터페이스로 제한되는 형식 매개 변수를 사용하도록 변경합니다.
 
 ```java
 public interface Comparable<T> {
@@ -480,23 +479,150 @@ public interface Comparable<T> {
 
 예) public static void process(List<? extends Foo> list) { /* ... */ }  
 
-- 예문 추가 예정
-
 #### 무제한(Unbounded) 와일드 카드
 
 - Object 클래스 에서 제공하는 기능을 사용하여 구현할 수있는 메서드를 작성하는 경우 .
 - 코드가 타입 파라미터에 의존하지 않는 제네릭 클래스의 메서드를 사용하는 경우. 예를 들어, List.size 또는 List.clear 입니다. 
 
-- 예문 추가 예정
+예) public static void process(List<?> list) { /* ... */ }  
 
 #### 하한 바운디드(lower bounded) 와일드 카드
 
 하위 경계와일드카드는 알 수 없는 타입을 특정 타입 또는 해당 타입의 부모 타입으로 제한합니다.
 
-- 예문 추가 예정
+예) public static void process(List<? super Foo> list) { /* ... */ }  
 
+#### 제네릭,상속,서브타입
 
+일반적으로 부모 타입의 변수에는 자식 타입의 인스턴스 할당이 가능합니다
+```java
+Object someObject = new Object();
+Integer someInteger = new Integer(10);
+someObject = someInteger;   // 가능
+```
+이러한 형태는 제네릭에서도 가능합니다.
 
+```java
+public class Box<T> {
+
+    public void add(T num) {
+    }
+}
+
+public class TestMain {
+    public static void main(String[] args) {
+        Box<Number> box = new Box<Number>();
+        box.add(new Integer(1));  //가능
+        box.add(new Double(1.0)); //가능
+    }
+}
+```
+
+그렇다면 메소드 하나를 추가해 봅니다
+
+```java
+public class Box<T> {
+
+    public void add(T num) {
+    }
+
+    public void boxTest(Box<Number> n){
+    }
+}
+```
+boxTest 메소드의 타입 파라미터 number입니다. 우리가 이전 예제와 같이 number의 하위 타입인 Integer나 Double 가능하다고 생각합니다.
+하지만 직접적인 Box\<number>의 하위타입 예를들어 Box\<Integer>라는 타입이 아니기 때문에 사용은 불가능 합니다.
+
+```java
+public class TestMain {
+    public static void main(String[] args) {
+        Box<Number> box = new Box<Number>();
+        box.add(new Integer(1));
+        box.add(new Double(1.0));
+
+        box.boxTest(new Integer(1));  //컴파일 에러
+        box.boxTest(new Double(1));   //컴파일 에러
+
+    }
+}
+```
+
+![이미지](https://docs.oracle.com/javase/tutorial/figures/java/generics-subtypeRelationship.gif)
+_오라클 튜토리얼_
+
+#### 제네릭과 서브타이핑
+
+일반 클래스 또는 인터페이스를 확장(extends)하거나 구현(implements)하여 하위 유형을 지정할 수 있습니다. 클래스 또는 인터페이스의 타입 파라미터와 다른 클래스의 타입 파라미터 간의 관계는 extends 및 implements 절에 의해 결정됩니다.
+
+Collections 클래스를 예로 들면 ArrayList \<E> 는 List \<E>를 구현 하고 List \<E>는 Collection \<E>을 확장 합니다. 따라서 ArrayList \<String> 은 Collection \<String> 의 하위 유형 인 List \<String> 의 하위 타입입니다. 타입 아규먼트를 변경하지 않는 한 타입간에 하위 타입 관계가 유지됩니다.
+
+![이미지](https://docs.oracle.com/javase/tutorial/figures/java/generics-sampleHierarchy.gif)
+
+PayloadList라는 인터페이스를 정의할 때 P라는 generic 타입을 메서드의 파라메터로 사용한다고했을때, 아래 코드와 같을 것입니다.
+
+```java
+interface PayloadList<E,P> extends List<E> {
+  void setPayload(int index, P val);
+  ...
+}
+```
+List\<String>의 서브타입이면서 PayloadList가 타입 아규먼트로 다양하게 변경 할수 있습니다.
+
+- PayloadList<String,String>
+- PayloadList<String,Integer>
+- PayloadList<String,Exception>
+
+![이미지](https://docs.oracle.com/javase/tutorial/figures/java/generics-payloadListHierarchy.gif)
+
+#### 와일드 카드와 서브타이핑
+
+위 내용처럼 상속과 제네릭 관의 연관관계는 무관하지만 와일드 카드를 사용함에 따라 그 관계를 생성 할수 있습니다.
+
+```java
+Integer a = new Integer(0);
+Number b = a;
+
+List<Integer> c = new ArrayList<>();
+List<Number> d = c;     //컴파일 에러
+```
+
+위 코드에서 a,b는 정상적으로 작동하지만, c,d는 정상적으로 작동하지 않습니다. 이는 제네릭의 경우 c와 d는 부모 자식 관계가 아니기 때문입니다.
+공통의 부모는 List\<?>입니다
+
+![이미지](https://docs.oracle.com/javase/tutorial/figures/java/generics-listParent.gif)
+
+하지만, integer는 number의 하위 타입입니다. 때문에 상한 와일드카드를 이용하여 이 문제를 해결 할수 있습니다.
+
+```java
+public class TestMain {
+    public static void main(String[] args) {
+        Integer a = new Integer(0);
+        Number b = a;
+
+        List<? extends Integer> c = new ArrayList<>();
+        List<? extends Number>  d = c;  // 가능. List<? extends Integer> 는 List<? extends Number> 하위 타입입니다.
+    }
+}
+```
+
+전체 구조는 아래와 같습니다.
+
+![이미지](https://docs.oracle.com/javase/tutorial/figures/java/generics-wildcardSubtyping.gif)
+_오라클 튜토리얼_
+
+#### 와일드 카드 사용지침
+
+와일드 카드 사용시 혼한을 가중하는 부분은 상한과 하한을 어떻게 정하는가 입니다.  
+때문에 오라클 문서에서는 몇가지 가이드 라인을 정하고 있습니다.
+- in 변수 : in 변수는 데이터를 제공하는 변수를 말합니다. capy(src , dest) 메소드를 상상해 보면, src는 데이터를 제공하는 in 변수 입니다. 
+- out 변수 : out 변수는 데이터의 사용처에 대한 변수 입니다. capy(src , dest) 메소드를 상상해 보면, dest는 데이터를 접근을 허용하는 out 변수 입니다. 
+위 내용을 기반하여 가이드가 제공되고 있습니다.
+- "in" 변수는 extends 키워드를 사용하여 상한 와일드 카드로 정의합니다.
+- "out"변수는 super 키워드를 사용하여 하한 와일드 카드로 정의합니다.
+- Object 클래스에 정의 된 메서드를 사용하여 "in"변수에 액세스 할 수있는 경우 제한되지 않은 와일드 카드를 사용하십시오.
+- 코드가 "in"및 "out"변수로 변수에 액세스해야하는 경우 와일드 카드를 사용하지 마십시오.
+
+자세한 내용은 [링크](https://docs.oracle.com/javase/tutorial/java/generics/wildcardGuidelines.html)를 참고 주십시오
 
 ### 제네릭 메소드 만들기
 
@@ -561,7 +687,261 @@ Util.<Integer,String>compare(p1,p2)과 같이 명시적으로도 사용할 수 �
 타입 추론에 관한 내용은 [링크](https://docs.oracle.com/javase/tutorial/java/generics/genTypeInference.html)로 대체합니다.
 
 
-### Erasure
+### 유형삭제(Erasure)
+
+Java 언어에 Generics가 도입되어 컴파일타임에 보다 엄격한 유형 검사를 제공하고 일반 프로그래밍을 지원합니다. 제네릭을 구현하기 위해 Java 컴파일러는 다음에 유형 삭제를 적용합니다.
+
+- 제네릭 타입의 모든 타입 파라미터를 해당 범위 또는 타입 파라미터가 제한되지 않은 경우 Object로 바꿉니다. 따라서 생성 된 바이트 코드에는 일반 클래스, 인터페이스 및 메서드 만 포함됩니다.
+- 유형 안전성을 유지하기 위해 필요한 경우 타입 캐스트를 삽입합니다.
+- 확장 된 제네릭 타입에서 다형성을 유지하는 브리지 메서드를 생성합니다.
+유형 삭제는 매개 변수화 된 유형에 대해 새 클래스가 생성되지 않도록합니다. 결과적으로 제네릭은 런타임 오버 헤드를 발생시키지 않습니다.
+
+#### 일반 유형삭제
+
+유형 삭제 프로세스는 Java 컴파일러는 모든 타입 파라미터를 지우고 타입 파라미터가 바인드 된 경우 각각을 첫 번째 바인드로 대체하고, 타입 파라미터가 바인드 되지 않은 경우 Object로 대체합니다.
+
+```java
+public class Node<T> {
+
+    private T data;
+    private Node<T> next;
+
+    public Node(T data, Node<T> next) {
+        this.data = data;
+        this.next = next;
+    }
+
+    public T getData() { return data; }
+}
+```
+
+> 바이트코드
+
+```
+public class week14.Node<T> {
+  public week14.Node(T, week14.Node<T>);
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: aload_1
+       6: putfield      #7                  // Field data:Ljava/lang/Object;
+       9: aload_0
+      10: aload_2
+      11: putfield      #13                 // Field next:Lweek14/Node;
+      14: return
+
+  public T getData();
+    Code:
+       0: aload_0
+       1: getfield      #7                  // Field data:Ljava/lang/Object;
+       4: areturn
+}
+```
+실제로 Object로 변경된 것을 코드에서 확인 할수 있습니다. 다음은 일반 Node 클래스는 제한된 타입 파라미터를 사용합니다.
+Java 컴파일러는 바인딩 된 타입 파라미터 T 를 첫 번째 바인딩 된 클래스 인 Comparable로 대체합니다.
+
+```java
+public class Node<T extends Comparable<T>> {
+
+    private T data;
+    private Node<T> next;
+
+    public Node(T data, Node<T> next) {
+        this.data = data;
+        this.next = next;
+    }
+
+    public T getData() { return data; }
+}
+```
+
+> 바이트코드
+
+```
+public class week14.Node<T extends java.lang.Comparable<T>> {
+  public week14.Node(T, week14.Node<T>);
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: aload_1
+       6: putfield      #7                  // Field data:Ljava/lang/Comparable;
+       9: aload_0
+      10: aload_2
+      11: putfield      #13                 // Field next:Lweek14/Node;
+      14: return
+
+  public T getData();
+    Code:
+       0: aload_0
+       1: getfield      #7                  // Field data:Ljava/lang/Comparable;
+       4: areturn
+}
+```
+
+이러한 바이트코드 변경은 제네릭 메소드에서도 마찬가지로 적용됩니다.
+
+#### 유형 삭제의 영향과 브리지 메소드
+때로는 유형 삭제로 인해 예상치 못한 상황이 발생할 수 있습니다. 
+
+```java
+public class Node<T> {
+
+    public T data;
+
+    public Node(T data) { this.data = data; }
+
+    public void setData(T data) {
+        System.out.println("Node.setData");
+        this.data = data;
+    }
+}
+
+public class MyNode extends Node<Integer> {
+    public MyNode(Integer data) { super(data); }
+
+    public void setData(Integer data) {
+        System.out.println("MyNode.setData");
+        super.setData(data);
+    }
+}
+
+public static void main(String[] args) {
+      MyNode mn = new MyNode(5);
+      Node n = mn;            // 원시 타입 -컴파일러는 확인 경고를 표시한다.
+      n.setData("Hello");     // 에러 : ClassCastException
+  }
+```
+
+> 바이트코드
+
+```
+public class week14.TestMain {
+  public week14.TestMain();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: new           #7                  // class week14/MyNode
+       3: dup
+       4: iconst_5
+       5: invokestatic  #9                  // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       8: invokespecial #15                 // Method week14/MyNode."<init>":(Ljava/lang/Integer;)V
+      11: astore_1
+      12: aload_1
+      13: astore_2
+      14: aload_2
+      15: ldc           #18                 // String Hello
+      17: invokevirtual #20                 // Method week14/Node.setData:(Ljava/lang/Object;)V
+      20: return
+}
+```
+
+위 코드는 아래와 같은 순서로 진행됩니다.
+
+1. n.setData ( "Hello"); MyNode 클래스의 객체에서 부모 클래스의 setData(T) 메서드를 실행 시킵니다.
+2. setData(T)는 본문에서 n 이 참조하는 객체의 데이터 필드의 타입은 String에 할당됩니다 .
+3. 참조를 통해 mn의 객체의 데이터 필드에 액세스 가능하며, 해당 데이터 필드는 Integer로 할당된다.(Mynode의 경우, Node\<Integer>를 상속받았기 때문입니다.)
+4. String 을 Integer 에 할당하려고 하면 Java 컴파일러에 의해 할당에 삽입 된 캐스트에서 ClassCastException이 발생합니다 .
+
+#### 브릿지 메소드
+
+매개 변수화된 클래스를 확장하거나 매개 변수화된 인터페이스를 구현하는 클래스 또는 인터페이스를 컴파일 할 때,
+ 컴파일러는 유형 삭제 프로세스의 일부로 __브릿지 메서드__ 라는 합성 메서드를 생성할 때도 있습니다.
+일반적으로 브리지 메서드에 대해 걱정할 필요가 없지만 스택 추적시 당황 할 수 있습니다.
+
+위의 Node 클래스가 유형삭제가 됬을 경우, 아래와 같은 코드로 변경됩니다.
+```java
+public class Node {
+
+    public Object data;
+
+    public Node(Object data) { this.data = data; }
+
+    public void setData(Object data) {
+        System.out.println("Node.setData");
+        this.data = data;
+    }
+}
+public class MyNode extends Node {
+
+    public MyNode(Integer data) { super(data); }
+
+    public void setData(Integer data) {
+        System.out.println("MyNode.setData");
+        super.setData(data);
+    }
+}
+public static void main(String[] args) {
+      MyNode mn = new MyNode(5);
+      Node n = mn;            // 원시 타입 -컴파일러는 확인 경고를 표시한다.
+      n.setData("Hello");     // 에러 미발생
+      System.out.println(mn.data);    // Hello
+  }
+```
+
+>바이트코드
+
+```
+public class week14.TestMain {
+  public week14.TestMain();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: new           #7                  // class week14/MyNode
+       3: dup
+       4: iconst_5
+       5: invokestatic  #9                  // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       8: invokespecial #15                 // Method week14/MyNode."<init>":(Ljava/lang/Integer;)V
+      11: astore_1
+      12: aload_1
+      13: astore_2
+      14: aload_2
+      15: ldc           #18                 // String Hello
+      17: invokevirtual #20                 // Method week14/Node.setData:(Ljava/lang/Object;)V
+      20: getstatic     #26                 // Field java/lang/System.out:Ljava/io/PrintStream;
+      23: aload_1
+      24: getfield      #32                 // Field week14/MyNode.data:Ljava/lang/Object;
+      27: invokevirtual #36                 // Method java/io/PrintStream.println:(Ljava/lang/Object;)V
+      30: return
+}
+```
+
+유형 삭제 후 메서드 시그니처가 일치하지 않습니다. (Node의 setData는 파라미터로 object를 MyNode는 setData의 파라미터로 Integer를 가진다)
+따라서 MyNode setData 메서드는 Node setData 메서드를 오버라이딩하지 않습니다.
+
+이 문제를 해결하고 유형 삭제 후 일반 유형 의 다형성 을 보존하기 위해 Java 컴파일러는 하위 유형이 예상대로 작동하는지 확인하는 브릿지 메소드를 생성합니다. 
+
+```java
+class MyNode extends Node {
+
+    // 컴파일러에 의해 생성된 브릿지 메소드
+    //
+    public void setData(Object data) {
+        setData((Integer) data);
+    }
+
+    public void setData(Integer data) {
+        System.out.println("MyNode.setData");
+        super.setData(data);
+    }
+
+    // ...
+}
+```
+
+#### 수정 불가한 타입
+
+수정불가한 타입에 관해서는 [링크](https://docs.oracle.com/javase/tutorial/java/generics/nonReifiableVarargsType.html)로 대체합니다
 
 # 출처
 https://docs.oracle.com/javase/tutorial/essential/io/streams.html  
+자바의 정석 3판
