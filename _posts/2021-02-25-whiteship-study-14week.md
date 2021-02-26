@@ -426,8 +426,7 @@ public class week14.Box<T> {
 
 위 코드의 main 메소드에서는 범위를 넘어가는 integerBox.inspect("some text")코드에 대해 오류를 발생합니다.
 ![이미지](https://github.com/redbean88/redbean88.github.io/blob/master/img/genericex02.png?raw=true)
-
-같은 방식으로 클래스에도 적용이 가능합니다.
+같은 방식으로 클래스에도 적용이 가능합니다.
 
 #### 다중 경계(Multiple Bounds)
 
