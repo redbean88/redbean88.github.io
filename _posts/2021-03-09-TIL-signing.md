@@ -4,7 +4,6 @@ title : signing
 categories: signing
 ---
 
-
 # 전자서명
 - 프로그램 악성 여부 확인
 - 원산지 표시(조작을 검증하는 기술적 장치가 있다)
