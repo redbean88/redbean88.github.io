@@ -419,7 +419,7 @@ public class week13.CopyLines {
 }
 ```
 
-호출하면 라인 별로 호출하여 총 4번 while문이 반복된다.
+호출하면 라인 별로 호출하여 총 4번 while문이 반복됩니다.
 
 ### 표준 스트림 (System.in, System.out, System.err)
 
