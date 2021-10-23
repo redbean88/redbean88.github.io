@@ -3,6 +3,7 @@ title: git log option
 date: 2020-09-16 00:00:00 +0000
 categories: [tip]
 ---
+
 + git log option 정리
 + 주요 옵션
 + 예)
