@@ -1,7 +1,7 @@
 ---
 title : 이클립스단축키
 date : 2020-08-25 00:00:00 +0000
-categories : tip
+categories: [tip]
 ---
 
 —– 실행 —–

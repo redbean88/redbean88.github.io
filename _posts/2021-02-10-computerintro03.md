@@ -1,7 +1,7 @@
 ---
 title: 컴퓨터개론 03
-data: 2021-02-10
-categories : computer architecture
+date: 2021-02-10 00:00:00 +0000
+categories: [CS]
 ---
 
 # 컴퓨터 구조 분야의 8가지 아이디어

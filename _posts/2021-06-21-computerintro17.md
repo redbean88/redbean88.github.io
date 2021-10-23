@@ -1,7 +1,7 @@
 ---
 title: 컴퓨터개론 17
-data: 2021-06-21
-categories : computer architecture
+date: 2021-06-21 00:00:00 +0000
+categories: [CS]
 ---
 
 # 주소지정방식

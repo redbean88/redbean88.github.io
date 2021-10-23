@@ -1,7 +1,7 @@
 ---
 title: 컴퓨터개론 18
-data: 2021-06-22
-categories : computer architecture
+date: 2021-06-22 00:00:00 +0000
+categories: [CS]
 ---
 
 # 곱셈

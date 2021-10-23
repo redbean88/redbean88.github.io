@@ -1,7 +1,7 @@
 ---
 date : 2020-03-09 00:00:00 +0000
 title : signing
-categories: signing
+categories: [signing]
 ---
 
 # 전자서명

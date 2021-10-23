@@ -1,7 +1,7 @@
 ---
 title: 컴퓨터개론 01
-data: 2021-02-10
-categories : computer architecture
+date: 2021-02-10
+categories: [CS]
 ---
 
 # 컴퓨터란?

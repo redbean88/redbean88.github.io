@@ -1,7 +1,7 @@
 ---
 title: 컴퓨터개론 21
-data: 2021-07-15
-categories : computer architecture
+date: 2021-07-15 00:00:00 +0000
+categories: [CS]
 ---
 
 # 프로세스 명령어 실행과정

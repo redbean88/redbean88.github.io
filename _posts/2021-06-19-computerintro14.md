@@ -1,7 +1,7 @@
 ---
 title: 컴퓨터개론 14
-data: 2021-06-19
-categories : computer architecture
+date: 2021-06-19 00:00:00 +0000
+categories: [CS]
 ---
 
 # 논리명령어

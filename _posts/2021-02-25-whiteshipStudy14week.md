@@ -1,7 +1,7 @@
 ---
 title : 자바스터디 14주차
 date : 2021-02-25 00:00:00 +0000
-categories : study
+categories: [study]
 ---
 
 # GOAL

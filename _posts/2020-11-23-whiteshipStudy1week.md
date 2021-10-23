@@ -1,7 +1,7 @@
 ---
 title : 자바스터디 1주차
 date : 2020-11-23 00:00:00 +0000
-categories : study
+categories: [study]
 ---
 
 ###### 아래 내용은 https://github.com/league3236/startJava/blob/master/live_study/week1.md 내용을 차용했음을 알려드립니다.

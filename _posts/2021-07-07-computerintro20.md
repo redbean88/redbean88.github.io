@@ -1,7 +1,7 @@
 ---
 title: 컴퓨터개론 20
-data: 2021-07-07
-categories : computer architecture
+date: 2021-07-07 00:00:00 +0000
+categories: [CS]
 ---
 
 # 논리회로

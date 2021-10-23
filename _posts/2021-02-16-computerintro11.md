@@ -1,7 +1,7 @@
 ---
 title: 컴퓨터개론 11
-data: 2021-02-16
-categories : computer architecture
+date: 2021-02-16 00:00:00 +0000
+categories: [CS]
 ---
 
 # 피연산자

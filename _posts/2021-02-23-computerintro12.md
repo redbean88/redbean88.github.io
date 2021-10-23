@@ -1,7 +1,7 @@
 ---
 title: 컴퓨터개론 12
-data: 2021-02-23
-categories : computer architecture
+date: 2021-02-23 00:00:00 +0000
+categories: [CS]
 ---
 
 # 부호

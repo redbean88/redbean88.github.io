@@ -1,7 +1,7 @@
 ---
 title: elegant object
-data: 2021-08-08
-categories : oop
+date: 2021-08-08 00:00:00 +0000
+categories: [oop]
 ---
 
 # 1. 출생

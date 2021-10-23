@@ -1,7 +1,7 @@
 ---
 title: 컴퓨터개론 06
-data: 2021-02-15
-categories : computer architecture
+date: 2021-02-15 00:00:00 +0000
+categories: [CS]
 ---
 
 # CPU 성능
