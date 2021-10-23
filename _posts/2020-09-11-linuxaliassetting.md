@@ -9,6 +9,7 @@ categories: [linux]
   ```
   vi ~/.bashrc
   ```
+
   result[EX]
   ```
   # .bashrc
@@ -22,16 +23,21 @@ categories: [linux]
           . ~/.bash_aliases
   fi
   ```  
+
 + add bash_aliases
+
 ```
 vi ~/.bash_aliases
 ```
+
 + add alias
+
   ```
   alias pet="ps -ef|grep tomcat"
   alias tst="./bin/catalina.sh start && tail -f logs/catalina.out"
   ```
 + reloading a resource file
+
   ```
   source ~/.bashrc
   ```
