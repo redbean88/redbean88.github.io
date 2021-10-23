@@ -167,7 +167,7 @@ Alt + Shift + J : 주석 생성 – 해당 메서드/클래스에 대한 주석�
 
 sysout + (Ctrl + Space) : System.out.println() 문장 삽입 – 코드 템플릿을 이용해서 소스 구문을 추가
 
-(Windows -> Preferences -> JAVA -> Editor -> Templates 에서 자주 쓰는 소스 구문을 추가시키면 <템플릿 이름> + (Ctrl + Space) 로 소스 문장을 완성 시킬 수 있다.)
+(Windows -> Preferences -> JAVA -> Editor -> Templates 에서 자주 쓰는 소스 구문을 추가시키면 {템플릿 이름} + (Ctrl + Space) 로 소스 문장을 완성 시킬 수 있다.)
 
 Alt + Shift + Z : Surround With 메뉴 – try / catch 문이나 for , do , while 등을 해당 블록에 감싸주는 메뉴가 나타난다.
 
