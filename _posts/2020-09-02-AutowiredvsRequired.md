@@ -1,6 +1,6 @@
 ---
-title : @Autowired vs @Required on setter
-date : 2020-09-02 00:00:00 +0000
+title: @Autowired vs @Required on setter
+date: 2020-09-02 00:00:00 +0000
 categories: [why]
 ---
 + @Autowired vs @Required on setter

@@ -1,6 +1,6 @@
 ---
-title : 이클립스단축키
-date : 2020-08-25 00:00:00 +0000
+title: 이클립스단축키
+date: 2020-08-25 00:00:00 +0000
 categories: [tip]
 ---
 
@@ -30,13 +30,13 @@ Ctrl + Shift + J : 입력하면서 거꾸로 찾아갈 수 있음.
 Ctrl + F : 기본적으로 찾기
 
 —– 소스 편집 —–
-Ctrl + Space : 입력 보조장치(Content Assistance) 강제 호출 => 입력하는 도중엔 언제라도 강제 호출 가능하다.
+Ctrl + Space: 입력 보조장치(Content Assistance) 강제 호출 => 입력하는 도중엔 언제라도 강제 호출 가능하다.
 
 F2 : 컴파일 에러의 빨간줄에 커서를 갖져다가 이 키를 누르면 에러의 원인에 대한 힌트를 제공한다.
 
 Ctrl + L : 원하는 소스 라인으로 이동(로컬 히스토리 기능을 이용하면 이전에 편집했던 내용으로 변환이 가능하다.)
 
-Ctrl + Shift + Space : 메소드의 가로안에 커서를 놓고 이 키를 누르면 파라미터 타입 힌트를 볼 수 있다.
+Ctrl + Shift + Space: 메소드의 가로안에 커서를 놓고 이 키를 누르면 파라미터 타입 힌트를 볼 수 있다.
 
 Ctrl + D : 한줄 삭제
 
@@ -54,7 +54,7 @@ Alt + Up(Down) : 위(아래)줄과 바꾸기
 
 Alt + Shift + 방향키 : 블록 선택하기
 
-Ctrl + Shift + Space : 메소드의 파라메터 목록 보기
+Ctrl + Shift + Space: 메소드의 파라메터 목록 보기
 
 Ctrl + Shift + O : 자동으로 import 하기
 
@@ -127,7 +127,7 @@ Ctrl + 1 (빠른교정) – 문 맥에 맞게 소스 교정을 도와 준다. �
 
 Ctrl + 0 : 클래스 구조를 트리로 보기
 
-Ctrl + Space :  Cotent Assist – 소스 구문에서 사용 가능한 메소드, 멤버들의 리스트 메뉴를 보여준다.
+Ctrl + Space: Cotent Assist – 소스 구문에서 사용 가능한 메소드, 멤버들의 리스트 메뉴를 보여준다.
 
 Ctrl + PageUp , Ctrl + PageDown : Edit 창 좌우 이동 – Edit 창이 여러개 띄워져 있을경우 Edit 창간의 이동 한다.
 
@@ -157,7 +157,7 @@ F12 : Editor 창으로 이동 (Debugging 등 자동적으로 포커스가 이동
 
 Alt + Up , Alt + Down : 줄 바꿈 – 해당 라인을 위 / 아래로 이동 시킨다.
 
-Alt + Shift + S : Source Menu – 소스메뉴 (Import 추가 , Comment 추가 , 각종 Generator 메뉴) 가 나타난다.
+Alt + Shift + S: Source Menu – 소스메뉴 (Import 추가 , Comment 추가 , 각종 Generator 메뉴) 가 나타난다.
 
 Alt + Shift + Up : 블록설정 – 소스 코드를 블록 단위로 설정해 준다.
 
