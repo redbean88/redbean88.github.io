@@ -1,6 +1,6 @@
 ---
 title: '[IntelliJ] intellij 유용한 단축키 정리'
-date: 2019-05-21
+date: 2019-05-21 00:00:00 +0000
 ---
 
 [인프런 강의](https://www.inflearn.com/course/intellij-guide/lecture/13200) 참고

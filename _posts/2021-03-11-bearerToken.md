@@ -1,5 +1,5 @@
 ---
-date : 2021-03-11
+date : 2021-03-11 00:00:00 +0000
 title : bearer Token
 categories : auth
 ---
@@ -70,7 +70,7 @@ const encodeHeader = new Buffer(JSON.stringify(header))
       |iss|토큰발급자|
       |sub|토큰제목|
       |aud|토큰대상자|
-      |exp|토큰 만료시간(numbericDate)|
+      |exp|토큰 만료시간(numbericdate)| 00:00:00 +0000
       |nbf|토큰 활성시간(Not Before)|
       |iat|토큰이 발급된 시간(age파악가능)|
       |jti|JWT 고유 식별자|
@@ -113,7 +113,7 @@ const encodeHeader = new Buffer(JSON.stringify(header))
 
   const crypto = require('crypto');
   const Signature = crypto.createHmac('sha256', 'secret')
-                                .update(encodeHeader + '.' + encodepayload)
+                                .update(encodeHeader + '.' + encodepayload) 00:00:00 +0000
                                 .digest('base64')
                                 .replace("=",''); //패딩 제거
 

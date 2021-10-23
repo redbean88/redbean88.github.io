@@ -1,6 +1,6 @@
 ---
 title : 자바스터디 10주차
-date : 2021-01-18
+date : 2021-01-18 00:00:00 +0000
 categories : study
 ---
 
@@ -763,7 +763,7 @@ int getBalance() {
 
     int curBalance = this.balance;    // 공유 데이터인 balance를 읽어온다.
 
-    if(!lock.validate(stamp)) {   // 쓰기 lock에 의해 낙관적 읽기 lock이 풀렸는지 확인
+    if(!lock.validate(stamp)) {   // 쓰기 lock에 의해 낙관적 읽기 lock이 풀렸는지 확인 00:00:00 +0000
         stamp = lock.readLock(); // lock이 풀렸으면, 읽기 lock을 얻으려고 기다린다.
 
         try {
@@ -852,7 +852,7 @@ Condition은 이미 생성된 lock으로부터 new Condition()을 호출해서 �
 + <b>void await(long timeout)</b>
   + boolean await(long time, TimeUnit unit)
   + long awaitNanos(long nanosTimeout)
-  + boolean awaitUntil(Date deadline)
+  + boolean awaitUntil(date deadline) 00:00:00 +0000
 + <b>void notify()</b>
   + void signal()
 + <b>void notifyAll()</b>

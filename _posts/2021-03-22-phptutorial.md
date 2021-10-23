@@ -1,5 +1,5 @@
 ---
-date : 2021-03-22
+date : 2021-03-22 00:00:00 +0000
 title : php-tutorial
 categories : php
 ---
