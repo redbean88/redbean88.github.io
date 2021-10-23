@@ -1,5 +1,5 @@
 ---
-title: [IntelliJ] intellij 유용한 단축키 정리
+title: intellij 유용한 단축키 정리
 date: 2019-05-21 00:00:00 +0000
 ---
 
