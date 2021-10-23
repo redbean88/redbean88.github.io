@@ -1,0 +1,35 @@
+---
+title: 컴퓨터개론 15
+data: 2021-06-20
+categories : computer architecture
+---
+
+# 판단 기능
+
+1. 조건부 분기
+    - 컴퓨터와 단순 계산기의 차이점 : 판단기능
+    - 입력데이터나 연산 결과에 따라 다른 명령어 실행가능
+    - 고급 언어 예시 : if, go to, switch-case
+    - switch-case 문은 if-then-else의 반복
+    - MIPS에서 가장 간단하게 switch-case를 구현하는 방법은 if-then-else를 사용하는 것
+2. 조건부 분기 명령어
+    - beq register1, register2, L1(임의값)
+    - bne register1, register2, L1(임의값) (효율성이 더 좋음)
+    - beq(branch if equal) : 비교 레지스터 값이 같을 경우 L1으로 분기
+    - bne(branch if not equal) : 비교 레지스터 값이 다를 경우 L1으로 분기
+3. 연습문제
+    - ![이미지]()
+4. 명령어 효율성
+    - ![이미지]()
+    - ![이미지]()
+5. 반복문
+    - 계산의 반복적인 수행을 위하여 instruction의 순환이 반드시 필요함
+    - 고급언어 예시: for, while
+6. while문
+    - ![이미지]()
+    - ![이미지]()
+7. 대/소의 비교
+    - Equals, Not Equal외에 변수간 대/소 비교가 존재함
+    - slt, slti 명령어를 이용하여 비교가능
+    - 첫번째 근원지 레지스터와 두번째 근원지 레지스터를 비교하여 첫번째가 작을 경우 목적지 레지스터를 1로 아닐경우 0으로 셋팅
+    - 부호없는 수(unsigned)끼리의 비교는 sltu, sltiu를 사용
