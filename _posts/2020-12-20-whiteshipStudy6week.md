@@ -1,5 +1,5 @@
 ---
-title : "자바스터디 6주차"
+title : 자바스터디 6주차
 date : 2020-12-20
 categories : study
 ---

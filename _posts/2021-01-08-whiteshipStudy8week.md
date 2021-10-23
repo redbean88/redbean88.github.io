@@ -1,5 +1,5 @@
 ---
-title : "자바스터디 8주차"
+title : 자바스터디 8주차
 date : 2021-01-08
 categories : study
 --- 

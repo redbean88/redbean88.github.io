@@ -1,5 +1,5 @@
 ---
-title: "리눅스 단축키"
+title: 리눅스 단축키
 data : 2020-10-30
 categories : linux
 ---

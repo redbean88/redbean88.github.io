@@ -1,5 +1,5 @@
 ---
-title : "자바스터디 14주차"
+title : 자바스터디 14주차
 date : 2021-02-25
 categories : study
 ---
