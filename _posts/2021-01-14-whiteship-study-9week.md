@@ -1,7 +1,7 @@
 ---
 title : "자바스터디 9주차"
 date : 2021-01-15
-categories : study
+categories: [ study]
 --- 
 
 

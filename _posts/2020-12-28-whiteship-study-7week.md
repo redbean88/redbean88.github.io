@@ -1,7 +1,7 @@
 ---
 title : "자바스터디 7주차"
 date : 2020-12-28
-categories : study
+categories: [ study]
 --- 
 
 # GOAL

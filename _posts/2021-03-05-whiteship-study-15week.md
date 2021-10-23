@@ -1,7 +1,7 @@
 ---
 title : "자바스터디 15주차"
 date : 2021-03-05
-categories : study
+categories: [ study]
 ---
 
 # GOAL

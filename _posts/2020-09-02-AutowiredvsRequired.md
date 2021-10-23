@@ -1,7 +1,7 @@
 ---
 title : "@Autowired vs @Required on setter"
 date : 2020-09-02
-categories : why
+categories: [ why]
 ---
 + @Autowired vs @Required on setter
 	+ 두코드 사이의 차이점이 뭔가요?

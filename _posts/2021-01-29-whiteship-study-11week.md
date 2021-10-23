@@ -1,7 +1,7 @@
 ---
 title : "자바스터디 11주차"
 date : 2021-01-29
-categories : study
+categories: [ study]
 ---
 
 # GOAL

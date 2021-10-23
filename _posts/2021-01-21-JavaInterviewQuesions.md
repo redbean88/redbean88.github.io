@@ -1,7 +1,7 @@
 ---
 title : Java_Interview_Questions
 date : 2021-01-21
-categories : interview
+categories: [ interview]
 ---
 
 > 아래 내용은 해당 페이지를 번역한 내용입니다.   

@@ -1,7 +1,7 @@
 ---
 title : "자바스터디 5주차"
 date : 2020-12-15
-categories : study
+categories: [ study]
 ---
 
 # GOAL

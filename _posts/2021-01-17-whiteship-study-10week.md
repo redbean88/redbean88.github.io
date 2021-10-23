@@ -1,7 +1,7 @@
 ---
 title : "자바스터디 10주차"
 date : 2021-01-18
-categories : study
+categories: [ study]
 ---
 
 

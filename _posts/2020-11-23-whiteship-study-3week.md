@@ -1,7 +1,7 @@
 ---
 title : "자바스터디 3주차"
 date : 2020-11-23
-categories : study
+categories: [ study]
 ---
 
 # GOAL
