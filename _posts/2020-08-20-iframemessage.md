@@ -7,8 +7,8 @@ categories: [tip]
 + 기본
 	+ 송신
 	```
-	window.parent.postMessage( data, [ports], targetOrigin ); //자식 > 부모
-	child.contentWindow.postMessage( data, [posts] , targetOrigin ); // 부모 > 자식
+	window.parent.postMessage( data, [ports], targetOrigin ); //자식 # 부모
+	child.contentWindow.postMessage( data, [posts] , targetOrigin ); // 부모 # 자식
 	```
 	+ 수신
 	```
