@@ -1,5 +1,5 @@
 ---
-title : "alias setting"
+title : alias setting
 date : 2020-09-11 00:00:00 +0000
 categories: [linux]
 ---
