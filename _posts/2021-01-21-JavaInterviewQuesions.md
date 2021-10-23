@@ -225,7 +225,7 @@ public static boolean isAcronymMoreBetter(String s1, String s2) {
 
 불가능 합니다.
 
-## 17. enum 은 Threadsafe한가요?[check]
+## 17. enum 은 Threadsafe한가요? check
 
 기본 구조는 Threadsafe하지만, 추가하는 작업에 메소드를 이용한다면 Threadsafe하지 않습니다.
 
