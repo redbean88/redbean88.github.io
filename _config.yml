@@ -159,6 +159,8 @@ exclude:
   - node_modules
   - package.json
 
+future: true
+
 jekyll-archives:
   enabled: [categories, tags]
   layouts:
