@@ -10,7 +10,7 @@ categories : tip
 ```
 $ git log --name-only -2
 commit c555ea057d291bcca9e4c880505bde5159fa1a5e (HEAD -> dev, origin/master, origin/dev, master)
-Author: ayj1002 <aaaa@aaaa.com>
+Author: ayj1002
 Date:   Wed Sep 16 09:24:52 2020 +0900
 
     포틀릿 사진 url 변경
@@ -18,7 +18,7 @@ Date:   Wed Sep 16 09:24:52 2020 +0900
 src/main/java/egovframework/com/cop/bbs/web/EgovBBSManageController.java
 
 commit 3411d65791260e9d33e38c61cdd2cfeded475283
-Author: dackpro00 <aaaa@aaaa.com>
+Author: dackpro00
 Date:   Mon Sep 14 15:58:05 2020 +0900
 
     포틀릿 jsop clean 적용 , 사용자 정보 확인 API 추가 및 예외 처리
@@ -81,19 +81,19 @@ a11bef0 - Scott Chacon, 6 years ago : first commit
 ```
 $ git log -3
 commit c555ea057d291bcca9e4c880505bde5159fa1a5e (HEAD -> dev, origin/master, origin/dev, master)
-Author: ayj1002 <aaaa@aaaa.com>
+Author: ayj1002
 Date:   Wed Sep 16 09:24:52 2020 +0900
 
     포틀릿 사진 url 변경
 
 commit 3411d65791260e9d33e38c61cdd2cfeded475283
-Author: dackpro00 <aaaa@aaaa.com>
+Author: dackpro00
 Date:   Mon Sep 14 15:58:05 2020 +0900
 
     포틀릿 jsop clean 적용 , 사용자 정보 확인 API 추가 및 예외 처리
 
 commit 626b2e24824c50629a8dcfcb8aa16a64685b8d42
-Author: SVN관리자<aaaa@aaaa.com>
+Author: SVN관리
 Date:   Thu Sep 3 16:08:22 2020 +0900
 
     업데이트 'README.md'
