@@ -1,7 +1,7 @@
 ---
 title : "alias setting"
 date : 2020-09-11
-categories : linux
+categories : [linux]
 ---
 + checking a bashrc file
   

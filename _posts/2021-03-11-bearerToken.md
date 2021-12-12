@@ -1,7 +1,7 @@
 ---
 date : 2021-03-11
 title : bearer Token
-categories : auth
+categories : [auth]
 ---
 
 

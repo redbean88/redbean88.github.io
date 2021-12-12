@@ -1,7 +1,7 @@
 ---
 title : "자바스터디 12주차"
 date : 2021-02-06
-categories : study
+categories : [study]
 ---
 
 

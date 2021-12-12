@@ -1,7 +1,7 @@
 ---
 date : 2021-03-22
 title : php-tutorial
-categories : php
+categories : [php]
 ---
 
 # 본문서는 [php 튜토리얼](https://www.everdevel.com/php/intro) 문서를 요약한 문서입니다.

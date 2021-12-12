@@ -1,7 +1,7 @@
 ---
 date : 2021-03-12
 title : webhook
-categories : it
+categories : [it]
 ---
 
 # webhook[웹훅]

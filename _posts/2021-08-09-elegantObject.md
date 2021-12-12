@@ -1,7 +1,7 @@
 ---
 title: elegant object
 data: 2021-08-08
-categories : oop
+categories : [oop]
 ---
 
 # 1. 출생
