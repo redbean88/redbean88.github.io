@@ -549,7 +549,7 @@ public class TestMain {
 ![이미지](https://docs.oracle.com/javase/tutorial/figures/java/generics-subtypeRelationship.gif)  
 _오라클 튜토리얼_
 
-#### 제네릭과 서브타이핑
+#### 제네릭과 서브타이핑
 
 일반 클래스 또는 인터페이스를 확장(extends)하거나 구현(implements)하여 하위 유형을 지정할 수 있습니다. 클래스 또는 인터페이스의 타입 파라미터와 다른 클래스의 타입 파라미터 간의 관계는 extends 및 implements 절에 의해 결정됩니다.
 
@@ -881,7 +881,7 @@ public class MyNode extends Node {
 public static void main(String[] args) {
       MyNode mn = new MyNode(5);
       Node n = mn;            // 원시 타입 -컴파일러는 확인 경고를 표시한다.
-      n.setData("Hello");     // 에러 미발생
+      n.setData("Hello");     // 에러 미발생
       System.out.println(mn.data);    // Hello
   }
 ```
