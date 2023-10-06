@@ -1,0 +1,835 @@
+<!DOCTYPE html><html lang="ko" mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="day-prompt" content="days ago"><meta name="hour-prompt" content="hours ago"><meta name="minute-prompt" content="minutes ago"><meta name="justnow-prompt" content="just now"><meta name="generator" content="Jekyll v4.2.2" /><meta property="og:title" content="자바스터디 10주차" /><meta property="og:locale" content="ko" /><meta name="description" content="아래 내용은 https://github.com/Yadon079/yadon079.github.io/blob/master/_posts/dev/java/study%20halle/2021-01-18-week-10.md 내용을 차용했음을 알려드립니다." /><meta property="og:description" content="아래 내용은 https://github.com/Yadon079/yadon079.github.io/blob/master/_posts/dev/java/study%20halle/2021-01-18-week-10.md 내용을 차용했음을 알려드립니다." /><link rel="canonical" href="https://redbean88.github.io/posts/whiteship-study-10week/" /><meta property="og:url" content="https://redbean88.github.io/posts/whiteship-study-10week/" /><meta property="og:site_name" content="dev note" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2021-01-18T00:00:00+09:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="자바스터디 10주차" /><meta name="twitter:site" content="@redbean88" /><meta name="google-site-verification" content="google_meta_tag_verification" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-12-13T00:24:28+09:00","datePublished":"2021-01-18T00:00:00+09:00","description":"아래 내용은 https://github.com/Yadon079/yadon079.github.io/blob/master/_posts/dev/java/study%20halle/2021-01-18-week-10.md 내용을 차용했음을 알려드립니다.","headline":"자바스터디 10주차","mainEntityOfPage":{"@type":"WebPage","@id":"https://redbean88.github.io/posts/whiteship-study-10week/"},"url":"https://redbean88.github.io/posts/whiteship-study-10week/"}</script><title>자바스터디 10주차 | dev note</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="dev note"><meta name="application-name" content="dev note"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column align-items-end" lang="en"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" alt="avatar" class="mx-auto"> <img src="/assets/img/favicons/android-chrome-384x384.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">dev note</a></div><div class="site-subtitle font-italic">학습한것을 기록합니다.</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <a href="https://github.com/redbean88" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href="https://twitter.com/redbean88" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['doctortor88','gmail.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/"> Home </a> </span> <span>자바스터디 10주차</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="post-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>자바스터디 10주차</h1><div class="post-meta text-muted d-flex flex-column"><div> <span class="semi-bold"> redbean88 </span> on <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="Mon, Jan 18, 2021, 12:00 AM +0900" >Jan 18, 2021<i class="unloaded">2021-01-18T00:00:00+09:00</i> </span></div><div> <span> Updated <span class="timeago lastmod" data-toggle="tooltip" data-placement="bottom" title="Mon, Dec 13, 2021, 12:24 AM +0900" >Dec 13, 2021<i class="unloaded">2021-12-13T00:24:28+09:00</i> </span> </span> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="10676 words">59 min read</span></div></div><div class="post-content"><h6 id="아래-내용은-httpsgithubcomyadon079yadon079githubioblobmaster_postsdevjavastudy20halle2021-01-18-week-10md-내용을-차용했음을-알려드립니다">아래 내용은 https://github.com/Yadon079/yadon079.github.io/blob/master/_posts/dev/java/study%20halle/2021-01-18-week-10.md 내용을 차용했음을 알려드립니다.</h6><h1 id="goal">GOAL</h1><p>자바의 멀티쓰레드 프로그래밍에 대해 학습한다.</p><h1 id="학습할-것">학습할 것</h1><ul><li><a href="#thread-클래스와-runnable-인터페이스">Thread 클래스와 Runnable 인터페이스</a><li><a href="#쓰레드의-상태">쓰레드의 상태</a><li><a href="#쓰레드의-우선순위">쓰레드의 우선순위</a><li><a href="#main-쓰레드">Main 쓰레드</a><li><a href="#동기화">동기화</a><li><a href="#데드락">데드락</a></ul><h1 id="thread-클래스와-runnable-인터페이스">Thread 클래스와 Runnable 인터페이스</h1><h2 id="프로세스와-쓰레드">프로세스와 쓰레드</h2><p>   프로세스(process)란 간단히 말해서 ‘실행 중인 프로그램(program)’이다. 프로그램을 실행하면 OS로부터 실행에 필요한 자원(메모리)를 할당받아 프로세스가 된다.</p><p>프로세스는 프로그램을 수행하는 데 필요한 데이터와 메모리 등의 자원 그리고 쓰레드로 구성되어 있으며 프로세스의 자원을 이용해서 실제로 작업을 수행하는 것이 바로 쓰레드이다.</p><p>모든 프로세스에는 최소한 하나 이상의 쓰레드가 존재하며, 둘 이상의 쓰레드를 가진 프로세스를 <b>멀티쓰레드 프로세스(multi-threaded process)</b>라고 한다.</p><p>공장(프로세스)에서 일하는 일꾼(쓰레드)라고 생각하면 된다.</p><p><img data-proofer-ignore data-src="https://github.com/Yadon079/yadon079.github.io/raw/master/assets/img/study/thread04.png" alt="" /></p><p>하나의 프로세스가 가질 수 있는 쓰레드의 개수는 제한되어 있지 않다. 하지만 쓰레드가 작업을 수행하는데 개별적인 메모리 공간(호출스택)을 필요로 하기 때문에 프로세스의 메모리 한계에 따라 생성할 수 있는 쓰레드의 수가 결정된다.</p><h2 id="멀티태스킹과-멀티쓰레딩">멀티태스킹과 멀티쓰레딩</h2><p>   우리가 사용하는 대부분의 OS는 멀티태스킹(multi-tasking, 다중작업)을 지원하기 때문에 여러 개의 프로세스가 동시에 실행될 수 있다.</p><p>멀티쓰레딩은 하나의 프로세스 내에서 여러 쓰레드가 동시에 작업을 수행하는 것이다. CPU의 코어(core)가 한 번에 단 하나의 작업만 수행할 수 있으므로, 실제로 동시에 처리되는 작업의 개수는 코어의 개수와 일치한다. 그러나 처리해야 하는 쓰레드의 수는 항상 코어의 수보다 많기 때문에 각 코어가 짧은 시간 동안 여러 작업을 번갈아 가며 수행함으로써 여러 작업들이 모두 동시에 수행되는 것처럼 보이게 한다.</p><p>프로세스의 성능이 단순히 쓰레드의 개수에 비례하는 것은 아니며, 하나의 쓰레드를 가진 프로세스 보다 두 개의 쓰레드를 가진 프로세스가 오히려 더 낮은 성능을 보일 수도 있다.</p><h2 id="쓰레드의-구현과-실행">쓰레드의 구현과 실행</h2><p>   쓰레드를 구현하는 방법은 Thread 클래스를 상속받는 방법과 Runnable 인터페이스를 구현하는 방법, 모두 두 가지가 있다. 어느 쪽을 선택해도 별 차이는 없지만 <b>Thread 클래스를 상속받으면 다른 클래스를 상속받을 수 없기 때문에</b>, Runnable 인터페이스를 구현하는 방법이 일반적이다.</p><p>▶<b>Thread 클래스를 상속</b></p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">MyThread</span> <span class="kd">extends</span> <span class="nc">Thread</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span> <span class="c1">// Thread 클래스의 run()을 오버라이딩</span>
+<span class="o">}</span>
+</pre></table></code></div></div><p>▶<b>Runnable 인터페이스를 구현</b></p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">MyThread</span> <span class="kd">implements</span> <span class="nc">Runnable</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span> <span class="c1">// Runnable 인터페이스의 run()을 구현</span>
+<span class="o">}</span>
+</pre></table></code></div></div><p>Runnable 인터페이스는 오로지 <code class="language-plaintext highlighter-rouge">run()</code>만 정의되어 있는 간단한 인터페이스이다. Runnable 인터페이스를 구현하기 위해서 해야 할 일은 추상메서드인 run()의 몸통{ }을 만들어 주는 것 뿐이다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>    <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Runnable</span> <span class="o">{</span>
+        <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">();</span>
+    <span class="o">}</span>
+</pre></table></code></div></div><h3 id="쓰레드를-구현한다는-것은-위의-두-방법-중-어떤-것을-선택하든-쓰레드를-통해-작업하고자-하는-내용으로-run의-몸통-을-채우는-것일-뿐이다">쓰레드를 구현한다는 것은, 위의 두 방법 중 어떤 것을 선택하든, 쓰레드를 통해 작업하고자 하는 내용으로 run()의 몸통{ }을 채우는 것일 뿐이다.</h3><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">App</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">ThreadOne</span> <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadOne</span><span class="o">();</span>
+
+        <span class="nc">Runnable</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadTwo</span><span class="o">();</span>
+        <span class="nc">Thread</span> <span class="n">t2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Thread</span><span class="o">(</span><span class="n">r</span><span class="o">);</span>      <span class="c1">// 생성자 Thread(Runnable Target)</span>
+
+        <span class="n">t1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+        <span class="n">t2</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">ThreadOne</span> <span class="kd">extends</span> <span class="nc">Thread</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">getName</span><span class="o">());</span> <span class="c1">// 조상인 Thread의 getName()을 호출</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">ThreadTwo</span> <span class="kd">implements</span> <span class="nc">Runnable</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="c1">// Thread.currentThread() : 현재 실행 중인 Thread를 반환</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">().</span><span class="na">getName</span><span class="o">());</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="https://github.com/Yadon079/yadon079.github.io/raw/master/assets/img/study/thread01.png" alt="" /></p><p>상속받을 때와 구현할 때의 인스턴스 생성 방법이 다르다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre>  <span class="nc">ThreadOne</span> <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadOne</span><span class="o">();</span>   <span class="c1">// Thread의 자손 클래스의 인스턴스를 생성</span>
+
+  <span class="nc">Runnable</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadTwo</span><span class="o">();</span>     <span class="c1">// Runnable을 구현한 클래스의 인스턴스를 생성</span>
+  <span class="nc">Thread</span> <span class="n">t2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Thread</span><span class="o">(</span><span class="n">r</span><span class="o">);</span>        <span class="c1">// 생성자 Thread(Runnable Target)</span>
+</pre></table></code></div></div><p>Runnable 인터페이스를 구현한 경우, Runnable 인터페이스를 구현한 클래스의 인스턴스를 생성한 다음, 이 인스턴스를 Thread 클래스의 생성자의 매개변수로 제공해야 한다.</p><p>Thread 클래스를 상속받으면, 자손 클래스에서 조상인 Thread 클래스의 메서드를 직접 호출할 수 있지만, Runnable을 구현하면 Thread 클래스의 static 메서드인 <code class="language-plaintext highlighter-rouge">currentThread()</code>를 호출하여 쓰레드에 대한 참조를 얻어 와야만 호출이 가능하다.</p><ul><li><b>static Thread currentThread()</b><ul><li>현재 실행중인 쓰레드의 참조를 반환한다.</ul><li><b>String getName()</b><ul><li>쓰레드의 이름을 반환한다.</ul></ul><p>▶<b>쓰레드의 이름</b></p><p>쓰레드의 이름은 다음과 같은 생성자나 메서드를 통해서 지정 또는 변경할 수 있다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>    <span class="nc">Thread</span><span class="o">(</span><span class="nc">Runnable</span> <span class="n">target</span><span class="o">,</span> <span class="nc">String</span> <span class="n">name</span><span class="o">)</span>
+    <span class="nc">Thread</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span>
+    <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span>
+</pre></table></code></div></div><p>쓰레드의 이름을 지정하지 않으면 ‘Thread-번호’의 형식으로 이름이 정해진다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">().</span><span class="na">getName</span><span class="o">());</span>
+</pre></table></code></div></div><p>위 코드는 아래 코드를 한 줄로 쓴 것이라고 생각하면 된다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>    <span class="nc">Thread</span> <span class="n">t</span> <span class="o">=</span> <span class="nc">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">();</span>
+    <span class="nc">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="na">getName</span><span class="o">();</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
+</pre></table></code></div></div><h2 id="쓰레드의-실행---start">쓰레드의 실행 - start()</h2><p>   쓰레드를 생성했다고 해서 자동으로 실행되는 것은 아니다. start()를 호출해야만 쓰레드가 실행된다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>    <span class="n">t1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+    <span class="n">t2</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+</pre></table></code></div></div><p>사실 start()가 호출되었다고 바로 실행되는 것은 아니고 실행대기 상태에 있다가 자신의 차례가 되어야 실행된다. 물론 실행대기 중인 쓰레드가 하나도 없으면 바로 실행상태가 된다.</p><p>한 번 실행이 종료된 쓰레드는 다시 실행할 수 없다. 즉, 하나의 쓰레드에 대해 start()가 한 번만 호출될 수 있다는 뜻이다.<br /> 따라서 쓰레드의 작업을 한 번 더 수행해야 한다면 새로운 쓰레드를 생성한 다음 start()를 호출해야 한다. 만일 하나의 쓰레드에 대해 start()를 두 번 이상 호출하면 실행 시에 <code class="language-plaintext highlighter-rouge">IllegalThreadStateException</code>이 발생한다.</p><p>▶<b>잘못된 호출</b></p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">App</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">ThreadOne</span> <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadOne</span><span class="o">();</span>
+
+        <span class="n">t1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+        <span class="n">t1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">ThreadOne</span> <span class="kd">extends</span> <span class="nc">Thread</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">getName</span><span class="o">());</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="https://github.com/Yadon079/yadon079.github.io/raw/master/assets/img/study/thread02.png" alt="" /></p><p>▶<b>올바른 호출</b></p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">App</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">ThreadOne</span> <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadOne</span><span class="o">();</span>
+
+        <span class="n">t1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+        <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadOne</span><span class="o">();</span> <span class="c1">// 다시 생성</span>
+        <span class="n">t1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">ThreadOne</span> <span class="kd">extends</span> <span class="nc">Thread</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">getName</span><span class="o">());</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="https://github.com/Yadon079/yadon079.github.io/raw/master/assets/img/study/thread03.png" alt="" /></p><h1 id="쓰레드의-상태">쓰레드의 상태</h1><p>   쓰레드 프로그래밍이 어려운 이유는 동기화(synchronization)와 스케쥴링(scheduling)때문이다. 효율적인 멀티쓰레드 프로그램을 만들기 위해서는 보다 정교한 스케쥴링을 통해 프로세스에게 주어진 자원과 시간을 여러 쓰레드가 낭비없이 잘 사용하도록 프로그래밍 해야 한다.</p><h2 id="쓰레드의-상태-1">쓰레드의 상태</h2><p>쓰레드의 상태는 다음과 같다.</p><ol><li><dl><dt><b>NEW</b><dd>쓰레드가 생성되고 아직 start()가 호출되지 않은 상태</dl><li><dl><dt><b>RUNNABLE</b><dd>실행 중 또는 실행 가능한 상태</dl><li><dl><dt><b>BLOCKED</b><dd>동기화 블럭에 의해서 일시정지된 상태(lock이 풀릴 때까지 기다리는 상태)</dl><li><dl><dt><b>WAITING, TIMED_WATITING</b><dd>쓰레드의 작업이 종료되지는 않았지만 실행가능하지 않은(unrunnable) 일시정지 상태<br /> TIMED_WATITING은 일시정지시간이 지정된 경우를 의미한다.</dl><li><dl><dt><b>TERMINATED</b><dd>쓰레드의 작업이 종료된 상태</dl></ol><p>이러한 쓰레드의 상태는 JDK1.5부터 추가된 Thread의 <code class="language-plaintext highlighter-rouge">getState()</code> 메서드를 호출해서 확인할 수 있다.</p><h2 id="쓰레드의-생성부터-소멸까지">쓰레드의 생성부터 소멸까지</h2><p><img data-proofer-ignore data-src="https://github.com/Yadon079/yadon079.github.io/raw/master/assets/img/study/threadstate.png" alt="" /></p><ol><li>쓰레드를 생성하고 start()를 호출하면 바로 실행되는 것이 아니라 실행대기열에 저장되어 차례를 기다린다. 실행대기열은 Queue와 같은 구조로 먼저 실행대기열에 들어온 쓰레드가 먼저 실행된다.<li>실행대기상태에 있다가 자신의 차례가 되면 실행상태가 된다.<li>주어진 실행시간이 다되거나 yield()를 만나면 다시 실행대기상태가 되고 다음 차례의 쓰레드가 실행상태가 된다.<li>실행 중에 <code class="language-plaintext highlighter-rouge">suspend()</code>, <code class="language-plaintext highlighter-rouge">sleep()</code>, <code class="language-plaintext highlighter-rouge">wait()</code>, <code class="language-plaintext highlighter-rouge">join()</code>, <code class="language-plaintext highlighter-rouge">I/O block</code>에 의해 일시정지상태가 될 수 있다. <code class="language-plaintext highlighter-rouge">I/O block</code>은 입출력작업에서 발생하는 지연상태를 말한다.<li>지정된 일시정지시간이 다되거나(time-out), <code class="language-plaintext highlighter-rouge">notify()</code>, <code class="language-plaintext highlighter-rouge">resume()</code>, <code class="language-plaintext highlighter-rouge">interrupt()</code>가 호출되면 일시정지상태를 벗어나 다시 실행대기열에 저장되어 차례를 기다린다.<li>실행을 모두 마치거나 stop()이 호출되면 쓰레드는 소멸된다.</ol><p>단, 무조건 번호 순서대로 쓰레드가 수행되는 것은 아니다.</p><h2 id="쓰레드의-스케쥴링과-관련된-메서드">쓰레드의 스케쥴링과 관련된 메서드</h2><h3 id="-sleeplong-millis---일정시간동안-쓰레드를-멈추게-한다">▶ <b>sleep(long millis) - 일정시간동안 쓰레드를 멈추게 한다.</b></h3><p>   sleep()은 지정된 시간동안 쓰레드를 멈추게 한다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sleep</span><span class="o">(</span><span class="kt">long</span> <span class="n">millis</span><span class="o">)</span>
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sleep</span><span class="o">(</span><span class="kt">long</span> <span class="n">millis</span><span class="o">,</span> <span class="kt">int</span> <span class="n">nanos</span><span class="o">)</span>
+</pre></table></code></div></div><p>세밀하게 값을 지정할 수 있지만 어느 정도의 오차가 발생할 수도 있다.</p><p>sleep()에 의해 일시정지 상태가 된 쓰레드는 지정된 시간이 다 되거나 interrupt()가 호출되면(InterruptedException 발생), 실행대기 상태가 된다.<br /> 따라서 sleep()을 호출할 때는 항상 try-catch문으로 예외를 처리해줘야 한다. 매번 try-catch문을 사용하기 번거롭기 때문에, 새로운 메서드로 만들어 사용하기도 한다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>    <span class="kt">void</span> <span class="nf">delay</span><span class="o">(</span><span class="kt">long</span> <span class="n">millis</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="nc">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">millis</span><span class="o">)</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{}</span>
+    <span class="o">}</span>
+</pre></table></code></div></div><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+</pre><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">App</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">ThreadOne</span> <span class="n">th1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadOne</span><span class="o">();</span>
+        <span class="nc">ThreadTwo</span> <span class="n">th2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadTwo</span><span class="o">();</span>
+        <span class="n">th1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+        <span class="n">th2</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">th1</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">2000</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="nc">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span> <span class="o">}</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;&lt; main 종료 &gt;&gt;"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">ThreadOne</span> <span class="kd">extends</span> <span class="nc">Thread</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"-"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;&lt; th1 종료 &gt;&gt;"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">ThreadTwo</span> <span class="kd">extends</span> <span class="nc">Thread</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"|"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;&lt; th2 종료 &gt;&gt;"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="https://github.com/Yadon079/yadon079.github.io/raw/master/assets/img/study/sleep.png" alt="" /></p><p>예제의 결과를 보면 th1, th2, main 순으로 종료되었는데, 아래 코드를 생각하면 조금 의외이다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre>    <span class="n">th1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+    <span class="n">th2</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">th1</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">2000</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span> <span class="o">}</span>
+
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;&lt; main 종료 &gt;&gt;"</span><span class="o">);</span>
+</pre></table></code></div></div><p>start()를 호출하고 <code class="language-plaintext highlighter-rouge">th1.sleep(2000)</code>를 호출하여 th1을 2초동안 일시정지상태로 만들었는데 th1이 가장 먼저 종료되었다.</p><p>그 이유는 sleep()이 항상 현재 실행 중인 쓰레드에 대해 작동하기 때문에 <code class="language-plaintext highlighter-rouge">th1.sleep(2000)</code>으로 호출하여도 실제로 영향을 받는 것은 main 메서드를 실행하는 main 쓰레드이다.</p><p>그래서 sleep()은 static으로 선언되어 있으며 참조변수를 이용해서 호출하기 보다는 <code class="language-plaintext highlighter-rouge">Thread.sleep(2000)</code>과 같이 해야한다.</p><h3 id="-interrupt와-interrupted---쓰레드의-작업을-취소한다">▶ <b>interrupt()와 interrupted() - 쓰레드의 작업을 취소한다.</b></h3><p>   진행 중인 쓰레드의 작업이 끝나기 전에 취소시켜야할 때가 있다. interrupt()를 사용하면 쓰레드에게 작업을 멈추라고 요청한다. 단지 멈추라고 요청만 하는 것이고 쓰레드를 강제로 종료시키지는 못한다. interrupt()는 그저 쓰레드의 interrupted상태(인스턴스 변수)를 바꾸는 것일 뿐이다.</p><p>그리고 interrupted()는 쓰레드에 대해 interrupt()가 호출되었는지 알려준다. interrupt()가 호출되지 않았다면 false를, 호출되었다면 true를 반환한다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre><td class="rouge-code"><pre>    <span class="nc">Thread</span> <span class="n">th</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Thread</span><span class="o">();</span>
+    <span class="n">th</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+      <span class="o">...</span>
+    <span class="n">th</span><span class="o">.</span><span class="na">interrupt</span><span class="o">();</span>
+
+    <span class="kd">class</span> <span class="nc">MyThread</span> <span class="kd">extends</span> <span class="nc">Thread</span> <span class="o">{</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">while</span><span class="o">(!</span><span class="n">interrupted</span><span class="o">())</span> <span class="o">{</span>
+                <span class="o">...</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+     <span class="o">}</span>
+</pre></table></code></div></div><p>   <code class="language-plaintext highlighter-rouge">isInterrupted()</code>도 쓰레드의 interrupt()가 호출되었는지 확인하는데 사용할 수 있지만, interrupted()와 달리 isInterrupted()는 쓰레드의 interrupt상태를 false로 초기화하지 않는다.</p><ul><li><b>void interrupt()</b><ul><li>쓰레드의 interrupted상태를 false에서 true로 변경.</ul><li><b>boolean isInterrupted()</b><ul><li>쓰레드의 interrupted상태를 반환.</ul><li><b>static boolean interrupted()</b><ul><li>현재 쓰레드의 interrupted상태를 반환 후, false로 변경.</ul></ul><p>쓰레드가 sleep(), wait(), join()에 의해 <b>일시정지 상태(WAITING)</b>에 있을 때, 해당 쓰레드에 대해 interrupt()를 호출하면, sleep(), wait(), join()에서 InterruptedException이 발생하고 쓰레드는 <b>실행대기 상태(RUNNABLE)</b>로 바뀐다. 즉, 멈춰있던 쓰레드를 깨워서 실행가능한 상태로 만드는 것이다.</p><h3 id="-suspend-resume-stop">▶ <b>suspend(), resume(), stop()</b></h3><p>   suspend()는 sleep()처럼 쓰레드를 멈추게 한다. suspend()에 의해 정지된 쓰레드는 resume()을 호출해야 다시 실행대기 상태가 된다. stop()은 호출되는 즉시 쓰레드가 종료된다.</p><p>suspend(), resume(), stop()은 쓰레드의 실행을 제어하는 가장 손쉬운 방법이지만, suspend()와 stop()이 교착상태(deadlock)을 일으키기 쉽게 작성되어있으므로 사용이 권장되지 않는다. 그래서 이 메서드들은 모두 <b>deprecated</b>되었다. Java API문서 stop()을 찾아보면 아래와 같이 <b>Deprecated.</b>라고 적혀있다.</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span text-data=" Text "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>void stop(Throwable obj)
+  Deprecated.
+This method was originally designed to force a thread to stop and throw a given Throwable as an exception. It was inherently unsafe (see stop() for details), and furthermore could be used to generate exceptions that the target thread was not prepared to handle.
+</pre></table></code></div></div><p><b>deprecated</b>의 의미는 ‘전에는 사용되었지만, 앞으로는 사용하지 않을 것을 권장한다’는 의미이다. deprecated된 메서드는 하위 호환성을 위해서 삭제하지 않는 것일 뿐이므로 사용해서는 안 된다.</p><h3 id="-yield---다른-쓰레드에게-양보한다">▶ <b>yield() - 다른 쓰레드에게 양보한다.</b></h3><p>   yield()는 쓰레드 자신에게 주어진 실행시간을 다음 차례의 쓰레드에게 양보(yield)한다. 예를 들어 스케쥴러에 의해 1초의 실행시간을 할당받은 쓰레드가 0.5초의 시간동안 작업한 상태에서 yield()가 호출되면, 나머지 0.5초는 포기하고 다시 실행대기상태가 된다.</p><h3 id="-join---다른-쓰레드의-작업을-기다린다">▶ <b>join() - 다른 쓰레드의 작업을 기다린다.</b></h3><p>   join()은 자신의 작업 중간에 다른 쓰레드의 작업을 참여(join)시킨다는 의미로 이름 지어진 것이다. 쓰레드 자신이 하던 작업을 잠시 멈추고 다른 쓰레드가 지정된 시간동안 작업을 수행하도록 할 때 사용한다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>    <span class="kt">void</span> <span class="nf">join</span><span class="o">()</span>
+    <span class="kt">void</span> <span class="nf">join</span><span class="o">(</span><span class="kt">long</span> <span class="n">millis</span><span class="o">)</span>
+    <span class="kt">void</span> <span class="nf">join</span><span class="o">(</span><span class="kt">long</span> <span class="n">millis</span><span class="o">,</span> <span class="kt">int</span> <span class="n">nanos</span><span class="o">)</span>
+</pre></table></code></div></div><p>시간을 지정하지 않으면, 해당 쓰레드가 작업을 모두 마칠 때까지 기다리게 된다. 작업 중에 다른 쓰레드의 작업이 먼저 수행되어야할 필요가 있을 때 join()을 사용한다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">th1</span><span class="o">.</span><span class="na">join</span><span class="o">()</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span> <span class="o">}</span>
+</pre></table></code></div></div><p>join()도 sleep()처럼 interrupt()에 의해 대기상태에서 벗어날 수 있으며, join()이 호출되는 부분을 try-catch문으로 감싸야 한다. join()은 여러모로 sleep()과 유사한 점이 많은데, sleep()과 다른 점은 join()은 현재 쓰레드가 아닌 특정 쓰레드에 대해 동작하므로 static메서드가 아니라는 것이다.</p><h1 id="쓰레드의-우선순위">쓰레드의 우선순위</h1><p>   쓰레드는 우선순위(priority)라는 속성(멤버변수)를 가지고 있는데, 이 우선순위의 값에 따라 쓰레드가 얻는 실행시간이 달라진다. 쓰레드가 수행하는 작업의 중요도에 따라 쓰레드의 우선순위를 서로 다르게 지정하여 특정 쓰레드가 더 많은 작업시간을 갖도록 할 수 있다.</p><h2 id="우선순위-지정하기">우선순위 지정하기</h2><p>   쓰레드의 우선순위와 관련된 메서드와 상수는 다음과 같다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre>    <span class="kt">void</span> <span class="nf">setPriority</span><span class="o">(</span><span class="kt">int</span> <span class="n">newPriority</span><span class="o">)</span> <span class="c1">// 쓰레드의 우선순위를 지정한 값으로 변경한다.</span>
+    <span class="kt">int</span> <span class="nf">getPriority</span><span class="o">()</span>                 <span class="c1">// 쓰레드의 우선순위를 반환한다.</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">MAX_PRIORITY</span>  <span class="o">=</span> <span class="mi">10</span>   <span class="c1">// 최대 우선순위</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">MIN_PRIORITY</span>  <span class="o">=</span> <span class="mi">1</span>    <span class="c1">// 최소 우선순위</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">NORM_PRIORITY</span> <span class="o">=</span> <span class="mi">5</span>    <span class="c1">// 보통 우선순위</span>
+</pre></table></code></div></div><p>쓰레드가 가질 수 있는 우선순위의 범위는 1 ~ 10이며 숫자가 높을수록 우선순위가 높다.</p><p>   쓰레드의 우선순위는 쓰레드를 생성한 쓰레드로부터 상속받는다. main메서드를 수행하는 쓰레드는 우선순위가 5이므로 main메서드 내에서 생성하는 쓰레드의 우선순위는 자동적으로 5가 된다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+</pre><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">App</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">ThreadOne</span> <span class="n">th1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadOne</span><span class="o">();</span>
+        <span class="nc">ThreadTwo</span> <span class="n">th2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadTwo</span><span class="o">();</span>
+
+        <span class="n">th2</span><span class="o">.</span><span class="na">setPriority</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Priority of th1(-) : "</span> <span class="o">+</span> <span class="n">th1</span><span class="o">.</span><span class="na">getPriority</span><span class="o">());</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Priority of th2(|) : "</span> <span class="o">+</span> <span class="n">th2</span><span class="o">.</span><span class="na">getPriority</span><span class="o">());</span>
+
+        <span class="n">th1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+        <span class="n">th2</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">ThreadOne</span> <span class="kd">extends</span> <span class="nc">Thread</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"-"</span><span class="o">);</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10000000</span><span class="o">;</span> <span class="n">x</span><span class="o">++);</span> <span class="c1">// 작업을 지연시키기위한 for문</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">ThreadTwo</span> <span class="kd">extends</span> <span class="nc">Thread</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"|"</span><span class="o">);</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10000000</span><span class="o">;</span> <span class="n">x</span><span class="o">++);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="https://github.com/Yadon079/yadon079.github.io/raw/master/assets/img/study/thread06.png" alt="" /></p><p>한 가지 의문은 예제에서 th2의 우선순위를 높게했음에도 불구하고 th1이 먼저 완료되는 결과가 나왔다.</p><p><img data-proofer-ignore data-src="https://github.com/Yadon079/yadon079.github.io/raw/master/assets/img/study/thread05.png" alt="" /></p><p>우선순위가 10에서 7로 낮아졌는데 이번에는 th2가 먼저 완료되었다. 몇 번 더 실행해본 결과 th2가 먼저 완료되는 경우가 많기는 했지만 th1이 먼저 완료되는 경우도 출력이 되었다. 이러한 결과에서 알 수 있듯이 <b>우선순위는 절대적으로 지켜지는 것이 아니다.</b> 다만 우선순위가 높은 쓰레드에게 상대적으로 많은 양의 실행시간이 주어지는 것일 뿐이다.</p><h1 id="main-쓰레드">Main 쓰레드</h1><p>   실제로 쓰레드를 실행시킬 때는 run()이 아니라 start()를 사용한다.</p><p>main메서드에서 run()을 호출하는 것은 생성된 쓰레드를 실행시키는 것이 아니라 단순히 클래스에 선언된 메서드를 호출하는 것일 뿐이다.</p><p>반면에 start()는 새로운 쓰레드가 작업을 실행하는데 필요한 호출스택(call stack)을 생성한 다음에 run()을 호출해서, 생성된 호출스택에 run()이 첫번째로 올라가게 한다.</p><p>모든 쓰레드는 독립적인 작업을 수행하기 위해 자신만의 호출스택이 필요하고, 새로운 쓰레드를 생성하고 실행시킬 때마다 새로운 호출스택이 생성되고 소멸되는 것을 반복한다.</p><p>호출스택은 이름처럼 스택(stack)과 같이 동작하며 가장 위에 있는 메서드가 현재 실행중인 메서드이고 나머지 메서드들은 대기상태이다. 그러나 쓰레드가 둘 이상인 경우에는 호출스택의 최상위에 있는 메서드일지라도 대기상태에 있을 수 있다.</p><h2 id="main쓰레드">main쓰레드</h2><p>   main메서드의 작업을 수행하는 것도 쓰레드이며, 이를 main 쓰레드라고 한다. 프로그램을 실행하면 기본적으로 하나의 쓰레드를 생성하고, 그 쓰레드가 main메서드를 호출해서 작업이 수행되는 것이다.</p><p>보통 main메서드가 수행을 마치면 프로그램이 종료되지만, main메서드는 수행을 마쳤는데 다른 쓰레드가 아직 작업을 마치지 않은 상태라면 프로그램이 종료되지 않는다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">App</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">ThreadOne</span> <span class="n">th1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadOne</span><span class="o">();</span>
+        <span class="n">th1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">ThreadOne</span> <span class="kd">extends</span> <span class="nc">Thread</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">throwException</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">throwException</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">Exception</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="https://github.com/Yadon079/yadon079.github.io/raw/master/assets/img/study/thread07.png" alt="" /></p><p>결과를 보면 알 수 있듯이 호출스택의 첫 번째 메서드가 main메서드가 아니라 run메서드이다.</p><p>한 쓰레드가 예외를 발생해서 종료되어도 다른 쓰레드의 실행에는 영향을 미치지 않는다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">App</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">ThreadOne</span> <span class="n">th1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadOne</span><span class="o">();</span>
+        <span class="n">th1</span><span class="o">.</span><span class="na">run</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">ThreadOne</span> <span class="kd">extends</span> <span class="nc">Thread</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">throwException</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">throwException</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">Exception</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="https://github.com/Yadon079/yadon079.github.io/raw/master/assets/img/study/thread08.png" alt="" /></p><p>이전 예제와 달리 run()을 사용하여 새로운 쓰레드가 생성되지 않았다.</p><h1 id="동기화">동기화</h1><p>   멀티쓰레드 프로세스의 경우 여러 쓰레드가 같은 프로세스 내의 자원을 공유하기 때문에 서로의 작업에 영향을 줄 수 있다.</p><p>이러한 일을 방지하기 위해서 한 쓰레드가 특정 작업을 끝마치기 전까지 다른 쓰레드에 의해 방해받지 않도록 하는 것이 필요하다. 그래서 도입된 개념이 바로 ‘임계 영역(critical section)’과 ‘잠금(락, lock)’이다.</p><p>공유 데이터를 사용하는 코드 영역을 임계 영역으로 지정해놓고, 공유 데이터(객체)가 가지고 있는 lock을 획득한 단 하나의 쓰레드만 이 영역 내의 코드를 수행할 수 있게 한다. 그리고 해당 쓰레드가 임계 영역 내의 모든 코드를 수행하고 벗어나서 lock을 반납해야만 다른 쓰레드가 반납된 lock을 획득하여 임계 영역의 코드를 수행할 수 있게 된다.</p><p>이렇게 <b>한 쓰레드가 진행 중인 작업을 다른 쓰레드가 간섭하지 못하도록 막는 것을 ‘쓰레드의 동기화(synchronization)’</b>라고 한다.</p><p>자바에서는 synchronized블럭을 이용해서 쓰레드의 동기화를 지원했지만, JDK1.5부터 <code class="language-plaintext highlighter-rouge">java.util.concurrent.locks</code>와 <code class="language-plaintext highlighter-rouge">java.util.concurrent.atomic</code>패키지를 통해서 다양한 방식으로 동기화를 구현할 수 있도록 지원하고 있다.</p><h2 id="synchronized를-이용한-동기화">synchronized를 이용한 동기화</h2><p>   가장 간단한 동기화 방법인 synchronized 키워드를 이용한 동기화는 두 가지 방식이 있다.</p><ol><li><p><b>메서드 전체를 임계 영역으로 지정</b><br /> public <b>synchronized</b> void calcSum() {<br /> // …<br /> }</p><li><p><b>특정한 영역을 임계 영역으로 지정</b><br /> <b>synchronized</b>(객체의 참조변수) {<br /> // …<br /> }</p></ol><p>첫 번째 방법은 메서드 앞에 synchronized를 붙이는 것인데, synchronized를 붙이면 메서드 전체가 임계 영역으로 설정된다. 쓰레드는 synchronized메서드가 호출된 시점부터 해당 메서드가 포함된 객체의 lock을 얻어 작업을 수행하다가 메서드가 종료되면 lock을 반환한다.</p><p>두 번째 방법은 메서드 내의 코드 일부를 블럭으로 감싸고 블럭 앞에 <code class="language-plaintext highlighter-rouge">synchronized(참조변수)</code>를 붙이는 것인데, 이 때 참조변수는 락을 걸고자 하는 객체를 참조하는 것이어야 한다. 이 블럭을 synchronized블럭이라고 부르며, 이 블럭의 영역 안으로 들어가면서부터 쓰레드는 지정된 객체의 lock을 얻게 되고, 이 블럭을 벗어나면 lock을 반납한다.</p><p>   두 방법 모두 lock의 획득과 반납이 모두 자동적으로 이루어지므로 우리가 해야 할 일은 그저 임계 영역만 설정해주는 것뿐이다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+</pre><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">App</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Runnable</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RunnableEx</span><span class="o">();</span>
+        <span class="k">new</span> <span class="nf">Thread</span><span class="o">(</span><span class="n">r</span><span class="o">).</span><span class="na">start</span><span class="o">();</span>
+        <span class="k">new</span> <span class="nf">Thread</span><span class="o">(</span><span class="n">r</span><span class="o">).</span><span class="na">start</span><span class="o">();</span>
+        <span class="k">new</span> <span class="nf">Thread</span><span class="o">(</span><span class="n">r</span><span class="o">).</span><span class="na">start</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Account</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">balance</span> <span class="o">=</span> <span class="mi">1000</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getBalance</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">balance</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">withdraw</span><span class="o">(</span><span class="kt">int</span> <span class="n">money</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">balance</span> <span class="o">&gt;=</span> <span class="n">money</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="nc">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">1000</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+            <span class="n">balance</span> <span class="o">-=</span> <span class="n">money</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">RunnableEx</span> <span class="kd">implements</span> <span class="nc">Runnable</span> <span class="o">{</span>
+    <span class="nc">Account</span> <span class="n">acc</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Account</span><span class="o">();</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">acc</span><span class="o">.</span><span class="na">getBalance</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// 100, 200, 300 중 임의의 한 값으로 출금(withdraw)</span>
+            <span class="kt">int</span> <span class="n">money</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="o">(</span><span class="nc">Math</span><span class="o">.</span><span class="na">random</span><span class="o">()</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">*</span> <span class="mi">100</span><span class="o">;</span>
+            <span class="n">acc</span><span class="o">.</span><span class="na">withdraw</span><span class="o">(</span><span class="n">money</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"balance : "</span> <span class="o">+</span> <span class="n">acc</span><span class="o">.</span><span class="na">getBalance</span><span class="o">());</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"출금되었습니다."</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="https://github.com/Yadon079/yadon079.github.io/raw/master/assets/img/study/thread10.png" alt="" /></p><p>은행계좌에서 잔고를 확인하고 임의의 금액을 출금하는 예제이다. 코드 중 withdraw부분을 살펴보면 잔고가 출금하려는 금액보다 큰 경우에만 출금하도록 되어 있는 것을 확인할 수 있다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">withdraw</span><span class="o">(</span><span class="kt">int</span> <span class="n">money</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">balance</span> <span class="o">&gt;=</span> <span class="n">money</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="nc">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">1000</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span> <span class="o">}</span>
+            <span class="n">balance</span> <span class="o">-=</span> <span class="n">money</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</pre></table></code></div></div><p>그러나 실행결과를 보면 잔고가 음수 값으로 되어있는데, 그 이유는 한 쓰레드가 if문의 조건식을 통과하고 출금하기 바로 직전에 다른 쓰레드가 끼어들어서 출금을 먼저 했기 때문이다.</p><p>이러한 상황을 막기 위해서 synchronized를 사용하는 것이다.</p><p>아래 코드는 synchronized를 사용하여 수정한 코드이다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+</pre><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">App</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Runnable</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RunnableEx</span><span class="o">();</span>
+        <span class="k">new</span> <span class="nf">Thread</span><span class="o">(</span><span class="n">r</span><span class="o">).</span><span class="na">start</span><span class="o">();</span>
+        <span class="k">new</span> <span class="nf">Thread</span><span class="o">(</span><span class="n">r</span><span class="o">).</span><span class="na">start</span><span class="o">();</span>
+        <span class="k">new</span> <span class="nf">Thread</span><span class="o">(</span><span class="n">r</span><span class="o">).</span><span class="na">start</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Account</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">balance</span> <span class="o">=</span> <span class="mi">1000</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getBalance</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">balance</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">withdraw</span><span class="o">(</span><span class="kt">int</span> <span class="n">money</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">balance</span> <span class="o">&gt;=</span> <span class="n">money</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="nc">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">1000</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+            <span class="n">balance</span> <span class="o">-=</span> <span class="n">money</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">RunnableEx</span> <span class="kd">implements</span> <span class="nc">Runnable</span> <span class="o">{</span>
+    <span class="nc">Account</span> <span class="n">acc</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Account</span><span class="o">();</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">acc</span><span class="o">.</span><span class="na">getBalance</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// 100, 200, 300 중 임의의 한 값으로 출금(withdraw)</span>
+            <span class="kt">int</span> <span class="n">money</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="o">(</span><span class="nc">Math</span><span class="o">.</span><span class="na">random</span><span class="o">()</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">*</span> <span class="mi">100</span><span class="o">;</span>
+            <span class="n">acc</span><span class="o">.</span><span class="na">withdraw</span><span class="o">(</span><span class="n">money</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"balance : "</span> <span class="o">+</span> <span class="n">acc</span><span class="o">.</span><span class="na">getBalance</span><span class="o">());</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"출금되었습니다."</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="https://github.com/Yadon079/yadon079.github.io/raw/master/assets/img/study/thread09.png" alt="" /></p><p>결과 값에 음수가 사라진 것을 확인할 수 있다. 여기서 한 가지 주의할 점은 Account클래스의 인스턴스 변수인 balance의 접근 제어자가 private이라는 것이다. 만일 private이 아니면, 외부에서 직접 접근할 수 있기 때문에 동기화가 무의미해 진다. <b>synchronized를 이용한 동기화는 지정된 영역의 코드를 한 번에 하나의 쓰레드가 수행하는 것을 보장하는 것</b>일 뿐이기 때문이다.</p><h2 id="wait와-notify">wait()와 notify()</h2><p>   동기화를 이용해서 공유 데이터를 보호하는 것은 좋은데, 특정 쓰레드가 락을 보유한 채로 상황이 해결될 때까지 오랜 시간을 보내게 된다면, 다른 작업들이 원활히 진행되지 않을 것이다.</p><p>   이러한 상황을 개선하기 위해 고안된 것이 바로 <code class="language-plaintext highlighter-rouge">wait()</code>와 <code class="language-plaintext highlighter-rouge">notify()</code>이다. 동기화된 임계 영역의 코드를 수행하다가 작업을 더 이상 진행할 상황이 아니면, 일단 wait()를 호출하여 쓰레드가 락을 반납하고 기다리게 한다. 그러면 다른 쓰레드가 락을 얻어 해당 객체에 대한 작업을 수행할 수 있게 된다. 나중에 작업을 진행할 수 있는 상황이 되면 notify()를 호출해서, 작업을 중단했던 쓰레드가 다시 락을 얻어 작업을 진행할 수 있게 한다.</p><p>lock이 넘어간다고 해서 무조건 오래 기다리던 쓰레드가 받게 된다는 보장은 없다. wait()을 호출하면 작업을 하던 쓰레드는 해당 객체의 대기실(waiting pool)로 이동하여 연락을 기다린다. notify()가 호출되면, 해당 객체의 대기실에 있던 모든 쓰레드 중 임의의 쓰레드만 연락을 받게되고, notifyAll()이 호출되면 연락은 모든 쓰레드가 받지만 랜덤하게 선택된 하나의 쓰레드가 lock을 받게 된다.</p><p>   wait()와 notify()는 특정 객체에 대한 것이므로 Object클래스에 정의되어있다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>    <span class="kt">void</span> <span class="nf">wait</span><span class="o">()</span>
+    <span class="kt">void</span> <span class="nf">wait</span><span class="o">(</span><span class="kt">long</span> <span class="n">timeout</span><span class="o">)</span>
+    <span class="kt">void</span> <span class="nf">wait</span><span class="o">(</span><span class="kt">long</span> <span class="n">timeout</span><span class="o">,</span> <span class="kt">int</span> <span class="n">nanos</span><span class="o">)</span>
+    <span class="kt">void</span> <span class="nf">notify</span><span class="o">()</span>
+    <span class="kt">void</span> <span class="nf">notifyAll</span><span class="o">()</span>
+</pre></table></code></div></div><p>wait()는 notify() 또는 notifyAll()이 호출될 때까지 기다리지만, 매개변수가 있는 wait()는 지정된 시간동안만 기다린다.</p><p>waiting pool은 객체마다 존재하는 것이므로 notifyAll()이 호출된다고 해서 모든 객체의 waiting pool에 있는 쓰레드가 깨워지는 것은 아니다. notifyAll()이 호출된 객체의 waiting pool에 대기 중인 쓰레드만 해당된다.</p><ul><li><b>wait(), notify(), notifyAll()</b><ul><li>Object에 정의되어 있다.<li>동기화 블록(synchronized블록)내에서만 사용할 수 있다.<li>보다 효율적인 동기화를 가능하게 한다.</ul></ul><h3 id="기아-현상과-경쟁-상태">기아 현상과 경쟁 상태</h3><p>정말 지독하게 운이 나빠서 쓰레드가 연락을 받지 못하고 오랫동안 기다리게 되는데, 이것은 <b>기아(starvation) 현상</b>이라고 한다. 이 현상을 막으려면, notify() 대신 notifyAll()을 사용해야 한다.</p><p>notifyAll()로 원하는 쓰레드의 기아현상은 막았지만, 다른 쓰레드까지 연락을 받아서 불필요하게 lock을 얻기 위해 경쟁하게 된다. 이처럼 여러 쓰레드가 lock을 얻기 위해 서로 경쟁하는 것을 <b>경쟁 상태(race condition)</b>라고 하는데, 이것을 개선하기 위해서는 구별해서 연락하는 것이 필요하다.</p><h2 id="lock과-condition을-이용한-동기화">Lock과 Condition을 이용한 동기화</h2><p>   동기화할 수 있는 방법은 synchronized블럭 외에도 <code class="language-plaintext highlighter-rouge">java.util.concurrent.locks</code>패키지가 제공하는 lock클래스들을 이용하는 방법이 있다. 이 패키지는 JDK1.5에 와서야 추가된 것으로 그 전에는 동기화 방법이 synchronized블럭뿐이었다.</p><p>   synchronized블럭으로 동기화를 하면 자동적으로 lock이 잠기고 풀리기 때문에 편리하다. 하지만 같은 메서드 내에서만 lock을 걸 수 있다는 제약이 불편하기도 하다. 그럴 때 이 lock클래스를 사용한다. lock클래스의 종류는 다음과 같이 3가지가 있다.</p><ul><li><b>ReentrantLock</b><ul><li>재진입이 가능한 lock. 가장 일반적인 배타 lock</ul><li><b>ReentrantReadWriteLock</b><ul><li>읽기에는 공유적이고, 쓰기에는 배타적인 lock</ul><li><b>StampedLock</b><ul><li>ReentrantReadWriteLock에 낙관적인 lock을 추가</ul></ul><p><b>▶ ReentrantLock</b></p><p>   ReentrantLock은 가장 일반적인 lock이다. ‘reentrant(재진입할 수 있는)’이라는 단어가 앞에 붙은 이유는 wait() &amp; notify()처럼, 특정 조건에서 lock을 풀고 나중에 다시 lock을 얻어 이후의 작업을 수행할 수 있기 때문이다.</p><p><b>▶ ReentrantReadWriteLock</b></p><p>   ReentrantReadWriteLock은 읽기를 위한 lock과 쓰기를 위한 lock을 제공한다. ReentrantLock은 배타적인 lock이라서 무조건 lock이 있어야만 임계 영역의 코드를 수행할 수 있지만, ReentrantReadWriteLock은 읽기 lock이 걸려있으면, 다른 쓰레드가 읽기 lock을 중복해서 걸고 읽기를 수행할 수 있다. 읽기는 내용을 변경하지 않으므로 동시에 여러 쓰레드가 읽어도 문제가 되지 않는다. 그러나 읽기 lock이 걸린 상태에서 쓰기 lock을 거는 것은 허용되지 않는다. 반대의 경우도 마찬가지다. 읽기를 할 때는 읽기 lock을 걸고, 쓰기 할 때는 쓰기 lock을 거는 것일 뿐 lock을 거는 방법은 같다.</p><p><b>▶ StampedLock</b></p><p>   StampedLock은 lock을 걸거나 해지할 때 ‘스탬프(long타입의 정수값)’를 사용하며, 읽기와 쓰기를 위한 lock외에 ‘낙관적 읽기 lock(optimistic reading lock)’이 추가된 것이다. 읽기 lock이 걸려있으면, 쓰기 lock을 얻기 위해서는 읽기 lock이 풀릴 때까지 기다려야하는데 비해 ‘낙관적 읽기 lock’은 쓰기 lock에 의해 바로 풀린다. 따라서 낙관적 읽기에 실패하면, 읽기 lock을 얻어서 다시 읽어 와야 한다. <b>무조건 읽기 lock을 걸지 않고, 쓰기와 읽기가 충돌할 때만 쓰기가 끝난 후에 읽기 lock을 거는 것이다.</b></p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre><td class="rouge-code"><pre><span class="kt">int</span> <span class="nf">getBalance</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kt">long</span> <span class="n">stamp</span> <span class="o">=</span> <span class="n">lock</span><span class="o">.</span><span class="na">tryOptimisticRead</span><span class="o">();</span>  <span class="c1">// 낙관적 읽기 lock을 건다.</span>
+
+    <span class="kt">int</span> <span class="n">curBalance</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">balance</span><span class="o">;</span>    <span class="c1">// 공유 데이터인 balance를 읽어온다.</span>
+
+    <span class="k">if</span><span class="o">(!</span><span class="n">lock</span><span class="o">.</span><span class="na">validate</span><span class="o">(</span><span class="n">stamp</span><span class="o">))</span> <span class="o">{</span>   <span class="c1">// 쓰기 lock에 의해 낙관적 읽기 lock이 풀렸는지 확인</span>
+        <span class="n">stamp</span> <span class="o">=</span> <span class="n">lock</span><span class="o">.</span><span class="na">readLock</span><span class="o">();</span> <span class="c1">// lock이 풀렸으면, 읽기 lock을 얻으려고 기다린다.</span>
+
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">curBalance</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">balance</span><span class="o">;</span>    <span class="c1">// 공유 데이터를 다시 읽어온다.</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="n">lock</span><span class="o">.</span><span class="na">unlockRead</span><span class="o">(</span><span class="n">stamp</span><span class="o">);</span>     <span class="c1">// 읽기 lock을 푼다.</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">curBalance</span><span class="o">;</span>    <span class="c1">// 낙관적 읽기 lock이 풀리지 않았으면 곧바로 읽어온 값을 반환</span>
+<span class="o">}</span>
+</pre></table></code></div></div><h3 id="reentrantlock의-생성자">ReentrantLock의 생성자</h3><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>    <span class="nc">ReentrantLock</span><span class="o">()</span>
+    <span class="nc">ReentrantLock</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">fair</span><span class="o">)</span>
+</pre></table></code></div></div><p>생성자의 매개변수를 true로 주면, lock이 풀렸을 때 가장 오래 기다린 쓰레드가 lock을 획득할 수 있게, 즉 공정(fair)하게 처리한다. 그러나 공정하게 처리하면 가장 오래된 쓰레드를 찾는 과정이 추가되어 성능이 떨어진다.</p><p>   대부분의 경우 공정하게 처리하지 않아도 문제가 되지 않으므로 공정함보다 성능을 선택한다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>    <span class="kt">void</span> <span class="nf">lock</span><span class="o">()</span>         <span class="c1">// lock을 잠근다.</span>
+    <span class="kt">void</span> <span class="nf">unlock</span><span class="o">()</span>       <span class="c1">// lock을 해제한다.</span>
+    <span class="kt">boolean</span> <span class="nf">isLocked</span><span class="o">()</span>  <span class="c1">// lock이 잠겼는지 확인한다.</span>
+</pre></table></code></div></div><p>자동적으로 lock의 잠금과 해제가 관리되는 synchronized블럭과 달리, ReentrantLock과 같은 lock클래스들은 수동으로 lock을 잠그고 해제해야 한다. 하지만 메서드를 호출하기만 하면되기 때문에 간단하다. lock을 걸고 나서 푸는 것을 잊지않도록 주의하자.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>    <span class="n">lock</span><span class="o">.</span><span class="na">lock</span><span class="o">();</span>
+    <span class="c1">// 임계 영역</span>
+    <span class="n">lock</span><span class="o">.</span><span class="na">unlock</span><span class="o">();</span>
+</pre></table></code></div></div><p>임계 영역 내에서 예외가 발생하거나 return문으로 빠져 나가게 되면 lock이 풀리지 않을 수 있으므로 unlock()은 try-finally문으로 감싸는 것이 일반적이다. 참조변수 lock은 ReentrantLock객체를 참조한다고 가정하였다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre>    <span class="n">lock</span><span class="o">.</span><span class="na">lock</span><span class="o">();</span>
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="c1">// 임계 영역</span>
+    <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+        <span class="n">lock</span><span class="o">.</span><span class="na">unlock</span><span class="o">();</span>
+    <span class="o">}</span>
+</pre></table></code></div></div><p>이렇게 하면, try블럭 내에서 어떤 일이 발생해도 finally블럭에 있는 unlock()이 수행되어 lock이 풀리지 않는 일은 발생하지 않는다. 대부분의 경우 synchronized블럭을 사용할 수 있어서 그냥 synchronized블럭을 사용하는 것이 나을 수 있다.</p><p>▶ tryLock()</p><p>   tryLock()은 lock()과 달리, 다른 쓰레드에 의해 lock이 걸려 있으면 lock을 얻으려고 기다리지 않는다. 또는 지정된 시간만큼만 기다린다. lock을 얻으면 true, 얻지 못하면 false를 반환한다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>    <span class="kt">boolean</span> <span class="nf">tryLock</span><span class="o">()</span>
+    <span class="kt">boolean</span> <span class="nf">tryLock</span><span class="o">(</span><span class="kt">long</span> <span class="n">timeout</span><span class="o">,</span> <span class="nc">TimeUnit</span> <span class="n">unit</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">InterruptedException</span>
+</pre></table></code></div></div><p>lock()은 lock을 얻을 때까지 쓰레드를 블락(block)시키므로 쓰레드의 응답성이 나빠질 수 있다. 응답성이 중요한 경우, tryLock()을 이용해서 지정된 시간동안 lock을 얻지 못하면 다시 작업을 시도할 것인지 포기할 것인지를 사용자가 결정할 수 있게 하는 것이 좋다.</p><p>이 메서드는 InterruptedException을 발생시킬 수 있는데, 이것은 지정된 시간동안 lock을 얻을려고 기다리는 중에 interrupt()에 의해 작업이 취소될 수 있도록 코드를 작성할 수 있다는 뜻이다.</p><h3 id="reentrantlock과-condition">ReentrantLock과 Condition</h3><p>Condition은 wait() &amp; notify()에서 쓰레드를 구분해서 연락하지 못한다는 단점을 해결하기 위한 것이다.</p><p>   wait() &amp; notify()로 쓰레드의 종류를 구분하지 않고, 공유 객체의 waiting pool에 같이 몰아넣은 대신, 각각의 쓰레드의 Condition을 만들어서 각각의 waiting pool에서 기다리도록 하면 문제는 해결된다.</p><p>Condition은 이미 생성된 lock으로부터 new Condition()을 호출해서 생성한다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>    <span class="kd">private</span> <span class="nc">ReentrantLock</span> <span class="n">lock</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ReentrantLock</span><span class="o">();</span> <span class="c1">// lock을 생성</span>
+
+    <span class="c1">// lock으로 condition을 생성</span>
+    <span class="kd">private</span> <span class="nc">Condition</span> <span class="n">forOne</span> <span class="o">=</span> <span class="n">lock</span><span class="o">.</span><span class="na">newCondition</span><span class="o">();</span>
+    <span class="kd">private</span> <span class="nc">Condition</span> <span class="n">forTwo</span> <span class="o">=</span> <span class="n">lock</span><span class="o">.</span><span class="na">newCondition</span><span class="o">();</span>
+</pre></table></code></div></div><p>그리고 wait() &amp; notify() 대신 await() &amp; signal()을 사용하면된다.</p><ul><li><b>void await()</b><ul><li>void await()<li>void awaitUninterruptibly()</ul><li><b>void await(long timeout)</b><ul><li>boolean await(long time, TimeUnit unit)<li>long awaitNanos(long nanosTimeout)<li>boolean awaitUntil(Date deadline)</ul><li><b>void notify()</b><ul><li>void signal()</ul><li><b>void notifyAll()</b><ul><li>void signalAll()</ul></ul><h1 id="데드락">데드락</h1><p>   교착상태(데드락, deadlock)은 두 개 이상의 작업이 서로 상대방의 작업이 끝나기를 기다리고 있어서 아무것도 완료되지 못하는 상태를 말한다.</p><h3 id="교착상태의-조건">교착상태의 조건</h3><ol><li>상호배제(Mutual exclusion) : 프로세스들이 필요로 하는 자원에 대해 배타적인 통제권을 요구한다.<li>점유대기(Hold and wait) : 프로세스가 할당된 자원을 가진 상태에서 다른 자원을 기다린다.<li>비선점(No preemption) : 프로세스가 어떤 자원의 사용을 끝낼 때까지 그 자원을 뺏을 수 없다.<li>순환대기(Circular wait) : 각 프로세스는 순환적으로 다음 프로세스가 요구하는 자원을 가지고 있다.</ol><blockquote><p>위 조건 중에서 한 가지라도 만족하지 않으면 교착 상태는 발생하지 않는다. 이중 순환대기 조건은 점유대기 조건과 비선점 조건을 만족해야 성립하는 조건이므로, 위 4가지 조건은 서로 완전히 독립적인 것은 아니다.</p></blockquote><p>교착상태는 예방, 회피, 무시 세 가지 방법으로 관리할 수 있다.</p><h2 id="예방">예방</h2><ul><li><b>상호배제 조건의 제거</b><ul><li>교착 상태는 두 개 이상의 프로세스가 공유가능한 자원을 사용할 때 발생하는 것이므로 공유 불가능한, 즉 상호 배제 조건을 제거하면 교착 상태를 해결할 수 있다.</ul><li><b>점유와 대기 조건의 제거</b><ul><li>한 프로세스에 수행되기 전에 모든 자원을 할당시키고 나서 점유하지 않을 때에는 다른 프로세스가 자원을 요구하도록 하는 방법이다. 자원 과다 사용으로 인한 효율성, 프로세스가 요구하는 자원을 파악하는 데에 대한 비용, 자원에 대한 내용을 저장 및 복원하기 위한 비용, 기아 상태, 무한대기 등의 문제점이 있다.</ul><li><b>비선점 조건의 제거</b><ul><li>비선점 프로세스에 대해 선점 가능한 프로토콜을 만들어 준다.</ul><li><b>환형 대기 조건의 제거</b><ul><li>자원 유형에 따라 순서를 매긴다.</ul></ul><p>이 해결 방법들은 자원 사용의 효율성이 떨어지고 비용이 많이 드는 문제점이 있다.</p><h2 id="회피">회피</h2><p>자원이 어떻게 요청될지에 대한 추가정보를 제공하도록 요구하는 것으로 시스템에 circular wait가 발생하지 않도록 자원 할당 상태를 검사한다.</p><p>교착 상태 회피 알고리즘은 크게 두가지가 있다.</p><ol><li><a href="https://ko.m.wikipedia.org/w/index.php?title=%EC%9E%90%EC%9B%90_%ED%95%A0%EB%8B%B9_%EA%B7%B8%EB%9E%98%ED%94%84_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98&amp;action=edit&amp;redlink=1">자원 할당 그래프 알고리즘</a> (Resource Allocation Graph Algorithm)<li><a href="https://ko.m.wikipedia.org/w/index.php?title=%EC%9D%80%ED%96%89%EC%9B%90_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98&amp;action=edit&amp;redlink=1">은행원 알고리즘</a> (Banker’s algorithm)</ol><h2 id="무시">무시</h2><p>예방과 회피방법을 활용하면 성능 상 이슈가 발생하는데, 데드락 발생에 대한 상황을 고려하는 것에 대한 비용이 낮다면 별다른 조치를 하지 않을 수도 있다고 한다.</p><p>다음 코드는 오라클에서 제공하는 데드락의 예제이다.</p><div class="language-java highlighter-rouge"><div class="code-header"> <span text-data=" Java "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Deadlock</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Friend</span> <span class="o">{</span>
+        <span class="kd">private</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+        <span class="kd">public</span> <span class="nf">Friend</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">name</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="kd">public</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">bow</span><span class="o">(</span><span class="nc">Friend</span> <span class="n">bower</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"%s: %s"</span>
+                <span class="o">+</span> <span class="s">"  has bowed to me!%n"</span><span class="o">,</span>
+                <span class="k">this</span><span class="o">.</span><span class="na">name</span><span class="o">,</span> <span class="n">bower</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+            <span class="n">bower</span><span class="o">.</span><span class="na">bowBack</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="kd">public</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">bowBack</span><span class="o">(</span><span class="nc">Friend</span> <span class="n">bower</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"%s: %s"</span>
+                <span class="o">+</span> <span class="s">" has bowed back to me!%n"</span><span class="o">,</span>
+                <span class="k">this</span><span class="o">.</span><span class="na">name</span><span class="o">,</span> <span class="n">bower</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">final</span> <span class="nc">Friend</span> <span class="n">alphonse</span> <span class="o">=</span>
+            <span class="k">new</span> <span class="nf">Friend</span><span class="o">(</span><span class="s">"Alphonse"</span><span class="o">);</span>
+        <span class="kd">final</span> <span class="nc">Friend</span> <span class="n">gaston</span> <span class="o">=</span>
+            <span class="k">new</span> <span class="nf">Friend</span><span class="o">(</span><span class="s">"Gaston"</span><span class="o">);</span>
+        <span class="k">new</span> <span class="nf">Thread</span><span class="o">(</span><span class="k">new</span> <span class="nc">Runnable</span><span class="o">()</span> <span class="o">{</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span> <span class="n">alphonse</span><span class="o">.</span><span class="na">bow</span><span class="o">(</span><span class="n">gaston</span><span class="o">);</span> <span class="o">}</span>
+        <span class="o">}).</span><span class="na">start</span><span class="o">();</span>
+        <span class="k">new</span> <span class="nf">Thread</span><span class="o">(</span><span class="k">new</span> <span class="nc">Runnable</span><span class="o">()</span> <span class="o">{</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span> <span class="n">gaston</span><span class="o">.</span><span class="na">bow</span><span class="o">(</span><span class="n">alphonse</span><span class="o">);</span> <span class="o">}</span>
+        <span class="o">}).</span><span class="na">start</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="https://github.com/Yadon079/yadon079.github.io/raw/master/assets/img/study/thread11.png" alt="" /></p><hr /><p><strong>Reference</strong></p><ul><li><a href="http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;ejkGb=KOR&amp;barcode=9788994492032">자바의 정석 3/e</a><li><a href="https://www.amazon.com/Java-Nutshell-Desktop-Quick-Reference/dp/1492037257/ref=sr_1_1?dchild=1&amp;keywords=Java+in+a+Nutshell&amp;qid=1605393888&amp;s=books&amp;sr=1-1">Java in a Nutshell</a><li><a href="https://docs.oracle.com/javase/tutorial/java/TOC.html">오라클 공식 가이드</a><li><a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/deadlock.html">https://docs.oracle.com/javase/tutorial/essential/concurrency/deadlock.html</a></ul></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/study/'>study</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=자바스터디 10주차 - dev note&url=https://redbean88.github.io/posts/whiteship-study-10week/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=자바스터디 10주차 - dev note&u=https://redbean88.github.io/posts/whiteship-study-10week/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://telegram.me/share?text=자바스터디 10주차 - dev note&url=https://redbean88.github.io/posts/whiteship-study-10week/" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="Copy link" title-succeed="Link copied successfully!"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-lastmod" class="post"> <span>Recent Update</span><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/JPA-CH05/">자바 ORM 표준 JPA 프로그래밍(희망편05)</a><li><a href="/posts/JPA-CH06/">자바 ORM 표준 JPA 프로그래밍(희망편06)</a><li><a href="/posts/JPA-CH07/">자바 ORM 표준 JPA 프로그래밍(희망편07)</a><li><a href="/posts/JPA-CH09/">자바 ORM 표준 JPA 프로그래밍(희망편09)</a><li><a href="/posts/JPA-CH08/">자바 ORM 표준 JPA 프로그래밍(희망편08)</a></ul></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"> <span class="pl-3 pt-2 mb-2">Contents</span><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/whiteship-study-1week/"><div class="card-body"> <span class="timeago small" >Nov 23, 2020<i class="unloaded">2020-11-23T00:00:00+09:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>자바스터디 1주차</h3><div class="text-muted small"><p> 아래 내용은 https://github.com/league3236/startJava/blob/master/live_study/week1.md 내용을 차용했음을 알려드립니다. GOAL 자바 소스 파일(.java)을 JVM으로 실행하는 과정 이해 하기. 학습할 것 JVM이란 무엇인가 컴파일 하는 방법 실행하는 방법 바이트코드란 무엇인가...</p></div></div></a></div><div class="card"> <a href="/posts/whiteship-study-2week/"><div class="card-body"> <span class="timeago small" >Nov 23, 2020<i class="unloaded">2020-11-23T00:00:00+09:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>자바스터디 2주차</h3><div class="text-muted small"><p> 아래 내용은 https://github.com/kksb0831/Practice_project/blob/master/Java_Study_02.md 내용을 차용했음을 알려드립니다. 학습할것 프리미티브 타입 종류와 값의 범위 그리고 기본 값 프리미티브 타입과 레퍼런스 타입 리터럴 변수 선언 및 초기화하는 방법 변수의 스코프와 라이프타임...</p></div></div></a></div><div class="card"> <a href="/posts/whiteship-study-3week/"><div class="card-body"> <span class="timeago small" >Nov 23, 2020<i class="unloaded">2020-11-23T00:00:00+09:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>자바스터디 3주차</h3><div class="text-muted small"><p> GOAL 자바가 제공하는 다양한 연산자를 학습하세요. 학습할 것 산술 연산자 비트 연산자 관계 연산자 논리 연산자 instanceof assignment(=) operator 화살표(-&gt;) 연산자 3항 연산자 연산자 우선 순위 (optional) Java 13. switch 연산자 산술 연산자...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/%EB%9D%BC%EB%9D%BC%EB%B2%A806/" class="btn btn-outline-primary" prompt="Older"><p>라라벨로 배우는 php 웹 프로그래밍</p></a> <a href="/posts/%EB%9D%BC%EB%9D%BC%EB%B2%A807/" class="btn btn-outline-primary" prompt="Newer"><p>라라벨로 배우는 php 웹 프로그래밍</p></a></div><div id="disqus_thread" class="pt-2 pb-2"><p class="text-center text-muted small"> Comments powered by <a href="https://disqus.com/">Disqus</a>.</p></div><script type="text/javascript"> var disqus_config = function () { this.page.url = 'https://redbean88.github.io/posts/whiteship-study-10week/'; this.page.identifier = '/posts/whiteship-study-10week/'; }; /* Lazy loading */ var disqus_observer = new IntersectionObserver(function (entries) { if(entries[0].isIntersecting) { (function () { var d = document, s = d.createElement('script'); s.src = 'https://redbean88-github-io.disqus.com/embed.js'; s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })(); disqus_observer.disconnect(); } }, { threshold: [0] }); disqus_observer.observe(document.querySelector('#disqus_thread')); /* Auto switch theme */ function reloadDisqus() { /* Disqus hasn't been loaded */ if (typeof DISQUS === "undefined") { return; } if (document.readyState == 'complete') { DISQUS.reset({ reload: true, config: disqus_config }); } } const modeToggle = document.querySelector(".mode-toggle"); if (modeToggle !== null) { modeToggle.addEventListener('click', reloadDisqus); window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', reloadDisqus); } </script></div></div></div><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center"><div class="footer-left"><p class="mb-0"> © 2023 <a href="https://redbean88.github.io">redbean88</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><h4 class="text-muted mb-4">Trending Tags</h4></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.16.1,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id=G-LR635TNW07"></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-LR635TNW07'); }); </script>
